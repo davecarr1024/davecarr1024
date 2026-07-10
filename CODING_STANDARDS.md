@@ -16,6 +16,9 @@ These standards summarize the patterns already present across my checked-out rep
 - Keep docs, roadmaps, and tests current with behavior changes.
 - Treat 100% production-code coverage as the standard goal. Thoroughly testable code is a good sign that the project is stable and well-shaped.
 - Every project should provide a coverage command and a presubmit/all-check command that at least enforces tests passing.
+- For multi-module projects, group code by domain/module using directories and matching namespaces/packages. Prefer `module/submodule` layout over flat file lists once a second cohesive area appears.
+- A phase is not done until the presubmit command, coverage gate, documentation updates, commit, and push all succeed.
+- Prefer local pre-commit hooks plus CI for the same checks. The hook catches mistakes before commit; CI proves the same workflow from a clean checkout.
 
 ## Unit Of Work Standard
 
@@ -57,7 +60,9 @@ Every project should have:
 
 - a normal test command,
 - a coverage command or coverage-producing test target,
-- a presubmit/all-check command that at least enforces tests passing,
+- a formatting check when the language ecosystem has a standard formatter,
+- a static-analysis or lint check when the ecosystem has a practical tool,
+- a presubmit/all-check command that enforces formatting, static analysis or linting, and tests,
 - coverage enforcement once the project is mature enough for it.
 
 For model projects, tests should prove behavior, invariants, diagnostics, traces, and generated artifacts. Line coverage is the floor, not the purpose.
@@ -130,12 +135,14 @@ Default toolchain:
 - C++20.
 - GoogleTest.
 - CTest.
-- Optional coverage via `ENABLE_COVERAGE=ON`.
+- `clang-format` for formatting.
+- `clang-tidy` for static analysis when it can run cleanly over the project.
+- Coverage via `ENABLE_COVERAGE=ON` once tests exist.
 
 Default commands:
 
 ```bash
-cmake -B build -DBUILD_TESTING=ON
+cmake -B build -DBUILD_TESTING=ON -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 cmake --build build --parallel
 ctest --test-dir build --output-on-failure -j 8
 ```
@@ -143,10 +150,13 @@ ctest --test-dir build --output-on-failure -j 8
 Style:
 
 - Keep module dependencies explicit and acyclic.
+- Represent nested modules with subdirectories and matching namespaces, such as `include/project/game/rules.h`, `src/game/rules.cpp`, and `project::game`.
+- Free functions are acceptable for cohesive domain operations, but put them in the domain namespace rather than the root project namespace.
 - Let generated definitions come from source data such as YAML.
 - Prefer strong types for domain values.
 - Keep runtime state separate from immutable structure when the model benefits from that distinction.
 - Keep compile warnings clean under `-Wall -Wextra -Wpedantic`.
+- Keep `clang-format` and `clang-tidy` clean when the project has adopted them.
 - Add focused GoogleTest coverage for new behavior.
 
 ## Go

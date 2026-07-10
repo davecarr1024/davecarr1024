@@ -182,6 +182,15 @@ For these projects, tests are not a cleanup step. The proof is the product.
 
 Every project should define a presubmit or all-check command. At minimum it should enforce tests passing. Mature projects should also enforce coverage, with 100% production-code coverage as the standard goal unless a narrow exception is documented.
 
+The preferred mature-project verification stack is:
+
+- a formatter check,
+- a static-analysis or lint check,
+- tests,
+- a coverage gate,
+- a local pre-commit hook that runs the same checks,
+- CI that runs the same checks from a clean checkout.
+
 ## 8. Phase Completion
 
 A phase is complete when:
@@ -190,6 +199,8 @@ A phase is complete when:
 - tests or checks pass,
 - documentation reflects the current model,
 - known gaps are written down,
+- the completed phase is committed,
+- the commit is pushed to the project remote when one exists,
 - the next phase can build on the result without re-explaining it from scratch.
 
 Before leaving a phase, write a short checkpoint note:

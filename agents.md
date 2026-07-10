@@ -2,6 +2,8 @@
 
 This is the root agent guide for my repositories. It is synthesized from the checked-out `CLAUDE.md`, `claude.md`, `pyproject.toml`, `CMakeLists.txt`, `Makefile`, `go.mod`, and `package.json` files under `~/projects`.
 
+The root developer record lives in `~/projects/davecarr1024`. Use its `agents.md`, `CODING_STANDARDS.md`, and `developer-record/` docs as the cross-repo source of process and style rules.
+
 Use this file as the default when starting new repositories. If a project has its own `AGENTS.md`, `CLAUDE.md`, or `claude.md`, that project-local file wins for project-specific commands and invariants.
 
 ## Working Style
@@ -13,6 +15,7 @@ Use this file as the default when starting new repositories. If a project has it
 - Do not implement future-phase concepts while working in the current phase.
 - Preserve user changes. Never revert work you did not make unless explicitly asked.
 - Keep commits focused when committing is requested. Do not force-push or force-commit.
+- When a project reveals a reusable workflow, style, tooling, or process lesson, promote that finding back to `~/projects/davecarr1024` rather than leaving it only in the pilot project.
 
 ## Project Philosophy
 
@@ -123,6 +126,7 @@ Always prefer the local repo's exact command if it differs from these defaults.
 - Before a rewrite, write down what the previous version taught and why local repair is not enough.
 - Record important invariants near the model that depends on them.
 - Keep local agent files concise and link to `README.md` and `docs/design.md` for long-form context.
+- New project agent files should include a pointer back to `~/projects/davecarr1024` and a note that reusable findings should be promoted there.
 
 ## Language Notes
 
