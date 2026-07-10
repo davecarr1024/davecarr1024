@@ -35,17 +35,23 @@ Agent-driven development is a major tool for maintaining this state. It helps me
 
 This has worked well in both work and hobby development, and I enjoy it. Maintaining this flow should be treated as a first-class project goal, not merely a productivity tactic.
 
+See `agent-enabled-development-process.md` for the explicit project process: brainstorming and discussion, naming, initial design, phases, deliverables, checkpoints, execution, verification, and phase completion.
+
 ### Operating Loop
 
 The work loop I want to preserve is:
 
-1. Identify the next bite-size piece.
-2. Define what done means.
-3. Design the local solution.
-4. Implement the design.
-5. Verify with tests, checks, or an inspectable artifact.
-6. Deliver the sub-module as a stable building block.
-7. Use what was learned to choose the next bite.
+1. Brainstorm the seed question.
+2. Name the project.
+3. Write the initial design.
+4. Plan phases, deliverables, and checkpoints.
+5. Identify the next bite-size piece.
+6. Define what done means.
+7. Design the local solution.
+8. Implement the design.
+9. Verify with tests, checks, or an inspectable artifact.
+10. Deliver the sub-module as a stable building block.
+11. Use what was learned to choose the next bite.
 
 When a project feels stuck, the fix is usually to shrink the next step, sharpen the proof of done, or return to the concrete model.
 
@@ -191,6 +197,16 @@ Bits become registers, registers become instructions, instructions become assemb
 ### Start Delightfully Small
 
 I should build one runnable thing quickly: one proof, one train movement, one replicated write, one dungeon room, one map analysis. That moment is not a milestone; it is the fuel.
+
+### Name The Project
+
+Every project needs a good punchy name.
+
+The name should be part of the initial brainstorming process, not a late branding pass. A strong name gives the project a handle, makes the idea easier to return to, and forces a little early clarity about what the project is really about.
+
+The best names are short, memorable, and connected to the core object, fantasy, historical reference, or emotional hook of the project. `Janney`, `Tower`, `Paper Railroad`, `IRATA`, `Henka`, and `Sudologue` work because they point at a specific world or idea rather than a generic category.
+
+The naming standard is not polish. It is focus. If an idea cannot yet support a name, that may mean the seed question is still too vague.
 
 ### Preserve Forward Motion
 

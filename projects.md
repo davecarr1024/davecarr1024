@@ -36,6 +36,8 @@ The projects that stay interesting usually have:
 
 - `developer-record/project-philosophy.md`: long-form project philosophy and lessons from `projects.html`.
 - `developer-record/project-inventory.md`: local/GitHub project summary and project matrix from `PROJECT_SUMMARY.md` and `projects.html`.
+- `developer-record/agent-enabled-development-process.md`: explicit agent-driven process from brainstorming through verified delivery.
+- `developer-record/open-questions-and-next-steps.md`: synthesis of current open questions, next steps, and decision points.
 - `future-project-designs/paper-railroad.md`: detailed design from `PAPER_RAILROAD_DESIGN.md`.
 - `future-project-designs/janney.md`: detailed design for the coupler and switching project.
 - `future-project-designs/tower.md`: detailed design for the interlocking and route-authority project.
@@ -62,6 +64,8 @@ See `future-project-designs/railroad-worlds.md` for the consolidated railroad-fa
 ## Standards To Preserve Across Projects
 
 - Start with one small, complete, inspectable world.
+- Give every project a good punchy name as part of the initial brainstorming process.
+- Use the agent-enabled development process: brainstorm, name, design, phase, execute, verify, and checkpoint.
 - Preserve not-being-stuck as a first-class goal: define the next bite, design it, implement it, verify it, and deliver it as a stable building block.
 - Use Markdown for durable documentation.
 - Give every project a root `README.md` and `docs/design.md`.

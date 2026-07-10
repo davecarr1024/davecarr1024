@@ -9,7 +9,7 @@ Use this file as the default when starting new repositories. If a project has it
 - Read the project `README.md`, `docs/design.md`, other relevant `docs/*.md`, and local agent file before changing code.
 - Prefer the repo's existing patterns, commands, and abstractions over new ones.
 - Keep work in small, focused steps that can be built, tested, and reviewed independently.
-- Maintain the "not being stuck" loop: identify the next bite-size piece, define done, design it, implement it, verify it, and leave behind a stable building block.
+- Maintain the "not being stuck" loop: brainstorm clearly, name the project, design the current phase, identify the next bite-size piece, define done, implement it, verify it, and leave behind a stable building block.
 - Do not implement future-phase concepts while working in the current phase.
 - Preserve user changes. Never revert work you did not make unless explicitly asked.
 - Keep commits focused when committing is requested. Do not force-push or force-commit.
@@ -40,11 +40,24 @@ Before calling a coding task done:
 When work is ambiguous or broad:
 
 - First shrink it to the next coherent sub-module.
+- Make naming and phase boundaries explicit before implementation starts.
 - State the local design before editing code.
 - Prefer a vertical slice that produces an inspectable artifact over a broad foundation with no proof.
 - Verify the result before expanding scope.
 - If the implementation starts spreading across too many concepts, stop and re-cut the work into a smaller step.
 - Keep the user oriented enough that they can supervise the development process and understand each action being taken.
+
+## Agent-Enabled Development Process
+
+For new projects and major phases, follow `developer-record/agent-enabled-development-process.md` from the root developer record:
+
+1. Brainstorm and discuss the seed question.
+2. Choose a punchy name.
+3. Write or update the initial design.
+4. Plan phases, deliverables, and checkpoints.
+5. Execute one bite-size unit at a time.
+6. Verify each unit with tests, checks, or inspectable artifacts.
+7. Record lessons and next steps before expanding scope.
 
 ## Common Commands
 

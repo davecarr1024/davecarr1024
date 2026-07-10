@@ -5,6 +5,7 @@ These standards summarize the patterns already present across my checked-out rep
 ## Universal Standards
 
 - Markdown is the standard documentation format. Keep durable documentation in `.md` files.
+- Give every project a good punchy name during initial brainstorming. The name should clarify the core object, fantasy, or hook.
 - Keep behavior deterministic unless randomness is the explicit subject of the project.
 - Model the domain directly. Avoid generic engines before one complete concrete experience exists.
 - Optimize for not being stuck: choose bite-size units of work with explicit design, verification, and delivery criteria.
@@ -26,6 +27,20 @@ A good unit of work should be:
 
 Avoid units of work that are only "set up architecture" without a runnable proof. If a task cannot be verified, shrink or reshape it until it can.
 
+## Agent-Enabled Project Process
+
+New projects and major phases should follow the process in `developer-record/agent-enabled-development-process.md`:
+
+1. Brainstorm and discuss the seed question.
+2. Choose a good punchy name.
+3. Write the initial design.
+4. Plan phases, deliverables, and checkpoints.
+5. Execute a bite-size unit of work.
+6. Verify with tests, checks, or inspectable artifacts.
+7. Record lessons and next steps.
+
+This process is part of the quality standard. A phase is not complete until its deliverable is verified and the relevant Markdown docs reflect the current model.
+
 ## Documentation Layout
 
 Every project should have a small, predictable documentation structure:
@@ -38,6 +53,7 @@ Every project should have a small, predictable documentation structure:
 Documentation rules:
 
 - Prefer Markdown for all durable docs. Avoid HTML or ad hoc document formats for planning and design records.
+- Include the project name and naming rationale in early design notes when the project is still forming.
 - Keep the root `README.md` concise. Move detailed design material into `docs/design.md` or focused `docs/*.md` files.
 - Keep `docs/design.md` current with the model that actually exists.
 - Link detailed docs from `README.md` so a new reader can find the shape of the project quickly.
