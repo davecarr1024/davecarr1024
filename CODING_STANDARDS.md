@@ -220,6 +220,8 @@ Style:
   - code conventions,
   - testing requirements,
   - documentation update rules,
-  - current phase or roadmap pointer.
+  - current phase or roadmap pointer,
+  - pointer back to `~/projects/davecarr1024` as the root developer rules dir,
+  - instruction to promote reusable workflow, style, tooling, and process findings back to `~/projects/davecarr1024`.
 - Agent files should point to `README.md` and `docs/design.md` rather than duplicating long design content.
 - Keep local agent files concise enough to read before work starts.
