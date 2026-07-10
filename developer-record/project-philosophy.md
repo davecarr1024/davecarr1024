@@ -174,9 +174,13 @@ I should use the type system, generated definitions, validators, and structured 
 
 Testability is representation design. My model should expose builders, fixtures, structured results, intermediate artifacts, and diagnostics so tests can describe the world directly.
 
+Thoroughly testable code is a very good sign. When code can be covered cleanly, it usually means the model has stable boundaries, visible state, and useful public artifacts. When coverage is painful, that is often a code smell: concepts may be hidden, responsibilities may be mixed, or the design may not expose the right checkpoints.
+
 ### Tests Are The Deliverable
 
-For my projects, the proof is the product. A demo is nice, but the deeper pride is a full run: every layer exercised, every invariant checked, every expansion covered, 100% pass, and coverage accounted for.
+For my projects, the proof is the product. A demo is nice, but the deeper pride is a full run: every layer exercised, every invariant checked, every expansion covered, 100% pass, and 100% production-code coverage as the standard goal.
+
+Every project should have a test command, a coverage command, and a presubmit or all-check command that at least enforces tests passing. Mature projects should enforce coverage too, with narrow documented exceptions when full coverage is not practical.
 
 ### Readable Tests Are Elegant
 
@@ -200,11 +204,26 @@ I should build one runnable thing quickly: one proof, one train movement, one re
 
 ### Name The Project
 
-Every project needs a good punchy name.
+Every project needs a good name.
 
 The name should be part of the initial brainstorming process, not a late branding pass. A strong name gives the project a handle, makes the idea easier to return to, and forces a little early clarity about what the project is really about.
 
-The best names are short, memorable, and connected to the core object, fantasy, historical reference, or emotional hook of the project. `Janney`, `Tower`, `Paper Railroad`, `IRATA`, `Henka`, and `Sudologue` work because they point at a specific world or idea rather than a generic category.
+Historically, I have often used codenames or compressed names:
+
+- `pysh`: C# or shell-like language ideas in Python.
+- `fge`: the Flyin' Hawaiian game engine.
+- `IRATA`: a poor Atari-like emulator idea, with a name connected to `errata` and `Atari` reversed.
+
+I like those names because they make projects feel personal and distinct. They are best for proper-noun projects that are creative, releasable, or product-like: a game, utility, tool, simulator, or world that should have its own identity.
+
+Experiments, labs, and educational projects should usually have descriptive names. `compiler_lab` and `game_ai_lab` are not as evocative as codenames, but they are honest, searchable, and scope-setting. For educational or exploratory projects, that clarity is more useful than mystery.
+
+The best names are short, memorable, and connected to either the core object, fantasy, historical reference, emotional hook, or plain project purpose. `Janney`, `Tower`, `Paper Railroad`, `IRATA`, `Henka`, `Sudologue`, `compiler_lab`, and `game_ai_lab` can all be valid if the name helps the project stay concrete.
+
+The practical rule is:
+
+- Proper-noun creative/releasable projects should get short, punchy, often punny names.
+- Experiments, labs, and educational projects should get descriptive names.
 
 The naming standard is not polish. It is focus. If an idea cannot yet support a name, that may mean the seed question is still too vague.
 

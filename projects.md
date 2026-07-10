@@ -64,7 +64,7 @@ See `future-project-designs/railroad-worlds.md` for the consolidated railroad-fa
 ## Standards To Preserve Across Projects
 
 - Start with one small, complete, inspectable world.
-- Give every project a good punchy name as part of the initial brainstorming process.
+- Give every project a good name as part of the initial brainstorming process: short punchy proper-noun names for creative/releasable projects, descriptive names for labs and experiments.
 - Use the agent-enabled development process: brainstorm, name, design, phase, execute, verify, and checkpoint.
 - Preserve not-being-stuck as a first-class goal: define the next bite, design it, implement it, verify it, and deliver it as a stable building block.
 - Use Markdown for durable documentation.
@@ -74,6 +74,8 @@ See `future-project-designs/railroad-worlds.md` for the consolidated railroad-fa
 - Encode important truths once and derive docs, tests, diagrams, and diagnostics from that model where practical.
 - Make invalid states unrepresentable when doing so clarifies the design.
 - Treat tests as the proof of the world.
+- Treat 100% production-code coverage as the standard goal and a useful code smell.
+- Give every project a test command, coverage command, and presubmit/all-check command that at least enforces tests passing.
 - Write postmortems before rewrites. A v2 needs lessons from v1, not just imagined cleanliness.
 - Keep administrative complexity out until the model itself has earned it.
 

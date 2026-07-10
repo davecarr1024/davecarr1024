@@ -31,7 +31,7 @@ Before calling a coding task done:
 - The completed unit of work should have a clear role in the larger system.
 - Run the project's full local check command when practical.
 - Add or update tests for changed behavior.
-- Keep coverage expectations intact. Several repos target 100% coverage for production code.
+- Keep coverage expectations intact. 100% production-code coverage is the standard goal unless the project documents a narrow exception.
 - Update docs, roadmaps, and local agent files when architecture, commands, phases, or behavior change.
 - Report exactly which checks were run and which were not.
 
@@ -52,7 +52,7 @@ When work is ambiguous or broad:
 For new projects and major phases, follow `developer-record/agent-enabled-development-process.md` from the root developer record:
 
 1. Brainstorm and discuss the seed question.
-2. Choose a punchy name.
+2. Choose a good name: a short proper-noun name for creative/releasable projects, or a descriptive name for labs and experiments.
 3. Write or update the initial design.
 4. Create or promote the project repo with `README.md`, `docs/design.md`, and local agent guidance.
 5. Plan phases, deliverables, and checkpoints.
@@ -101,6 +101,10 @@ Always prefer the local repo's exact command if it differs from these defaults.
 
 ## Testing Expectations
 
+- Thoroughly testable code is a strong sign that a project is stable and well-shaped.
+- 100% production-code coverage is the standard goal and a useful code smell: if coverage is painful, the representation may be hiding concepts or mixing responsibilities.
+- Every project should include a coverage command or coverage-producing test target.
+- Every project should include a presubmit or all-check command that at least enforces tests passing, and should enforce coverage when the project is mature enough.
 - Tests should prove meaningful model behavior and invariants, not just line execution.
 - Prefer readable fixtures, table-driven cases, and structured results.
 - Use public interfaces where possible.

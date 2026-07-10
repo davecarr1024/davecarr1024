@@ -43,16 +43,22 @@ The active design should live next to the implementation once implementation sta
 
 ### How should project names be handled?
 
-Every project needs a good punchy name during initial brainstorming. The name should clarify the project before implementation starts.
+Every project needs a good name during initial brainstorming. The name should clarify the project before implementation starts.
+
+There are two naming modes, chosen by project type:
+
+- Proper-noun creative/releasable projects should get short, punchy, often punny names. Past examples include `pysh`, `fge`, and `IRATA`.
+- Experiments, labs, and educational projects should get descriptive names. `compiler_lab` and `game_ai_lab` are reasonable names because the projects are educational/exploratory and their purpose is the point.
+
+`Paper Railroad` is an intentional exception to the short proper-noun preference for creative projects. It works because it is descriptive and evocative at the same time: it connects to the childhood paper map on the model train layout, and it suggests a paper corporation that exists through waybills, route maps, ledgers, and railroad documentation. The name carries the image of the project well enough to be the implementation name.
 
 Open naming questions:
 
-- Is `Paper Railroad` the final name, or a design label that wants a sharper project name?
-- Is `Compiler Lab` too generic for the project once its point of view is clearer?
-- Is `Game AI Lab` a placeholder, with the real name emerging from the first concrete game pair?
+- Is `compiler_lab` the right descriptive name, or is there a clearer descriptive lab name?
+- Is `game_ai_lab` the right descriptive name, or should the first concrete game pair suggest a clearer descriptive lab name?
 - Does the NES emulator need a name that signals "transparent behavioral console" rather than generic emulation?
 
-Good names should be short, memorable, and tied to the core object, fantasy, historical reference, or personal hook.
+Good names should be short, memorable, and matched to the project's role: identity-forming for creative/releasable work, grounding and descriptive for labs and experiments.
 
 ## Project-Specific Next Steps
 
@@ -62,7 +68,7 @@ Decision: Keep as lead candidate.
 
 Next useful bite:
 
-1. Decide whether `Paper Railroad` is the implementation name or only the concept name.
+1. Keep `Paper Railroad` as the implementation name unless repo creation reveals a concrete reason to change it.
 2. Create a project repo with `README.md`, `docs/design.md`, and `AGENTS.md`.
 3. Define the smallest map format: towns, routes, goods, producers, consumers.
 4. Implement validation only.
@@ -134,7 +140,7 @@ Decision: Strong educational candidate if it stays artifact-first.
 
 Next useful bite:
 
-1. Pick a punchy project name before implementation.
+1. Pick a project name before implementation.
 2. Choose the v1 implementation language and test style.
 3. Define the tiny source language and grammar.
 4. Build lexer plus token-span diagnostics.
@@ -169,7 +175,8 @@ Open questions:
 
 Before creating a new project repo, answer:
 
-- What is the punchy name?
+- What is the project name?
+- Is this a proper-noun creative/releasable project, or a lab/experiment/educational project?
 - What is the core question?
 - What is the fundamental object?
 - What is the first runnable moment?
@@ -178,6 +185,9 @@ Before creating a new project repo, answer:
 - What old failure mode is this project most likely to repeat?
 - What are the v1 phases, deliverables, and checkpoints?
 - What verification step proves each phase?
+- What command runs tests?
+- What command produces coverage?
+- What presubmit or all-check command at least enforces tests passing?
 
 Then create:
 

@@ -23,7 +23,7 @@ The end state of a phase is not "some code exists." The end state is a complete 
 The standard loop is:
 
 1. Brainstorm and discuss the idea.
-2. Find a good punchy name.
+2. Find a good name.
 3. Write the initial design.
 4. Create or promote the project repo when the idea is ready to implement.
 5. Plan phases, deliverables, and checkpoints.
@@ -50,7 +50,7 @@ The output of brainstorming should be a short project thesis, not an architectur
 
 ## 2. Naming
 
-Every project needs a good punchy name as part of initial brainstorming.
+Every project needs a good name as part of initial brainstorming.
 
 The name should help clarify the project. Good names usually come from:
 
@@ -61,6 +61,13 @@ The name should help clarify the project. Good names usually come from:
 - the visible artifact,
 - the main operation the user performs.
 
+There are two naming modes, chosen by project type:
+
+- Proper-noun creative/releasable project: use a short, punchy, often punny name, such as `pysh`, `fge`, `IRATA`, `Henka`, or `Sudologue`.
+- Experiment, lab, or educational project: use a descriptive name, such as `compiler_lab` or `game_ai_lab`.
+
+The choice should be part of the design discussion. Creative projects benefit from identity and energy. Labs and experiments benefit from being immediately legible.
+
 A weak placeholder is acceptable for a short time, but a project should not start implementation until the name is good enough to carry the idea.
 
 Naming questions:
@@ -70,6 +77,7 @@ Naming questions:
 - Does it make the project easier to talk about?
 - Does it imply a useful scope boundary?
 - Would the name still fit the v1 first runnable moment?
+- Is this a proper-noun creative/releasable project, or a lab/experiment/educational project?
 
 ## 3. Initial Design
 
@@ -97,7 +105,7 @@ When an idea moves from future design to active project, promote it into its own
 
 Project creation should produce:
 
-- a repo with the punchy project name,
+- a repo with the chosen project name,
 - a root `README.md`,
 - `docs/design.md` containing the active project design,
 - optional `docs/roadmap.md` for phases and milestones,
@@ -154,6 +162,7 @@ Preferred verification methods:
 
 - unit tests for model behavior,
 - integration tests for complete flows,
+- coverage runs for production code,
 - golden outputs for generated artifacts,
 - structured diagnostics that can be asserted directly,
 - deterministic replay tests,
@@ -166,9 +175,12 @@ Verification should answer:
 - Are important invalid states rejected?
 - Is the result deterministic?
 - Is the artifact inspectable?
+- Is the code thoroughly testable, with 100% production-code coverage as the default goal?
 - Did docs and tests stay synchronized with behavior?
 
 For these projects, tests are not a cleanup step. The proof is the product.
+
+Every project should define a presubmit or all-check command. At minimum it should enforce tests passing. Mature projects should also enforce coverage, with 100% production-code coverage as the standard goal unless a narrow exception is documented.
 
 ## 8. Phase Completion
 
@@ -212,7 +224,7 @@ Agents should not:
 
 Before implementation starts, the project should have:
 
-- a punchy name,
+- a good project name,
 - a root `README.md`,
 - `docs/design.md`,
 - a v1 thesis,
@@ -220,6 +232,7 @@ Before implementation starts, the project should have:
 - a first runnable moment,
 - explicit non-goals,
 - a verification strategy,
+- planned test, coverage, and presubmit commands,
 - project-local `AGENTS.md` or `agents.md` if the root guide is not enough.
 
 ## Default First Milestone

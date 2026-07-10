@@ -5,7 +5,7 @@ These standards summarize the patterns already present across my checked-out rep
 ## Universal Standards
 
 - Markdown is the standard documentation format. Keep durable documentation in `.md` files.
-- Give every project a good punchy name during initial brainstorming. The name should clarify the core object, fantasy, or hook.
+- Give every project a good name during initial brainstorming. Creative/releasable projects should use short punchy proper-noun names; labs, experiments, and educational projects should use descriptive names.
 - Keep behavior deterministic unless randomness is the explicit subject of the project.
 - Model the domain directly. Avoid generic engines before one complete concrete experience exists.
 - Optimize for not being stuck: choose bite-size units of work with explicit design, verification, and delivery criteria.
@@ -14,6 +14,8 @@ These standards summarize the patterns already present across my checked-out rep
 - Keep generated artifacts derived from their source definitions.
 - Comments should explain non-obvious logic, not restate code.
 - Keep docs, roadmaps, and tests current with behavior changes.
+- Treat 100% production-code coverage as the standard goal. Thoroughly testable code is a good sign that the project is stable and well-shaped.
+- Every project should provide a coverage command and a presubmit/all-check command that at least enforces tests passing.
 
 ## Unit Of Work Standard
 
@@ -32,7 +34,7 @@ Avoid units of work that are only "set up architecture" without a runnable proof
 New projects and major phases should follow the process in `developer-record/agent-enabled-development-process.md`:
 
 1. Brainstorm and discuss the seed question.
-2. Choose a good punchy name.
+2. Choose a good name.
 3. Write the initial design.
 4. Plan phases, deliverables, and checkpoints.
 5. Execute a bite-size unit of work.
@@ -40,6 +42,27 @@ New projects and major phases should follow the process in `developer-record/age
 7. Record lessons and next steps.
 
 This process is part of the quality standard. A phase is not complete until its deliverable is verified and the relevant Markdown docs reflect the current model.
+
+## Testing And Coverage Philosophy
+
+The default testing goal is 100% production-code coverage.
+
+This is not only a metric. It is a design smell and a design signal:
+
+- If code is straightforward to cover thoroughly, the model is probably well-factored and inspectable.
+- If coverage is painful, the code may be mixing responsibilities, hiding state, depending on incidental timing, or lacking useful public artifacts.
+- If a line is intentionally excluded from coverage, the reason should be narrow and documented.
+
+Every project should have:
+
+- a normal test command,
+- a coverage command or coverage-producing test target,
+- a presubmit/all-check command that at least enforces tests passing,
+- coverage enforcement once the project is mature enough for it.
+
+For model projects, tests should prove behavior, invariants, diagnostics, traces, and generated artifacts. Line coverage is the floor, not the purpose.
+
+When 100% coverage is not practical for a project area, document the exception in the local design or agent file. Common exceptions might include visual renderers, interactive shells, development scripts, or platform glue.
 
 ## Documentation Layout
 
@@ -53,7 +76,7 @@ Every project should have a small, predictable documentation structure:
 Documentation rules:
 
 - Prefer Markdown for all durable docs. Avoid HTML or ad hoc document formats for planning and design records.
-- Include the project name and naming rationale in early design notes when the project is still forming.
+- Include the project name and naming rationale in early design notes when the project is still forming, including whether it is a proper-noun creative project or a descriptive lab/experiment.
 - When a future design becomes an active project, move the active design into that project's `docs/design.md` as part of repo creation.
 - Keep the root `README.md` concise. Move detailed design material into `docs/design.md` or focused `docs/*.md` files.
 - Keep `docs/design.md` current with the model that actually exists.
