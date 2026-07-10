@@ -6,6 +6,20 @@ My favorite projects are executable models: intentionally small versions of seri
 
 I am less interested in building production systems than in building things that help me understand how systems work from the inside.
 
+A high-level goal of my development practice is not being stuck: moving steadily by identifying the next bite-size piece, designing it, implementing it, verifying it, and delivering it as a stable building block. Agent-driven development is one of my main tools for preserving that flow while keeping design intent explicit.
+
+## Developer Record
+
+This repository is also my root developer record:
+
+- `projects.md` tracks the active structure of this repo as a planning hub.
+- `developer-record/project-philosophy.md` holds the long-form design philosophy and lessons from past projects.
+- `developer-record/project-inventory.md` summarizes local and GitHub projects.
+- `future-project-designs/` holds early project designs, including the Railroad Worlds and Paper Railroad docs.
+- `agents.md` and `CODING_STANDARDS.md` hold cross-repo agent and coding guidance.
+
+Markdown is the standard documentation format. For normal project repos, the expected shape is a root `README.md`, a canonical `docs/design.md`, and optional detailed `docs/*.md` files.
+
 ## Project Themes
 
 ### Virtual Computers

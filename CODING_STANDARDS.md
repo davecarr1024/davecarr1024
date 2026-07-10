@@ -1,0 +1,175 @@
+# Coding Standards
+
+These standards summarize the patterns already present across my checked-out repositories. Project-local configuration is authoritative when it differs.
+
+## Universal Standards
+
+- Markdown is the standard documentation format. Keep durable documentation in `.md` files.
+- Keep behavior deterministic unless randomness is the explicit subject of the project.
+- Model the domain directly. Avoid generic engines before one complete concrete experience exists.
+- Optimize for not being stuck: choose bite-size units of work with explicit design, verification, and delivery criteria.
+- Prefer small, composable types with clear invariants.
+- Return or raise context-rich errors. Do not swallow failures.
+- Keep generated artifacts derived from their source definitions.
+- Comments should explain non-obvious logic, not restate code.
+- Keep docs, roadmaps, and tests current with behavior changes.
+
+## Unit Of Work Standard
+
+A good unit of work should be:
+
+- small enough to complete in one focused pass,
+- specific enough to design before coding,
+- testable through public behavior, structured diagnostics, or an inspectable artifact,
+- complete enough to become a dependency for later work,
+- documented when it changes the model, roadmap, commands, or standards.
+
+Avoid units of work that are only "set up architecture" without a runnable proof. If a task cannot be verified, shrink or reshape it until it can.
+
+## Documentation Layout
+
+Every project should have a small, predictable documentation structure:
+
+- `README.md`: root project introduction, quick start, status, and links to deeper docs.
+- `docs/design.md`: the canonical design document for the project.
+- `docs/*.md`: optional detailed docs for architecture notes, roadmaps, protocols, milestones, feature designs, postmortems, and operating notes.
+- `AGENTS.md` or `agents.md`: agent guidance when the project needs instructions beyond the root defaults.
+
+Documentation rules:
+
+- Prefer Markdown for all durable docs. Avoid HTML or ad hoc document formats for planning and design records.
+- Keep the root `README.md` concise. Move detailed design material into `docs/design.md` or focused `docs/*.md` files.
+- Keep `docs/design.md` current with the model that actually exists.
+- Link detailed docs from `README.md` so a new reader can find the shape of the project quickly.
+- When a project has phases or milestones, keep the roadmap in `docs/roadmap.md` or inside `docs/design.md`, not scattered through implementation notes.
+- Capture rewrite reasons and v1 lessons in a `docs/postmortem*.md` or design-history doc before starting a v2.
+
+## Python
+
+Observed repos: `eastman`, `pirata`, `tracky`, `sudologue`.
+
+Default toolchain:
+
+- Poetry for environments and packaging.
+- Poe for task aliases.
+- Black for formatting.
+- Ruff for linting and import ordering.
+- Pyright in strict mode.
+- Pytest, pytest-cov, pytest-subtests, and often pytest-xdist.
+
+Default command:
+
+```bash
+poetry run poe all
+```
+
+Style:
+
+- Use type annotations throughout.
+- Prefer `X | None` over bare `Optional`.
+- Use frozen dataclasses for immutable value types.
+- Use `typing.Protocol` for interfaces.
+- Prefer `match`/`case` for state-machine or typed dispatch when it improves clarity.
+- Keep tests near source when that is the repo's pattern, such as `component.py` beside `component_test.py`.
+- Use `pytest.approx()` for floating-point checks.
+- Use subtests for readable table-driven cases.
+- Exclude interactive renderers, scripts, protocols, and dev-only helpers from coverage only when the project already treats them as coverage exceptions.
+
+Coverage:
+
+- Treat 100% production-code coverage as the default goal for Python model projects.
+- Do not reduce coverage expectations to make a change pass.
+
+## C++
+
+Observed repo: `irata2`.
+
+Default toolchain:
+
+- CMake 3.20+.
+- C++20.
+- GoogleTest.
+- CTest.
+- Optional coverage via `ENABLE_COVERAGE=ON`.
+
+Default commands:
+
+```bash
+cmake -B build -DBUILD_TESTING=ON
+cmake --build build --parallel
+ctest --test-dir build --output-on-failure -j 8
+```
+
+Style:
+
+- Keep module dependencies explicit and acyclic.
+- Let generated definitions come from source data such as YAML.
+- Prefer strong types for domain values.
+- Keep runtime state separate from immutable structure when the model benefits from that distinction.
+- Keep compile warnings clean under `-Wall -Wextra -Wpedantic`.
+- Add focused GoogleTest coverage for new behavior.
+
+## Go
+
+Observed repo: `doki`.
+
+Default commands:
+
+```bash
+make build
+make test
+make test-int
+make lint
+```
+
+Style:
+
+- Wrap errors with context using `%w`.
+- Keep user-facing errors distinguishable from internal errors.
+- Use injected interfaces for time, storage, clients, and other external dependencies.
+- Use `context.Context` for background goroutines and shut them down cleanly.
+- Do not hold multiple shard or model locks unless the local design explicitly allows it.
+- Use `t.Cleanup()` for test resources, especially inside loops.
+- Keep integration and reliability tests separated by tags when the project does.
+
+## TypeScript
+
+Observed repo: `henka`.
+
+Default commands:
+
+```bash
+npm test
+npm run build
+npm run dev
+```
+
+Style:
+
+- Keep core game logic testable without the browser.
+- Separate simulation state, input, rendering, and evolution logic.
+- Use Vitest for unit and integration tests.
+- Make adaptive or generated behavior visible and inspectable rather than hidden.
+- Keep mobile and desktop interaction constraints in mind when the project targets both.
+
+## Build And Config Files
+
+- Prefer existing task runners over ad hoc commands.
+- Do not edit lockfiles, generated code, or build output unless that is part of the requested task.
+- Do not introduce a new formatter, linter, package manager, or build system without a project-level reason.
+- If a repo has a Makefile, Poe task, npm script, or CMake target for an operation, use that target.
+
+## Agent File Conventions
+
+- New repos should include a root `AGENTS.md` or `agents.md`.
+- A project-local agent file should include:
+  - project overview,
+  - essential commands,
+  - architecture map,
+  - key invariants,
+  - code conventions,
+  - testing requirements,
+  - documentation update rules,
+  - current phase or roadmap pointer.
+- Agent files should point to `README.md` and `docs/design.md` rather than duplicating long design content.
+- Keep local agent files concise enough to read before work starts.
