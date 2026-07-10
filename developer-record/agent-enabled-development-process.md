@@ -25,10 +25,11 @@ The standard loop is:
 1. Brainstorm and discuss the idea.
 2. Find a good punchy name.
 3. Write the initial design.
-4. Plan phases, deliverables, and checkpoints.
-5. Execute one bite-size unit at a time.
-6. Verify each unit before expanding scope.
-7. Record lessons, regrets, and next steps.
+4. Create or promote the project repo when the idea is ready to implement.
+5. Plan phases, deliverables, and checkpoints.
+6. Execute one bite-size unit at a time.
+7. Verify each unit before expanding scope.
+8. Record lessons, regrets, and next steps.
 
 This process should be explicit at project start and repeated at each major phase boundary.
 
@@ -88,7 +89,26 @@ The design should answer:
 
 The design should be specific enough to guide implementation but not so large that it blocks the first runnable artifact.
 
-## 4. Phases, Deliverables, And Checkpoints
+## 4. Repo Creation And Design Promotion
+
+`davecarr1024` is the root developer record. It should hold developer-wide structure, reusable patterns, standards, agent process, inventory, and future designs.
+
+When an idea moves from future design to active project, promote it into its own repo. That promotion should happen after the initial design discussion and naming, and before implementation work begins.
+
+Project creation should produce:
+
+- a repo with the punchy project name,
+- a root `README.md`,
+- `docs/design.md` containing the active project design,
+- optional `docs/roadmap.md` for phases and milestones,
+- project-local `AGENTS.md` or `agents.md` when the root guidance is not enough,
+- initial commands and verification expectations.
+
+After promotion, the active design source lives in the project repo beside the implementation. The original future-design file in `davecarr1024` can remain as an origin note or be replaced with a short pointer to the new repo.
+
+Cross-project lessons, postmortems, reusable standards, and changes to the agent-enabled process should come back into `davecarr1024`.
+
+## 5. Phases, Deliverables, And Checkpoints
 
 Each project should be split into phases. A phase should produce a stable artifact, not just infrastructure.
 
@@ -112,7 +132,7 @@ Checkpoint: is the map representation clear enough to support waybills?
 
 Avoid phases named only for architecture, setup, or framework work. If a phase cannot be verified, shrink it until it can.
 
-## 5. Execution Loop
+## 6. Execution Loop
 
 The execution loop for each unit of work is:
 
@@ -126,7 +146,7 @@ The execution loop for each unit of work is:
 
 Agents should keep the user oriented during this loop. The user should be able to understand why each action is being taken and how it moves the project toward the current phase deliverable.
 
-## 6. Verification Steps
+## 7. Verification Steps
 
 Verification is part of the deliverable.
 
@@ -150,7 +170,7 @@ Verification should answer:
 
 For these projects, tests are not a cleanup step. The proof is the product.
 
-## 7. Phase Completion
+## 8. Phase Completion
 
 A phase is complete when:
 

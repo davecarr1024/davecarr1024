@@ -54,6 +54,7 @@ Documentation rules:
 
 - Prefer Markdown for all durable docs. Avoid HTML or ad hoc document formats for planning and design records.
 - Include the project name and naming rationale in early design notes when the project is still forming.
+- When a future design becomes an active project, move the active design into that project's `docs/design.md` as part of repo creation.
 - Keep the root `README.md` concise. Move detailed design material into `docs/design.md` or focused `docs/*.md` files.
 - Keep `docs/design.md` current with the model that actually exists.
 - Link detailed docs from `README.md` so a new reader can find the shape of the project quickly.

@@ -2,7 +2,7 @@
 
 This repo is my root developer record: the place to keep long-term project planning, cross-project standards, reusable agent instructions, and early design notes that are not ready to become their own repositories.
 
-The working rule is simple: this repository should remember the ideas, constraints, and standards that should survive across projects.
+The working rule is simple: this repository should remember the ideas, constraints, and standards that should survive across projects. Once a future design becomes an active project, its working design moves into that project's own `README.md`, `docs/design.md`, and local agent file.
 
 Markdown is the documentation standard. New projects should keep a root `README.md`, a canonical `docs/design.md`, and any deeper planning or architecture notes as optional `docs/*.md` files.
 
@@ -80,4 +80,4 @@ See `future-project-designs/railroad-worlds.md` for the consolidated railroad-fa
 ## Parking Lot
 
 - Add one design file per future project as the ideas become more concrete.
-- Decide whether mature design docs should stay here as canonical planning records or move into their project repos once implementation begins.
+- Convert mature future designs into project repos when they are ready to implement, leaving behind origin notes or pointers here.

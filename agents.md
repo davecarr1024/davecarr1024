@@ -54,10 +54,11 @@ For new projects and major phases, follow `developer-record/agent-enabled-develo
 1. Brainstorm and discuss the seed question.
 2. Choose a punchy name.
 3. Write or update the initial design.
-4. Plan phases, deliverables, and checkpoints.
-5. Execute one bite-size unit at a time.
-6. Verify each unit with tests, checks, or inspectable artifacts.
-7. Record lessons and next steps before expanding scope.
+4. Create or promote the project repo with `README.md`, `docs/design.md`, and local agent guidance.
+5. Plan phases, deliverables, and checkpoints.
+6. Execute one bite-size unit at a time.
+7. Verify each unit with tests, checks, or inspectable artifacts.
+8. Record lessons and next steps before expanding scope.
 
 ## Common Commands
 

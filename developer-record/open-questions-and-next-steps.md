@@ -28,14 +28,18 @@ NES Emulator is the highest-risk virtual-computer candidate. It is worthwhile on
 
 Game AI Lab is promising, but it has the clearest abstraction trap. It should start only if the first milestone is one generic policy playing two concrete games, not a board-game framework.
 
-### Should mature design docs stay here or move into project repos?
+### How should designs move from this repo into project repos?
 
-The likely rule should be:
+The rule is:
 
-- Early ideas stay in `future-project-designs/`.
-- Once implementation starts, the new project gets a root `README.md` and `docs/design.md`.
-- The developer-record design remains as origin notes or gets replaced by a short pointer to the project repo.
-- Major postmortems and cross-project lessons come back into `developer-record/`.
+- `davecarr1024` keeps my overall developer structure, recurring patterns, standards, agent process, inventory, and future designs.
+- Early project ideas stay in `future-project-designs/` while they are still being brainstormed, named, and shaped.
+- After initial design discussion, naming, and repo creation, the active project design moves into that project's repo.
+- The new project repo should be created with a root `README.md`, `docs/design.md`, and project-local `AGENTS.md` or `agents.md`.
+- The future-design file in `davecarr1024` should either become an origin note or a short pointer to the project repo.
+- Cross-project lessons, postmortems, reusable standards, and durable philosophy come back into `developer-record/`.
+
+The active design should live next to the implementation once implementation starts. The root developer record should preserve the pattern, not become the working design source for every active project.
 
 ### How should project names be handled?
 
