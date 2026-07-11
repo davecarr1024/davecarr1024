@@ -226,6 +226,7 @@ Agents should:
 Agents should not:
 
 - turn a concrete world into a generic framework prematurely,
+- erase domain-friendly APIs just because a generic core has emerged,
 - hide design choices inside unreviewed implementation,
 - skip tests because a demo appears to work,
 - continue broad implementation after the phase boundary becomes unclear,
