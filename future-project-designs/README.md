@@ -14,6 +14,7 @@ The goal is to make ideas easy to edit from anywhere, including a phone, before 
 - `nes-emulator.md`: future design for a transparent, testable NES emulator centered on producing and explaining frames.
 - `compiler-lab.md`: future design for learning compiler fundamentals through a tiny language, TAC, and VM/machine-code environment.
 - `game-ai-lab.md`: future design for revisiting GBGE/ESS as a concrete-game-first generic board-game representation and AI system.
+- `rule-lab.md`: future design for a C++23 typed rule algebra that grows from pure rules to character-stream regex combinators.
 
 ## Format
 
