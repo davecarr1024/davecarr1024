@@ -45,7 +45,8 @@ The projects that stay interesting usually have:
 - `future-project-designs/nes-emulator.md`: future design for a transparent NES emulator, with fit analysis against the existing CPU-simulator history.
 - `future-project-designs/compiler-lab.md`: future design for learning compiler fundamentals with an inspectable pipeline, TAC, and tiny execution environment.
 - `future-project-designs/game-ai-lab.md`: future design for a generic board-game representation and AI system earned through concrete games.
-- `future-project-designs/rule-lab.md`: future design for a C++23 typed rule algebra that grows from pure rules to character-stream regex combinators.
+- `/home/davecarr1024/projects/rule_lab`: active repo for a C++23 typed rule algebra that grows from pure rules to character-stream regex combinators.
+- `future-project-designs/rule-lab.md`: origin design for the active Rule Lab repo.
 - `future-project-designs/typed-game-engine.md`: future design for a C++23 statically validated game object tree with typed properties, behaviors, and messages.
 - `future-project-designs/symbolic-math-lab.md`: future design for a SymPy-like C++23 symbolic expression and rewrite system.
 
@@ -61,7 +62,6 @@ The strongest current direction is a family of railroad-world projects. These ar
 | NES Emulator | Frame | Can a real console explain itself? | One simple NROM ROM produces a deterministic, asserted frame. |
 | Compiler Lab | Program | Can compiler basics be learned through inspectable artifacts? | A tiny program compiles through tokens, AST, TAC, VM code, trace, and output. |
 | Game AI Lab | GameState | Can one AI play many games through one interface? | One generic search policy plays two small deterministic games and explains moves. |
-| Rule Lab | Rule | Can C++23 types make Pysh-style rule composition explicit and inspectable? | A typed character-stream regex rule matches input and returns a compile-time-shaped result plus the remaining stream. |
 | Typed Game Engine | GameObject | Can C++23 types statically validate object properties, behaviors, and message plumbing? | One tiny object tree runs a deterministic frame after compile-time behavior/property checks. |
 | Symbolic Math Lab | Expr | Can C++23 types make symbolic expressions, rewrites, and simplification traces explicit? | A tiny arithmetic expression simplifies through named rewrite rules with an inspectable trace. |
 
@@ -89,3 +89,9 @@ See `future-project-designs/railroad-worlds.md` for the consolidated railroad-fa
 
 - Add one design file per future project as the ideas become more concrete.
 - Convert mature future designs into project repos when they are ready to implement, leaving behind origin notes or pointers here.
+
+## Active Project Repos
+
+| Project | Path | Core object | Current proof |
+| --- | --- | --- | --- |
+| Rule Lab | `/home/davecarr1024/projects/rule_lab` | Rule | C++23 CMake scaffold with typed `Rule` proof slice, tests, CI workflow, and 100% production-code coverage gate. |
