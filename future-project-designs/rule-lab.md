@@ -649,6 +649,32 @@ Every layer should have:
 - diagnostic tests,
 - coverage expectations inherited from `game_ai_lab`.
 
+Rule Lab should also invest early in substantial test scaffolding. The project
+will verify large structured values: nested result shapes, remaining streams,
+diagnostic trees, parsed rule structures, and later AST-like artifacts. Raw
+GoogleTest assertions against those objects will become noisy quickly.
+
+Useful test helpers might include:
+
+- stream builders and remaining-stream matchers,
+- success and failure matchers for `std::expected`,
+- rule-result matchers that display nested `Sequence` and `Choice` values
+  clearly,
+- diagnostic matchers for expected rule names, positions, and child failures,
+- type assertion helpers for `RuleInput`, `RuleResult`, and progress traits,
+- golden structure helpers for parsed regexes and later parser artifacts.
+
+The test scaffolding should make examples read like small specifications:
+
+```text
+expect_match(rule, "a-b!")
+  .with_value(sequence('a', 'b'))
+  .with_remaining("!");
+```
+
+Readable tests are part of the design pressure. If a behavior is hard to assert
+cleanly, the public artifact may not be shaped well enough yet.
+
 The project should use the same general C++ discipline as `game_ai_lab`:
 
 - CMake,
