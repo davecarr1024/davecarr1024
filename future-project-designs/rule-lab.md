@@ -479,6 +479,51 @@ rule definitions. A useful version might include:
 The trigger for this path should be evidence from earlier milestones, not the
 abstract desire to make the rule system universal.
 
+## Language Engine Interface
+
+If Rule Lab grows into language parsing, it would be fun for it to expose an
+elegant way to define a language's parsing engine.
+
+There are two attractive directions:
+
+- an in-C++ symbolic interface where rules are first-class objects and compose
+  through operators, similar in spirit to Boost.Spirit,
+- a secondary grammar DSL where rules are written as grammar declarations,
+  parsed by Rule Lab itself, and paired with semantic actions where needed,
+  similar in spirit to yacc.
+
+The in-C++ path keeps type information close to the compiler:
+
+```text
+auto expr = term >> zero_or_more((literal("+") | literal("-")) >> term);
+```
+
+The grammar-DSL path is more self-hosting and inspectable:
+
+```text
+expr  := term (("+" | "-") term)* ;
+term  := factor (("*" | "/") factor)* ;
+factor := number | "(" expr ")" ;
+```
+
+The hard design question is semantic construction. A parser can recognize a
+language with grammar rules, but a useful parsing engine must also build the
+needed artifacts: parse tree, AST, typed AST, diagnostics, symbol references, or
+other language-specific products.
+
+Possible approaches:
+
+- C++ semantic action callbacks attached to symbolic rules,
+- typed builder functions attached to grammar DSL productions,
+- generated C++ from parsed grammar definitions,
+- a deliberately small action language parsed by Rule Lab,
+- a two-stage model where the grammar DSL builds a parse tree first and native
+  C++ transforms that tree afterward.
+
+This should be a later milestone. The first job is to make hand-built rules,
+regex bootstrap, and token-stream parser rules solid enough that the interface
+question has real examples behind it.
+
 ## C++23 Learning Goals
 
 This project should explicitly learn modern C++ as part of the work.
@@ -548,3 +593,7 @@ The project should use the same general C++ discipline as `game_ai_lab`:
   token-stream parser that can build regex matchers?
 - Does the bootstrapped regex parser need a `RegexAst`, or can it construct
   typed regex rules directly while still staying inspectable?
+- Should language grammars eventually be defined through C++ symbolic rules, a
+  bootstrapped grammar DSL, or both?
+- What is the least magical way to attach semantic construction logic to parsed
+  grammar rules?
