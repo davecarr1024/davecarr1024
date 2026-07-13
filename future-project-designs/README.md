@@ -16,6 +16,7 @@ The goal is to make ideas easy to edit from anywhere, including a phone, before 
 - `game-ai-lab.md`: future design for revisiting GBGE/ESS as a concrete-game-first generic board-game representation and AI system.
 - `rule-lab.md`: future design for a C++23 typed rule algebra that grows from pure rules to character-stream regex combinators.
 - `typed-game-engine.md`: future design for a C++23 statically validated game object tree with typed properties, behaviors, and messages.
+- `symbolic-math-lab.md`: future design for a SymPy-like C++23 symbolic expression and rewrite system.
 
 ## Format
 

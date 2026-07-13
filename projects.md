@@ -47,6 +47,7 @@ The projects that stay interesting usually have:
 - `future-project-designs/game-ai-lab.md`: future design for a generic board-game representation and AI system earned through concrete games.
 - `future-project-designs/rule-lab.md`: future design for a C++23 typed rule algebra that grows from pure rules to character-stream regex combinators.
 - `future-project-designs/typed-game-engine.md`: future design for a C++23 statically validated game object tree with typed properties, behaviors, and messages.
+- `future-project-designs/symbolic-math-lab.md`: future design for a SymPy-like C++23 symbolic expression and rewrite system.
 
 ## Future Project Designs
 
@@ -62,6 +63,7 @@ The strongest current direction is a family of railroad-world projects. These ar
 | Game AI Lab | GameState | Can one AI play many games through one interface? | One generic search policy plays two small deterministic games and explains moves. |
 | Rule Lab | Rule | Can C++23 types make Pysh-style rule composition explicit and inspectable? | A typed character-stream regex rule matches input and returns a compile-time-shaped result plus the remaining stream. |
 | Typed Game Engine | GameObject | Can C++23 types statically validate object properties, behaviors, and message plumbing? | One tiny object tree runs a deterministic frame after compile-time behavior/property checks. |
+| Symbolic Math Lab | Expr | Can C++23 types make symbolic expressions, rewrites, and simplification traces explicit? | A tiny arithmetic expression simplifies through named rewrite rules with an inspectable trace. |
 
 See `future-project-designs/railroad-worlds.md` for the consolidated railroad-family design, the individual project design docs, and `future-project-designs/railroad-fit-analysis.md` for the cross-project fit analysis.
 
