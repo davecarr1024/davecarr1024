@@ -48,6 +48,25 @@ structured representation that mirrors the expression. Failures are explicit
 values, not exceptions. Tests can inspect the matched value, the remaining
 stream, and the diagnostic path.
 
+The sharper proof is syntax consumption without semantic pollution:
+
+```cpp
+auto range_rule =
+    discard(literal('[')) &
+    alpha() &
+    discard(literal('-')) &
+    alpha() &
+    discard(literal(']'));
+
+static_assert(std::same_as<
+    RuleResult<decltype(range_rule)>,
+    Sequence<char, char>
+>);
+```
+
+That example is the core promise: punctuation can be validated and consumed
+while the compile-time result type keeps only the semantic values.
+
 ## Fundamental Object
 
 `Rule`.
@@ -57,7 +76,7 @@ make rules more expressive without losing their type-level shape.
 
 Core objects:
 
-- `RuleConcept`: compile-time contract for invoking a rule.
+- `Rule`: concept-level contract for invoking a rule.
 - `RuleInput`: type trait or alias that exposes a rule's accepted input type.
 - `RuleResult`: type trait or alias that exposes a rule's success type.
 - `Null`: no-value success marker.
@@ -154,9 +173,18 @@ The static type representation is not merely documentation. It is the
 structural model of the rule pipeline. The runtime representation is the flow of
 real data through that already-validated pipeline.
 
+Concepts are the abstraction boundary. They should define what a rule, stream,
+and stream rule must provide without forcing inheritance or universal base
+objects. Concrete rules stay native typed values; generic combinators operate
+over objects that satisfy the concepts.
+
 ## Type Composition
 
 Composition changes the result type in a way the compiler can validate.
+
+In these examples, `Rule<A>` is shorthand for "a rule whose success result type
+is `A`." Input type compatibility is a separate axis and should be checked by
+the relevant rule or stream-rule concept.
 
 Examples:
 
@@ -194,6 +222,30 @@ flowchart TD
     C --> E
     E -. "optional later ergonomics" .-> F
 ```
+
+## Progress Validation
+
+Repetition needs a narrow compile-time validation pass.
+
+Rule Lab should not try to prove that arbitrary rules terminate. It only needs
+to reject structurally obvious no-progress loops, such as repeating a rule that
+can succeed without consuming input.
+
+A useful model is a small progress trait:
+
+```text
+always_consumes
+may_consume
+never_consumes
+unknown
+```
+
+Then `zero_or_more(rule)` and `one_or_more(rule)` can reject child rules that are
+known to be `never_consumes`, and can require a runtime progress guard for child
+rules whose consumption depends on input. This is similar in spirit to a
+microcode compiler validating the shape of the program before execution: it
+catches invalid structure without pretending to solve every possible runtime
+behavior.
 
 ## Why This Fits
 
@@ -367,6 +419,11 @@ Verification:
 - type assertions for conjunction, disjunction, option, and repetition,
 - behavior tests for success, failure, backtracking, and empty matches,
 - diagnostics for aggregate failures.
+
+Invariant:
+
+- repetition combinators must detect a successful child rule that does not
+  consume input and return a structured error rather than looping.
 
 Checkpoint:
 
