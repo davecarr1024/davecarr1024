@@ -11,6 +11,12 @@ Use this file as the default when starting new repositories. If a project has it
 - Read the project `README.md`, `docs/design.md`, other relevant `docs/*.md`, and local agent file before changing code.
 - Prefer the repo's existing patterns, commands, and abstractions over new ones.
 - Keep work in small, focused steps that can be built, tested, and reviewed independently.
+- Prefer immutability by default. Make values, members, and helper functions
+  `const`, frozen, readonly, or `static` where the language supports it and no
+  mutation is intended.
+- Add file-level or class-level comments when an abstraction carries design
+  intent that would not be obvious to a fresh reader. Comments should explain
+  invariants, tradeoffs, and why a design exists, not restate syntax.
 - Maintain the "not being stuck" loop: brainstorm clearly, name the project, design the current phase, identify the next bite-size piece, define done, implement it, verify it, and leave behind a stable building block.
 - Do not implement future-phase concepts while working in the current phase.
 - Preserve user changes. Never revert work you did not make unless explicitly asked.

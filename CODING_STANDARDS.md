@@ -10,9 +10,14 @@ These standards summarize the patterns already present across my checked-out rep
 - Model the domain directly. Avoid generic engines before one complete concrete experience exists.
 - Optimize for not being stuck: choose bite-size units of work with explicit design, verification, and delivery criteria.
 - Prefer small, composable types with clear invariants.
+- Prefer immutability by default. Make values, members, and helper functions
+  `const`, frozen, readonly, or `static` when the language supports it and no
+  mutation is intended. Treat mutation as an explicit design choice.
 - Return or raise context-rich errors. Do not swallow failures.
 - Keep generated artifacts derived from their source definitions.
-- Comments should explain non-obvious logic, not restate code.
+- Comments should explain non-obvious logic, design decisions, invariants, and
+  tradeoffs, not restate code. Add file-level or class-level comments when an
+  abstraction's role would otherwise be ambiguous to a fresh reader.
 - Keep docs, roadmaps, and tests current with behavior changes.
 - Treat 100% production-code coverage as the standard goal. Thoroughly testable code is a good sign that the project is stable and well-shaped.
 - Every project should provide a coverage command and a presubmit/all-check command that at least enforces tests passing.
