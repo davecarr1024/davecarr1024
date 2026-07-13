@@ -555,6 +555,42 @@ The in-C++ path keeps type information close to the compiler:
 auto expr = term >> zero_or_more((literal("+") | literal("-")) >> term);
 ```
 
+An even more ambitious version would let language object types attach their
+parsing rules at compile time. In that model, Rule Lab is not only a parser
+implementation detail. It is a library interface that another language framework
+can satisfy or consume.
+
+For example, a Pythonish language might define an integer object and attach its
+parser through a static method, CRTP base, concept specialization, type trait, or
+template parameter:
+
+```cpp
+struct Int {
+    int value;
+
+    static constexpr auto parser =
+        rule_lab::regex("\\d+")
+            .transform([](std::string_view text) {
+                return Int{parse_int(text)};
+            });
+};
+
+static_assert(rule_lab::Parsable<Int>);
+```
+
+The exact C++ mechanism should be earned later. Possible shapes include:
+
+- `T::parser`,
+- `rule_lab::parser_for<T>`,
+- CRTP such as `Parsable<T, Parser>`,
+- concept-map-like traits,
+- generated parser attachments from a grammar DSL.
+
+The design goal is that a language definition can live in its own typed object
+model while Rule Lab supplies the parsing and validation interface. The regex
+and parser systems built inside Rule Lab would be the first bootstrap clients of
+that interface, not separate special cases.
+
 The grammar-DSL path is more self-hosting and inspectable:
 
 ```text
@@ -654,3 +690,8 @@ The project should use the same general C++ discipline as `game_ai_lab`:
   bootstrapped grammar DSL, or both?
 - What is the least magical way to attach semantic construction logic to parsed
   grammar rules?
+- Can language object types attach their own parse rules through static methods,
+  traits, CRTP, or template parameters while still keeping Rule Lab's public
+  interface small?
+- Are Rule Lab's own regex and parser systems good bootstrap clients of that
+  attached-rule interface?
