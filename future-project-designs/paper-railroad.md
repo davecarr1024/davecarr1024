@@ -25,7 +25,20 @@ The first project should preserve that clarity.
 
 Make the clever mechanism visible, then make its consequences visible.
 
-Paper Railroad is about modeling a railroad as an economic and logistical system rather than as a moving-train simulation. It should feel less like running trains and more like reading the railroad's internal paperwork until the hidden system becomes visible: places, routes, capacities, costs, demands, freight flows, rates, policies, constraints, and the public consequences of private railroad decisions.
+Paper Railroad models a railroad as an economic and logistical system, not as a moving-train simulation. It should feel less like running trains and more like reading the railroad's internal paperwork until the hidden system becomes visible.
+
+The visible system is made from:
+
+- places,
+- routes,
+- capacities,
+- costs,
+- demands,
+- freight flows,
+- rates,
+- policies,
+- constraints,
+- public consequences of private railroad decisions.
 
 The first-order questions can be straightforward:
 
@@ -36,7 +49,15 @@ The first-order questions can be straightforward:
 - What traffic is unreachable or unprofitable?
 - Which towns, industries, routes, bridges, or junctions are central to the network?
 
-The deeper goal is to build a model where simple first-order mechanisms can produce interesting second-order effects. A rate policy might increase railroad revenue while starving one town of traffic. A new route might reduce distance while shifting burden onto a fragile bridge or ruling grade. A favorable milling-in-transit rule might create activity in one location while draining it from another. A shortcut might improve one commodity flow while creating empty-car imbalance somewhere else. A policy that looks efficient from the railroad office might quietly change the geography of the surrounding economy.
+The deeper goal is to build a model where simple first-order mechanisms produce interesting second-order effects.
+
+Examples:
+
+- A rate policy increases railroad revenue while starving one town of traffic.
+- A new route reduces distance while shifting burden onto a fragile bridge or ruling grade.
+- A milling-in-transit privilege creates activity in one location while draining it from another.
+- A shortcut improves one commodity flow while creating empty-car imbalance somewhere else.
+- A policy that looks efficient from the railroad office quietly changes the geography of the surrounding economy.
 
 That is the heart of the project: make the clever mechanism visible, then make its externalities visible.
 
@@ -52,6 +73,28 @@ Paper Railroad should preserve both sides of that fascination:
 This does not mean v1 should be morally or economically elaborate. The first version should only create a small, inspectable world where the network has behavior. If the model can make a simple traffic pattern explainable, later versions can add richer policies and watch second-order effects emerge.
 
 Not a train game. A railroad economy under glass.
+
+## Model Shape
+
+The central loop should stay simple: economic need becomes paperwork; paperwork becomes load; load exposes constraints; constraints explain consequences.
+
+```mermaid
+flowchart TD
+    Map[Paper map] --> Places[Towns and routes]
+    Places --> Economy[Production and demand]
+    Economy --> Waybills[Generated waybills]
+    Waybills --> Routing[Route choice]
+    Routing --> Loads[Route loads]
+    Loads --> Diagnostics[Report and diagnostics]
+    Diagnostics --> Questions[Design questions]
+
+    Rates[Rates and policies] -. later .-> Routing
+    Costs[Costs and burdens] -. later .-> Diagnostics
+    Cars[Car supply] -. later .-> Loads
+    Dependency[Local dependency] -. later .-> Questions
+```
+
+The first prototype only needs the solid path. The dotted inputs are future pressure, not v1 scope.
 
 ## Why This Fits
 
@@ -120,6 +163,24 @@ That matches the core developer record almost exactly. It is an executable model
 5. Build route selection and route-load explanation.
 6. Add tests for every invalid and interesting map.
 7. Only then consider capacity, slack, and going-concern accounting.
+
+## Growth Map
+
+The project should grow by earning each layer from the previous one. Static causality comes first; money, policy, and time come later.
+
+```mermaid
+flowchart LR
+    L1["Layer 1<br/>Static map analyzer"] --> L2["Layer 2<br/>Transport bandwidth"]
+    L2 --> L3["Layer 3<br/>Going concern"]
+    L3 --> L4["Layer 4<br/>Discrete operation"]
+
+    L1 --> P1["Reachability<br/>waybills<br/>route loads"]
+    L2 --> P2["Capacity<br/>slack<br/>bottlenecks"]
+    L3 --> P3["Rates<br/>costs<br/>profit and welfare"]
+    L4 --> P4["Cars<br/>yards<br/>time pressure"]
+```
+
+Do not skip ahead because a later layer is interesting. A later layer is ready only when it can reuse artifacts from the earlier one instead of replacing them.
 
 ## Non-Goals
 
