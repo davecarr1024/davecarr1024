@@ -16,6 +16,7 @@ This repository is also my root developer record:
 - `developer-record/project-philosophy.md` holds the long-form design philosophy and lessons from past projects.
 - `developer-record/project-inventory.md` summarizes local and GitHub projects.
 - `future-project-designs/` holds early project designs, including the Railroad Worlds and Paper Railroad docs.
+- `train-book/` holds the raw OCR text and analysis fingerprint for *The American Railway*, the source lens behind the railroad-world ideas.
 - `agents.md` and `CODING_STANDARDS.md` hold cross-repo agent and coding guidance.
 
 Markdown is the standard documentation format. For normal project repos, the expected shape is a root `README.md`, a canonical `docs/design.md`, and optional detailed `docs/*.md` files.

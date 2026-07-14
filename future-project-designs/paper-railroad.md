@@ -1,5 +1,18 @@
 # Paper Railroad Design Doc
 
+## Train Book Lens
+
+Paper Railroad is explicitly inspired by *The American Railway*, especially the book's management, freight, way-bill, statistical, and civil-engineering chapters.
+
+Primary cross-references:
+
+- `../train-book/themes.md`: themes 2, 4, 5, 7, and 9.
+- `../train-book/cross-reference.md`: `Paper Railroad`.
+- `../train-book/fingerprint.md`: chapter map and term counts for freight, cars, way-bills, route burden, and statistics.
+- `train-book-alignment.md`: `Way-Bill And Management Lens` and `Civil Engineering Lens`.
+
+The book-derived rule for this project is: a railroad economy should be explained through records. The first useful artifact should feel like a small railroad office report: generated way-bills, route loads, bottlenecks, unreachable demands, and later revenue or car-accounting summaries.
+
 ## Core Question
 
 Can a tiny paper railroad economy be represented, analyzed, and eventually operated as a small deterministic world?
@@ -17,7 +30,7 @@ Paper Railroad combines several durable interests without starting in the most d
 - It has a personal emotional hook instead of starting from an abstract systems problem.
 - It can begin as a static model, like the HDL layer in IRATA2, before any clock or simulation loop exists.
 - It naturally supports causality: every shipment can explain why it exists, where it can go, what capacity it consumes, and whether it was economically worthwhile.
-- It has historical texture from old railroad practice without needing production realism.
+- It has historical texture from *The American Railway*: way-bills, car movement, route burden, railroad statistics, and the question of whether a line is a going concern.
 
 The right framing is not "toy railroad" and not "Borg but trains." It is a miniature economic railway laboratory.
 
@@ -171,12 +184,12 @@ No clock. No sim step. No moving train. Just a map and questions about whether t
 ### Model Objects
 
 - `Town`: a node on the paper map.
-- `Route`: an edge between towns, with distance and optional capacity.
+- `Route`: an edge between towns, with distance, optional capacity, and eventually book-derived route burden such as ruling grade, curvature class, bridge/tunnel burden, and maintenance class.
 - `Good`: a thing that can be produced, consumed, stored, or transformed.
 - `Producer`: a source of a good at a town.
 - `Consumer`: a sink for a good at a town.
 - `Industry`: a transformation from input goods to output goods.
-- `Waybill`: a causal demand object saying that some quantity of a good must move from origin to destination.
+- `Waybill`: a causal demand and accounting object saying that some quantity of a good must move from origin to destination. Inspired by the book's way-bill discussion, it should eventually support route, revenue, responsibility, and statistics.
 
 ### First Questions
 
@@ -212,6 +225,38 @@ Network status:
 ```
 
 This is not just reporting. It should be causal. The analyzer should be able to answer why a route is loaded, why a town is underserved, and which waybills contribute to a constraint.
+
+### Book-Derived Route Burden
+
+The route model should eventually capture the civil-engineering idea that a railroad line is not an abstract graph edge. A route is a physical compromise.
+
+Candidate fields:
+
+- `distance`
+- `capacity`
+- `ruling_grade`
+- `curvature_class`
+- `bridge_or_tunnel_burden`
+- `maintenance_class`
+- `capital_burden`
+
+These should not all enter v1 unless they produce useful diagnostics. The first useful version may keep only distance and capacity, but the design should leave room for explanations such as:
+
+```text
+Foundry Branch is bottlenecked by ruling grade rather than distance.
+Coal demand can be served only by shorter trains or more frequent service.
+```
+
+### Book-Derived Report Style
+
+Paper Railroad should prefer report-like output over game-like narration:
+
+- way-bill summary,
+- route-load table,
+- stranded or underserved towns,
+- route burden notes,
+- car-accounting notes later,
+- going-concern summary later.
 
 ## Layer 2: Transport Bandwidth
 

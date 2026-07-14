@@ -1,0 +1,175 @@
+source:
+  title: "The American Railway: Its Construction, Development, Management, and Appliances"
+  year: 1889
+  publisher: "Charles Scribner's Sons"
+  archive_identifier: "americanrailwayi00coolrich"
+  raw_text: "../raw/american-railway-1889-ocr.txt"
+
+topics:
+  civil_engineering:
+    summary: "The railroad as a physically located line through terrain."
+    sections:
+      - "The Building of a Railway"
+      - "Feats of Railway Engineering"
+    terms:
+      - survey
+      - surveying
+      - location
+      - grade
+      - grades
+      - curve
+      - curves
+      - road-bed
+      - ballast
+      - rail
+      - track
+      - bridge
+      - bridges
+      - tunnel
+      - tunnels
+      - trestle
+      - truss
+      - cantilever
+      - culvert
+      - culverts
+      - embankment
+      - cuttings
+      - switchback
+      - section boss
+    project_hooks:
+      - "Paper Railroad route burden"
+      - "Janney track geometry"
+      - "Tower protected plant layout"
+
+  locomotive_and_car_mechanics:
+    summary: "The railroad as steam, wheels, adhesion, cars, couplers, and brakes."
+    sections:
+      - "American Locomotives and Cars"
+      - "Safety in Railroad Travel"
+    terms:
+      - locomotive
+      - locomotives
+      - boiler
+      - fire-box
+      - injector
+      - throttle
+      - cylinder
+      - cylinders
+      - valve
+      - valve-gear
+      - steam
+      - driving-wheels
+      - adhesion
+      - truck
+      - trucks
+      - frame
+      - tender
+      - car
+      - cars
+      - coupler
+      - couplers
+      - brake
+      - brakes
+      - air-brake
+      - hand-brakes
+      - wheel
+      - wheels
+    project_hooks:
+      - "Janney coupling, slack, and braking"
+      - "Paper Railroad locomotive class and route capacity"
+
+  waybill_management_and_statistics:
+    summary: "The railroad as paperwork, records, rates, accounting, and traffic analysis."
+    sections:
+      - "Railway Management"
+      - "The Freight-Car Service"
+      - "Statistical Railway Studies"
+      - "The Railway in Its Business Relations"
+    terms:
+      - way-bill
+      - freight
+      - rate
+      - rates
+      - revenue
+      - statistics
+      - car accountant
+      - car-accountant
+      - tracers
+      - empty cars
+      - train despatcher
+      - despatcher
+      - time-table
+      - schedule
+      - division
+      - yards
+      - route
+      - traffic
+      - mileage
+      - earnings
+    project_hooks:
+      - "Paper Railroad waybill"
+      - "Paper Railroad reports"
+      - "Janney future car-card scenarios"
+
+  safety_and_authority:
+    summary: "The railroad as permission constrained by brakes, signals, switches, blocks, and interlocking."
+    sections:
+      - "Safety in Railroad Travel"
+      - "Railway Management"
+    terms:
+      - signal
+      - signals
+      - semaphore
+      - switch
+      - switches
+      - interlocking
+      - block
+      - blocks
+      - facing-point
+      - detector-bars
+      - derailing
+      - lock
+      - locks
+      - home signal
+      - distant signal
+      - danger
+      - caution
+      - route
+      - occupancy
+      - telegraph
+      - brake
+      - air-brake
+    project_hooks:
+      - "Tower route proof"
+      - "Tower denial taxonomy"
+      - "Janney braking constraints"
+
+  labor_and_daily_operation:
+    summary: "The railroad as roles, discipline, maintenance, supply, and daily work."
+    sections:
+      - "The Every-Day Life of Railroad Men"
+      - "The Prevention of Railway Strikes"
+      - "How to Feed a Railway"
+    terms:
+      - engineer
+      - fireman
+      - brakeman
+      - conductor
+      - station agent
+      - switch-tender
+      - section-men
+      - train despatcher
+      - clerk
+      - pay-car
+      - supplies
+      - stores
+      - maintenance
+      - repair
+      - shop
+      - discipline
+      - vigilance
+    project_hooks:
+      - "Role-labeled diagnostics"
+      - "Paper Railroad office reports"
+      - "Tower signalman viewpoint"
+      - "Janney switchman/brakeman viewpoint"

@@ -1,6 +1,15 @@
 # Railroad Worlds Fit Analysis
 
-This compares the three train-based project ideas against the stated developer-record goals:
+This compares the three train-based project ideas against the stated developer-record goals and the source lens in `../train-book/`.
+
+The railroad ideas are deliberately inspired by *The American Railway*. The book-derived analysis lives in:
+
+- `../train-book/fingerprint.md`
+- `../train-book/themes.md`
+- `../train-book/cross-reference.md`
+- `train-book-alignment.md`
+
+This comparison asks whether each project preserves the book's spirit in a small executable world rather than trying to model the entire book at once.
 
 - small deterministic worlds,
 - one fundamental object,
@@ -34,6 +43,7 @@ This ranking is about what should come first, not which idea is most valuable.
 | Main scope trap | Economy/accounting realism | Layout editor and physics engine | Full signaling/dispatching system |
 | Personal hook | Strongest | Strong | Medium to strong |
 | Best implementation style | Headless model first | Headless physics plus minimal renderer | Data-driven rule table plus minimal panel |
+| Train-book center | Way-bills, freight, records, civil route burden | Couplers, cars, brakes, mechanical events | Signals, switches, interlocking, route authority |
 
 ## Individual Fit Notes
 
@@ -49,6 +59,13 @@ Paper Railroad is the most aligned with the current developer record. It has a c
 
 The central risk is over-generalization. The project should remain a paper railroad, not a logistics solver in railroad clothing.
 
+Train-book import priority:
+
+- way-bill reports,
+- route-load statistics,
+- civil route burden,
+- car-accounting vocabulary later.
+
 ### Janney
 
 Janney is the most tactile and game-like. It has a concrete first scene and a strong central object, but the success criterion includes feel. That makes it harder to prove complete through tests.
@@ -57,6 +74,13 @@ It is a good candidate after either Paper Railroad or Tower because those projec
 
 The central risk is building a physics/layout engine instead of one satisfying inglenook.
 
+Train-book import priority:
+
+- structured coupling events,
+- named cars and car classes,
+- simple braking states,
+- mechanical explanations for failed moves.
+
 ### Tower
 
 Tower is the cleanest proof game. Its route table, locking, conflict, occupancy, and denial logic map directly to deterministic tests and causal explanations.
@@ -64,6 +88,13 @@ Tower is the cleanest proof game. Its route table, locking, conflict, occupancy,
 It probably wants a minimal UI earlier than Paper Railroad, because the core delight is seeing a plant state and understanding why a signal clears or refuses. That UI can still be simple and model-derived.
 
 The central risk is importing too much real-world signaling detail too early.
+
+Train-book import priority:
+
+- route-denial taxonomy,
+- fail-safe signal defaults,
+- switch/lock/occupancy proof,
+- period terms only when they map to model state.
 
 ## Recommended Sequence
 
@@ -98,6 +129,8 @@ The projects should share vocabulary and design philosophy, not infrastructure. 
 - Keep the v1 design smaller than the interesting future vision.
 - Build the headless model before the UI where practical.
 - Make every important decision produce structured output.
+- Cross-reference `../train-book/` when importing period vocabulary or technical detail.
+- Import book details only when they become rules, diagnostics, tests, or reports.
 - Write tests against model state and diagnostics.
 - Add visual/manual tests only where the experience genuinely needs them.
 - Write a v1 postmortem before starting a v2 or merging concepts across projects.

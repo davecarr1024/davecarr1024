@@ -1,5 +1,15 @@
 # Railroad Worlds
 
+This project family is deliberately inspired by *The American Railway: Its Construction, Development, Management, and Appliances*, Dave's "train book." The book is treated as a source lens for period vocabulary, engineering concerns, operating records, and safety logic, not as a demand to build one giant historically complete simulator.
+
+Train-book references:
+
+- `../train-book/README.md`: source-text index.
+- `../train-book/fingerprint.md`: book structure and rough term-frequency fingerprint.
+- `../train-book/themes.md`: central themes and project-useful ideas.
+- `../train-book/cross-reference.md`: mapping from book themes to these railroad designs.
+- `train-book-alignment.md`: project-facing analysis of how the book should influence this family.
+
 Rather than one giant railroad simulator, build a family of small projects. Each one isolates a different aspect of railroading and asks:
 
 > What is the smallest executable model that captures why this part of railroading is interesting?
@@ -14,6 +24,8 @@ Each project should stand on its own. They should share philosophy, not necessar
 - Keep behavior deterministic and replayable.
 - Find the right representation before chasing algorithms.
 - Build one delightful runnable moment almost immediately.
+- Import details from *The American Railway* only when they become executable rules, diagnostics, reports, vocabulary, or tests.
+- Let railroad records feel period-correct: way-bill reports, movement logs, route denials, car accounting, and route-load tables are better first artifacts than decorative historical UI.
 
 ## Project 1: Paper Railroad
 
@@ -128,4 +140,4 @@ Tower asks when it may move. It models authority, signals, interlocking, and saf
 
 Together they describe a railroad from three independent viewpoints. Each is intentionally small. Each explores one abstraction. Each tries to make an invisible system visible.
 
-For a comparison against the developer-record design and execution goals, see `railroad-fit-analysis.md`.
+For a comparison against the developer-record design and execution goals, see `railroad-fit-analysis.md`. For the book-derived source lens, see `../train-book/cross-reference.md` and `train-book-alignment.md`.

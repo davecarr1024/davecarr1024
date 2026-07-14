@@ -1,5 +1,18 @@
 # Janney Design Doc
 
+## Train Book Lens
+
+Janney is explicitly inspired by *The American Railway*, especially `American Locomotives and Cars`, `Safety in Railroad Travel`, and the freight-car material. It should inherit the book's fascination with cars as physical objects: wheels, couplers, brakes, slack, mass, impact, and train make-up.
+
+Primary cross-references:
+
+- `../train-book/themes.md`: themes 3, 4, 6, 8, and 10.
+- `../train-book/cross-reference.md`: `Janney`.
+- `../train-book/fingerprint.md`: term clusters for cars, couplers, brakes, locomotives, wheels, and steam.
+- `train-book-alignment.md`: `Locomotive And Car Lens`.
+
+The book-derived rule for this project is: every local movement should be explainable as a mechanical event. Coupling, uncoupling, stopping, slipping, shoving, and slack should produce structured facts, not just screen motion.
+
 ## Core Question
 
 How does switching actually feel when the coupler is treated as the center of the railroad world?
@@ -39,6 +52,7 @@ Everything in Janney should support the coupler:
 - impact speed,
 - train segmentation,
 - puzzle state.
+- movement logs that explain coupling, uncoupling, slack, and braking events in railroad language.
 
 ## Non-Goals
 
@@ -63,13 +77,14 @@ If pushing cars around is not fun in that setup, adding scenery, industries, map
 
 - `Track`: a one-dimensional path with switch-connected branches.
 - `Switch`: a track decision point with normal and reversed routes.
-- `Car`: a body with length, mass, position, velocity, and coupler endpoints.
-- `Locomotive`: a car-like body with traction and braking input.
+- `Car`: a named railroad object with length, mass, class, position, velocity, and coupler endpoints.
+- `Locomotive`: a car-like body with traction and braking input. Later versions should let adhesion, train resistance, and route geometry constrain what it can do.
 - `Coupler`: an endpoint that may be open, closed, coupled, or blocked.
 - `Consist`: a connected set of cars whose forces propagate through couplers.
 - `Slack`: compression or stretch between coupled cars.
 - `Move`: a player-intended action such as pull, shove, stop, uncouple, or throw switch.
 - `Puzzle`: an initial arrangement, target arrangement, and scoring rules.
+- `MovementLog`: a structured record of coupling, uncoupling, braking, switch, and slack events.
 
 ## First Questions
 
@@ -100,6 +115,36 @@ Last event:
 ```
 
 The screen can be plain. The important thing is that coupling, uncoupling, pushing, and stopping feel legible.
+
+## Book-Derived Mechanical Event Logs
+
+Janney should produce records that make mechanical behavior inspectable:
+
+```text
+Coupling attempt:
+  Leading car: Boxcar 3
+  Trailing car: Tank 1
+  Impact speed: 1.2 mph
+  Leading coupler: open
+  Trailing coupler: closed
+  Result: coupled
+  Slack: compressed
+```
+
+Useful early event categories:
+
+- coupling attempt,
+- coupling success,
+- coupling denial,
+- uncoupling,
+- slack compressed,
+- slack stretched,
+- brake applied,
+- car stopped,
+- switch traversal,
+- invalid switch movement.
+
+V1 does not need full air-brake, draft-gear, or knuckle realism. It should keep the book's mechanical spirit by making each event causally explainable.
 
 ## Representation Principle
 

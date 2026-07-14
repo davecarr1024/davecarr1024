@@ -1,5 +1,18 @@
 # Tower Design Doc
 
+## Train Book Lens
+
+Tower is explicitly inspired by *The American Railway*, especially `Safety in Railroad Travel` and the management material on dispatching, signals, blocks, and interlocked switches.
+
+Primary cross-references:
+
+- `../train-book/themes.md`: themes 6, 7, 8, 9, and 10.
+- `../train-book/cross-reference.md`: `Tower`.
+- `../train-book/fingerprint.md`: term clusters for signals, switches, interlocking, blocks, brakes, and telegraph.
+- `train-book-alignment.md`: `Safety And Authority Lens`.
+
+The book-derived rule for this project is: route authority is a proof under constraints. A signal should clear only because switches, locks, occupancy, and conflicts have all been checked. A denial is a successful explanation.
+
 ## Core Question
 
 How do interlockings make railroads safe?
@@ -38,6 +51,7 @@ Everything should support route proof:
 - approach locking,
 - route release,
 - explanations for denial.
+- period-inspired denial vocabulary: switch wrong, switch unlocked, facing-point lock not engaged, detector bar occupied, protected circuit occupied, conflicting route locked, signal at danger.
 
 ## Non-Goals
 
@@ -60,6 +74,7 @@ The system is successful if the player can inspect a denied movement and underst
 - occupied track circuit,
 - switch not detected in the required position,
 - facing-point lock not engaged,
+- detector bar or protected section occupied,
 - conflicting route already established,
 - approach locking active,
 - route not released yet.
@@ -75,6 +90,7 @@ The system is successful if the player can inspect a denied movement and underst
 - `Lever` or `Control`: player command for switches, route requests, and signals.
 - `Interlocking`: the rule table that validates route requests.
 - `Denial`: a structured explanation for why a command failed.
+- `Lever`: optional period-facing control representation tying switches, locks, signals, and routes together.
 
 ## First Questions
 
@@ -102,6 +118,33 @@ Available action:
 ```
 
 The player should be able to ask "why not?" and get an answer from the model.
+
+## Book-Derived Denial Taxonomy
+
+The denial model should use railroad-specific causes when they clarify the proof:
+
+- `switch_position_mismatch`
+- `switch_not_locked`
+- `facing_point_lock_not_engaged`
+- `detector_bar_occupied`
+- `protected_circuit_occupied`
+- `conflicting_route_locked`
+- `approach_locking_active`
+- `route_not_released`
+- `signal_held_at_danger`
+
+Example:
+
+```text
+Requested route:
+  Home Signal 2 -> East Main
+
+Denied:
+  Facing-point lock 3 is NORMAL.
+  Route requires lock 3 REVERSED before Signal 2 can clear.
+```
+
+Unknown or indeterminate state should deny authority. The model should fail toward signals at danger.
 
 ## Representation Principle
 

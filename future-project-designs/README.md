@@ -11,6 +11,7 @@ The goal is to make ideas easy to edit from anywhere, including a phone, before 
 - `janney.md`: detailed design for the switching and coupler-focused project.
 - `tower.md`: detailed design for the interlocking and route-authority project.
 - `railroad-fit-analysis.md`: comparison of all three railroad ideas against the developer-record goals.
+- `train-book-alignment.md`: book-derived alignment analysis connecting *The American Railway* to the railroad-world ideas.
 - `nes-emulator.md`: future design for a transparent, testable NES emulator centered on producing and explaining frames.
 - `compiler-lab.md`: future design for learning compiler fundamentals through a tiny language, TAC, and VM/machine-code environment.
 - `game-ai-lab.md`: future design for revisiting GBGE/ESS as a concrete-game-first generic board-game representation and AI system.
