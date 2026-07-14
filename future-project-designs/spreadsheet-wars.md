@@ -64,15 +64,13 @@ Example questions:
 - How much scouting is enough before committing a salvo?
 - What is the risk of firing on ambiguous contact information?
 
-## Fundamental Object
+## Fundamental Shape
 
-`EngagementModel`.
+The central object should not be a ship, missile, sensor, or map contact. The
+project should be organized around declared analytical decision problems.
 
-The central object should not be a ship, missile, sensor, or map contact. Those
-objects can appear inside particular models, but the project should be organized
-around declared analytical decision problems.
-
-An engagement model contains:
+For now, I can think of each problem as an engagement model: a small, explicit
+bundle containing:
 
 - explicit assumptions,
 - uncertain parameters,
@@ -264,7 +262,7 @@ The project can grow as a collection of small standalone analytical ponds:
 Each module should be able to stand alone. A weekend-sized version of any module
 should still feel satisfying.
 
-## Phase Plan
+## Possible Growth Path
 
 ### Phase 1: Salvo Pond
 
