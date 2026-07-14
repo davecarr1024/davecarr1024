@@ -17,6 +17,9 @@ Use this file as the default when starting new repositories. If a project has it
 - Add file-level or class-level comments when an abstraction carries design
   intent that would not be obvious to a fresh reader. Comments should explain
   invariants, tradeoffs, and why a design exists, not restate syntax.
+- Add explanatory comments for each class and for non-trivial methods. If a file
+  becomes unwieldy, split it into focused module files and group related
+  concepts/classes under matching directories and namespaces where practical.
 - Maintain the "not being stuck" loop: brainstorm clearly, name the project, design the current phase, identify the next bite-size piece, define done, implement it, verify it, and leave behind a stable building block.
 - Do not implement future-phase concepts while working in the current phase.
 - Preserve user changes. Never revert work you did not make unless explicitly asked.

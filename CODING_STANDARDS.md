@@ -18,6 +18,11 @@ These standards summarize the patterns already present across my checked-out rep
 - Comments should explain non-obvious logic, design decisions, invariants, and
   tradeoffs, not restate code. Add file-level or class-level comments when an
   abstraction's role would otherwise be ambiguous to a fresh reader.
+- Each class should have an explanatory comment, and non-trivial methods should
+  document intent, invariants, or failure behavior. When a source file grows
+  broad enough that comments are compensating for mixed responsibilities, split
+  it into focused module files and group related concepts/classes under
+  matching directories and namespaces where practical.
 - Keep docs, roadmaps, and tests current with behavior changes.
 - Treat 100% production-code coverage as the standard goal. Thoroughly testable code is a good sign that the project is stable and well-shaped.
 - Every project should provide a coverage command and a presubmit/all-check command that at least enforces tests passing.
