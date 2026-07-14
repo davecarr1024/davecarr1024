@@ -123,6 +123,8 @@ Just a map analyzer that can answer:
 
 It has the load-and-balance flavor I like from schedulers, the operations flavor I like from railroads, and a personal hook that keeps it from becoming another production-shaped systems project.
 
+Another future-project shelf item is **Spreadsheet Wars**: a naval operations analysis sandbox for studying salvo exchange, detection confidence, uncertainty, and decision delay as small probabilistic models. Its scope guardrail is to analyze the decision rather than simulate the battle.
+
 ## The Compass
 
 I do not want to build production systems.

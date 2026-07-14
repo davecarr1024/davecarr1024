@@ -53,6 +53,9 @@ When work is ambiguous or broad:
 
 - First shrink it to the next coherent sub-module.
 - Make naming and phase boundaries explicit before implementation starts.
+- For future-project designs, keep central abstractions provisional until a first
+  runnable model has earned them. Prefer "fundamental shape" language when the
+  project is still clay.
 - State the local design before editing code.
 - Prefer a vertical slice that produces an inspectable artifact over a broad foundation with no proof.
 - Verify the result before expanding scope.
