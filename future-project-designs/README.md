@@ -17,6 +17,7 @@ The goal is to make ideas easy to edit from anywhere, including a phone, before 
 - `rule-lab.md`: origin design for the active `/home/davecarr1024/projects/rule_lab` repo.
 - `typed-game-engine.md`: future design for a C++23 statically validated game object tree with typed properties, behaviors, and messages.
 - `symbolic-math-lab.md`: future design for a SymPy-like C++23 symbolic expression and rewrite system.
+- `spreadsheet-wars.md`: future design for a naval operations analysis sandbox centered on probabilistic salvo, detection, and decision models.
 
 ## Format
 
