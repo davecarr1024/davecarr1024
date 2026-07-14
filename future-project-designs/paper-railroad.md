@@ -21,6 +21,38 @@ The seed is not "build a train simulator." The seed is the childhood paper map: 
 
 The first project should preserve that clarity.
 
+## Guiding Thesis
+
+Make the clever mechanism visible, then make its consequences visible.
+
+Paper Railroad is about modeling a railroad as an economic and logistical system rather than as a moving-train simulation. It should feel less like running trains and more like reading the railroad's internal paperwork until the hidden system becomes visible: places, routes, capacities, costs, demands, freight flows, rates, policies, constraints, and the public consequences of private railroad decisions.
+
+The first-order questions can be straightforward:
+
+- Can this freight move from here to there?
+- Which route does it take?
+- Where is the bottleneck?
+- How much capacity is consumed?
+- What traffic is unreachable or unprofitable?
+- Which towns, industries, routes, bridges, or junctions are central to the network?
+
+The deeper goal is to build a model where simple first-order mechanisms can produce interesting second-order effects. A rate policy might increase railroad revenue while starving one town of traffic. A new route might reduce distance while shifting burden onto a fragile bridge or ruling grade. A favorable milling-in-transit rule might create activity in one location while draining it from another. A shortcut might improve one commodity flow while creating empty-car imbalance somewhere else. A policy that looks efficient from the railroad office might quietly change the geography of the surrounding economy.
+
+That is the heart of the project: make the clever mechanism visible, then make its externalities visible.
+
+The historical inspiration matters because nineteenth-century railroad literature often describes commercial mechanisms with delighted confidence: rates, classifications, way-bills, car accounting, through traffic, divisions, milling in transit, utilization, and network expansion. There is real beauty in that machinery. It made vast economic coordination possible, made distance cheaper, and linked towns, industries, farms, ports, mines, cities, and markets.
+
+But that same machinery could concentrate power, distort local economies, reward manipulation, hide costs, and create dependency. The railroad was not just a business moving through a market. In many places, it became the thing that made the market possible. That means its private decisions could have public consequences.
+
+Paper Railroad should preserve both sides of that fascination:
+
+- the excitement of a clever transport economy, where freight moves farther and cheaper, towns become connected, route structures become legible, capacity becomes measurable, and paperwork becomes a kind of operating system for physical commerce;
+- the shadows of that machinery: captive towns, unfair rate structures, overloaded routes, deferred maintenance, monopoly corridors, empty-car waste, fragile dependencies, and the gap between railroad profit and public welfare.
+
+This does not mean v1 should be morally or economically elaborate. The first version should only create a small, inspectable world where the network has behavior. If the model can make a simple traffic pattern explainable, later versions can add richer policies and watch second-order effects emerge.
+
+Not a train game. A railroad economy under glass.
+
 ## Why This Fits
 
 Paper Railroad combines several durable interests without starting in the most dangerous place.
@@ -77,6 +109,7 @@ That matches the core developer record almost exactly. It is an executable model
 - V1 must not include a UI.
 - V1 must not include full tariff law, crew rules, yard operations, car hire, or interchange realism.
 - V1 should have one map, one or two goods, one routing policy, and one excellent explanation.
+- V1 should choose primitives that can later support rates, policy, dependency, and externalities without trying to model all of them immediately.
 
 ### Recommended Execution Plan
 
@@ -191,6 +224,15 @@ No clock. No sim step. No moving train. Just a map and questions about whether t
 - `Industry`: a transformation from input goods to output goods.
 - `Waybill`: a causal demand and accounting object saying that some quantity of a good must move from origin to destination. Inspired by the book's way-bill discussion, it should eventually support route, revenue, responsibility, and statistics.
 
+Later primitives can grow from these only when they explain visible behavior:
+
+- `Rate`: pricing rule by commodity, route, distance, town, service class, or commercial privilege.
+- `Policy`: a local railroad decision that changes routing, priority, pricing, service, or investment.
+- `Interchange`: a place where traffic or cars cross railroad boundaries.
+- `CarSupply`: an inspectable constraint on freight movement and empty-car return.
+- `ServiceObligation`: traffic the railroad must carry even when it is unattractive.
+- `LocalDependency`: a town or industry condition created by reliance on the railroad.
+
 ### First Questions
 
 - Is every demanded good produced somewhere?
@@ -202,6 +244,8 @@ No clock. No sim step. No moving train. Just a map and questions about whether t
 - Which routes are bottlenecks?
 - Which routes have slack?
 - Is the network convergent, stable, or structurally divergent?
+- Which places, routes, and industries are central enough that changes to them reshape the whole network?
+- Which traffic moves because it is useful to the surrounding economy, and which traffic moves because railroad policy favors it?
 
 ### First Output
 
@@ -325,8 +369,26 @@ Use old railroad practice as mechanic inspiration:
 - `Demurrage`: slow unloading creates cost and congestion.
 - `Interchange`: cars or traffic can cross into another railroad's territory.
 - `Empty-car return`: satisfying demand may create repositioning problems.
+- `Divisions`: revenue and responsibility can be split across participating roads or route segments.
+- `Captive traffic`: some towns or industries may have no practical alternative to the railroad's chosen rates or service.
+- `Publicity and regulation`: external pressure can expose or constrain policies that are profitable but publicly damaging.
 
 These should not become bureaucracy for its own sake. Each mechanic must create a more interesting causal question.
+
+### Consequence Questions
+
+This layer is where Paper Railroad can start showing why cleverness alone was not enough.
+
+- What happens if one town receives a lower rate than another?
+- What happens if a milling-in-transit privilege exists at one location?
+- What happens if bridge capacity limits traffic on an otherwise attractive route?
+- What happens if a railroad chases profitable through traffic and neglects local service?
+- What happens if demand grows faster than route capacity?
+- What hidden dependencies appear when one junction, pass, bridge, yard, or interchange becomes central?
+- What policies make local sense but create system-level ugliness?
+- What would regulation, publicity, standardization, or public accounting be trying to correct?
+
+The long-term dream is not to recreate a real railroad in exhaustive detail. It is to build a small analytical railroad world where transportation, pricing, capacity, geography, and power can be observed together.
 
 ## Layer 4: Discrete Operation
 
@@ -426,6 +488,8 @@ The project is working if it can answer questions like these in a way that feels
 - "If the foundry doubles production, what breaks?"
 - "Which traffic is profitable?"
 - "Is this railroad a going concern?"
+- "Who benefits from this rate or route policy?"
+- "Which town, route, or industry becomes dependent on a decision that looked local?"
 
 The project is failing if the main output becomes an engine, framework, or pile of configuration whose behavior is not visible from a tiny map.
 
