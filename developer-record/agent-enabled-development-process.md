@@ -97,6 +97,49 @@ The design should answer:
 
 The design should be specific enough to guide implementation but not so large that it blocks the first runnable artifact.
 
+## 3.5. Post-Design Review
+
+After a substantial design rewrite, roadmap reset, or major phase-plan change,
+run a dual design review before treating the design as ready for
+implementation.
+
+The review has two parts:
+
+- local deep review by the current agent,
+- external review with Gemini CLI when available.
+
+The local review should check:
+
+- whether the design preserves the project thesis,
+- whether the central abstraction is named clearly,
+- whether phase gates are concrete and verifiable,
+- whether implementation order matches dependency order,
+- whether old assumptions or stale phase text contradict the new direction,
+- whether open questions are captured instead of hidden inside prose,
+- whether the next implementation checkpoint is small enough to test.
+
+The Gemini review should be asked to focus on:
+
+- contradictions,
+- unclear abstractions,
+- missing phase gates,
+- weak terminology,
+- implementation traps,
+- open questions.
+
+After both reviews:
+
+- implement obvious documentation fixes,
+- update `docs/design.md`, `docs/roadmap.md`, and project-local agent guidance
+  as needed,
+- capture unresolved conceptual questions explicitly,
+- do not start broad implementation until the revised docs can be used as the
+  source of truth.
+
+This is not a replacement for judgment. It is a pressure test for whether the
+design has become internally coherent enough to guide the next bite-size
+implementation step.
+
 ## 4. Repo Creation And Design Promotion
 
 `davecarr1024` is the root developer record. It should hold developer-wide structure, reusable patterns, standards, agent process, inventory, and future designs.
