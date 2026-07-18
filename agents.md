@@ -138,9 +138,19 @@ Always prefer the local repo's exact command if it differs from these defaults.
 - Use Markdown for durable documentation.
 - Every project should have a root `README.md`.
 - Every project should have `docs/design.md` as its canonical design document.
+- Mature, revived, or idea-heavy projects should add `status.md` as the
+  human-readable capability narrative: the question, current capabilities,
+  canonical scenarios, representative output, surprising tradeoffs, limitations,
+  and next interesting question.
+- Mature, revived, or architecture-heavy projects should add
+  `technical-description.md` as the machine explanation: architecture, data
+  flow, boundaries, algorithms, and design decisions.
 - Put optional detailed docs under `docs/*.md`.
 - Keep design docs and roadmaps synchronized with implementation.
 - Mark milestones complete when implementation and tests are complete.
+- When returning to an older project, recover the thesis, identify the
+  fundamental objects, inventory what tests already prove, refresh the status
+  narrative, and then choose the next phase that deepens the central idea.
 - Before a rewrite, write down what the previous version taught and why local repair is not enough.
 - Record important invariants near the model that depends on them.
 - Keep local agent files concise and link to `README.md` and `docs/design.md` for long-form context.

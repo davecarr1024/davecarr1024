@@ -200,6 +200,66 @@ For my projects, the proof is the product. A demo is nice, but the deeper pride 
 
 Every project should have a test command, a coverage command, and a presubmit or all-check command that at least enforces tests passing. Mature projects should enforce coverage too, with narrow documented exceptions when full coverage is not practical.
 
+### Make The Idea Visible
+
+A technically interesting project is not only a body of correct code. It is an
+idea that another person should be able to enter.
+
+Tests prove that the system behaves as claimed. Technical documentation explains
+the machine: architecture, data flow, boundaries, algorithms, and design
+decisions. A status narrative explains the project to a human.
+
+That status narrative should show:
+
+- what question the project asks,
+- what the system can currently do,
+- one or two canonical scenarios,
+- representative output,
+- a surprising result or tradeoff,
+- current limitations,
+- the next interesting question.
+
+This matters most for projects that do not fit cleanly into familiar categories.
+A project may not simply be "an operating system," "a game," "a computer," or
+"a solver." Its interesting character may live between those labels. A strong
+status document preserves that shape instead of flattening the project into the
+nearest recognizable noun.
+
+A useful documentation shape for mature or idea-heavy projects is:
+
+```text
+README.md
+  What is this, and how do I run it?
+
+status.md
+  What can it do now, and why is that interesting?
+
+technical-description.md
+  How does it work?
+
+tests
+  What executable evidence proves the claims?
+```
+
+Returning to an older project should be treated as creating a second edition,
+not merely performing maintenance:
+
+```text
+recover the thesis
+  -> identify the fundamental objects
+  -> make the system's point of view explicit
+  -> inventory what the tests already prove
+  -> build a human-readable capability narrative
+  -> choose the next phase that deepens the central idea
+```
+
+The goal is not documentation volume. It is clarity and curation. A good
+project explanation may need only one visual pipeline, one concrete example, one
+proof or decision trace, one surprising consequence, and one honest boundary.
+
+When those artifacts are chosen well, the project becomes easier to explain to
+others and easier for me to understand again.
+
 ### Readable Tests Are Elegant
 
 I want tests that set up the world, perform the action, and assert the meaningful final state. A thousand lines of boilerplate, mocks, and incidental special cases is not a satisfying proof.

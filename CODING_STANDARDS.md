@@ -88,6 +88,12 @@ Every project should have a small, predictable documentation structure:
 - `README.md`: root project introduction, quick start, status, and links to deeper docs.
 - `docs/design.md`: the canonical design document for the project.
 - `docs/*.md`: optional detailed docs for architecture notes, roadmaps, protocols, milestones, feature designs, postmortems, and operating notes.
+- `status.md` for mature, revived, or idea-heavy projects: a readable
+  capability narrative showing what the system can do now and why that is
+  interesting.
+- `technical-description.md` for mature, revived, or architecture-heavy
+  projects: a machine explanation covering architecture, data flow, boundaries,
+  algorithms, and design decisions.
 - `AGENTS.md` or `agents.md`: agent guidance when the project needs instructions beyond the root defaults.
 
 Documentation rules:
@@ -98,6 +104,11 @@ Documentation rules:
 - Keep the root `README.md` concise. Move detailed design material into `docs/design.md` or focused `docs/*.md` files.
 - Keep `docs/design.md` current with the model that actually exists.
 - Link detailed docs from `README.md` so a new reader can find the shape of the project quickly.
+- Use `status.md` to preserve the project's thesis, canonical scenarios,
+  representative output, surprising tradeoffs, current limitations, and next
+  interesting question.
+- Use `technical-description.md` when a fresh reader needs a compact map of how
+  the implementation works before safely changing it.
 - When a project has phases or milestones, keep the roadmap in `docs/roadmap.md` or inside `docs/design.md`, not scattered through implementation notes.
 - Capture rewrite reasons and v1 lessons in a `docs/postmortem*.md` or design-history doc before starting a v2.
 

@@ -8,6 +8,12 @@ Markdown is the documentation standard. New projects should keep a root `README.
 
 A high-level operating goal is not being stuck: use design discussion, agent-driven implementation, clear standards, bite-size work units, and verification to keep projects moving steadily from one stable building block to the next.
 
+Idea-heavy projects also need a curated explanation of what has become visible.
+Tests prove the claims, technical documentation explains the machine, and
+`status.md` explains the project to a human through current capabilities,
+canonical scenarios, representative output, surprising tradeoffs, limitations,
+and the next interesting question.
+
 ## Current Compass
 
 I build small, deterministic worlds where hidden systems become visible.
@@ -78,6 +84,9 @@ See `future-project-designs/railroad-worlds.md` for the consolidated railroad-fa
 - Preserve not-being-stuck as a first-class goal: define the next bite, design it, implement it, verify it, and deliver it as a stable building block.
 - Use Markdown for durable documentation.
 - Give every project a root `README.md` and `docs/design.md`.
+- Add `status.md` when a project needs a human-readable capability narrative.
+- Add `technical-description.md` when a project needs a compact architecture and
+  data-flow explanation.
 - Keep detailed project docs under `docs/*.md`.
 - Prefer a concrete model over an engine.
 - Encode important truths once and derive docs, tests, diagrams, and diagnostics from that model where practical.

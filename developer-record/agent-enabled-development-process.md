@@ -14,6 +14,8 @@ Each project should become a small deterministic world that is:
 - split into phases with explicit deliverables,
 - implemented in small verified increments,
 - documented in Markdown,
+- explained through a human-readable capability narrative when its central idea
+  is not obvious from the code or category label,
 - useful as a foundation for the next layer.
 
 The end state of a phase is not "some code exists." The end state is a complete sub-module with tests, docs, and an inspectable artifact that proves what was built.
@@ -245,6 +247,11 @@ A roadmap or major phase is complete when:
 - the deliverable exists,
 - tests or checks pass,
 - documentation reflects the current model,
+- `status.md` or the equivalent project status section explains what the system
+  can do now, what proves it, what is surprising, and what remains limited,
+- technical documentation explains architecture, data flow, boundaries,
+  algorithms, and design decisions when the implementation is substantial
+  enough to need that map,
 - known gaps are written down,
 - the current agent performs a fresh-context self review of the code against
   the design, the design against the project goals, and both against the root
@@ -266,6 +273,34 @@ Before leaving a phase, write a short checkpoint note:
 - What became load-bearing?
 - What should not be generalized yet?
 - What is the next smallest useful phase?
+
+## 9. Returning To Older Projects
+
+Returning to an older project is a second-edition exercise, not only
+maintenance. Before adding broad new capability:
+
+1. Recover the thesis.
+2. Identify the fundamental objects.
+3. Make the system's point of view explicit.
+4. Inventory what the existing tests already prove.
+5. Build or refresh the human-readable capability narrative.
+6. Choose the next phase that deepens the central idea.
+
+The durable artifacts should answer four different reader questions:
+
+```text
+README.md
+  What is this, and how do I run it?
+
+status.md
+  What can it do now, and why is that interesting?
+
+technical-description.md
+  How does it work?
+
+tests
+  What executable evidence proves the claims?
+```
 
 ## Agent Responsibilities
 

@@ -21,6 +21,12 @@ This repository is also my root developer record:
 
 Markdown is the standard documentation format. For normal project repos, the expected shape is a root `README.md`, a canonical `docs/design.md`, and optional detailed `docs/*.md` files.
 
+For mature, revived, or idea-heavy projects, the explanation should separate
+four jobs: `README.md` says what the project is and how to run it, `status.md`
+shows what it can do now and why that is interesting,
+`technical-description.md` explains how the machine works, and the tests provide
+the executable evidence.
+
 ## Project Themes
 
 ### Virtual Computers
