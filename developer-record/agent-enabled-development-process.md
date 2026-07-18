@@ -240,7 +240,7 @@ The preferred mature-project verification stack is:
 
 ## 8. Phase Completion
 
-A phase is complete when:
+A roadmap or major phase is complete when:
 
 - the deliverable exists,
 - tests or checks pass,
