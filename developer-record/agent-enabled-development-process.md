@@ -240,6 +240,10 @@ The preferred mature-project verification stack is:
 - a local pre-commit hook that runs the same checks,
 - CI that runs the same checks from a clean checkout.
 
+When a status document uses canonical scenarios to explain capabilities, promote
+representative scenarios into executable tests. The status narrative should not
+claim behavior that is only demonstrated in prose.
+
 ## 8. Phase Completion
 
 A roadmap or major phase is complete when:
@@ -259,6 +263,9 @@ A roadmap or major phase is complete when:
 - Gemini CLI is asked for an external code and design review when available,
   focused on whether the implementation follows the design and whether the
   design still serves the project principles, goals, and rules,
+- if Gemini CLI or another external reviewer is unavailable, the phase record
+  says so explicitly; pasted user-provided external review can be used as
+  review input, but agents should not imply that a tool review ran,
 - obviously correct review findings are implemented,
 - review findings that are open questions, tradeoffs, or design choices are
   surfaced to the user for discussion before moving to the next phase,
@@ -273,6 +280,11 @@ Before leaving a phase, write a short checkpoint note:
 - What became load-bearing?
 - What should not be generalized yet?
 - What is the next smallest useful phase?
+
+For boundary refactors, prefer a validated state boundary plus explicit
+compatibility adapters over a full rewrite. The phase should prove where raw
+input enters, where trusted or validated state begins, which adapters still
+exist, and which follow-up debt remains.
 
 ## 9. Returning To Older Projects
 

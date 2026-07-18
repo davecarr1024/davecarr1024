@@ -30,6 +30,9 @@ These standards summarize the patterns already present across my checked-out rep
 - When a second concrete implementation forces a generic core, keep domain-friendly wrapper APIs around that core so callers can still speak the local model.
 - Defer optional interfaces, evaluators, and strategy hooks until a concrete use case proves they are needed.
 - A roadmap or major phase is not done until the presubmit command, coverage gate, documentation updates, fresh-context self review, Gemini CLI review request when available, commit, and push all succeed.
+- If external review tooling is unavailable, report that explicitly. Use pasted
+  user-provided external review as advisory input when present, without claiming
+  a tool review ran.
 - Prefer local pre-commit hooks plus CI for the same checks. The hook catches mistakes before commit; CI proves the same workflow from a clean checkout.
 
 ## Unit Of Work Standard
@@ -78,6 +81,13 @@ Every project should have:
 - coverage enforcement once the project is mature enough for it.
 
 For model projects, tests should prove behavior, invariants, diagnostics, traces, and generated artifacts. Line coverage is the floor, not the purpose.
+When a status document uses canonical scenarios as a capability tour, promote
+representative scenarios into executable tests so docs do not become unsupported
+claims.
+
+For boundary refactors, prefer a validated state boundary and explicit
+compatibility adapters over an all-at-once rewrite. Document which adapters
+remain and what debt they intentionally preserve.
 
 When 100% coverage is not practical for a project area, document the exception in the local design or agent file. Common exceptions might include visual renderers, interactive shells, development scripts, or platform glue.
 

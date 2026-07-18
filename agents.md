@@ -52,6 +52,8 @@ Before calling a coding task done:
   review findings. Surface open questions, tradeoffs, or design choices to the
   user for discussion before moving to the next phase.
 - Report exactly which checks and review passes were run and which were not.
+- If external model review is unavailable, say so explicitly and use
+  user-provided pasted review as advisory input when present.
 
 ## Anti-Stuck Workflow
 
@@ -127,6 +129,8 @@ Always prefer the local repo's exact command if it differs from these defaults.
 - Every project should include a coverage command or coverage-producing test target.
 - Every project should include a presubmit or all-check command that at least enforces tests passing, and should enforce coverage when the project is mature enough.
 - Tests should prove meaningful model behavior and invariants, not just line execution.
+- Promote representative status-document scenarios into executable tests so
+  capability claims are backed by structured proof.
 - Prefer readable fixtures, table-driven cases, and structured results.
 - Use public interfaces where possible.
 - Avoid mocking internal collaborators when real objects make a clearer test.
@@ -147,6 +151,8 @@ Always prefer the local repo's exact command if it differs from these defaults.
   flow, boundaries, algorithms, and design decisions.
 - Put optional detailed docs under `docs/*.md`.
 - Keep design docs and roadmaps synchronized with implementation.
+- For boundary refactors, introduce a validated state boundary and compatibility
+  adapters before attempting a broad rewrite.
 - Mark milestones complete when implementation and tests are complete.
 - When returning to an older project, recover the thesis, identify the
   fundamental objects, inventory what tests already prove, refresh the status
