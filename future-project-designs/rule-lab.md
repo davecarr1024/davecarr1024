@@ -1,5 +1,15 @@
 # Rule Lab Design Doc
 
+Status: promoted to `~/projects/rule_lab` and completed as a v1 research
+proof. This file is retained as the origin design. The completed project docs,
+close-out assessment, and retrospective now live in the project repo.
+
+Key retrospective lesson: Rule Lab succeeded by preserving the Pysh-style rule
+composition idea while making each layer produce a verified artifact. A v2
+should start with the final tiny-language pressure test earlier and work
+backward from concrete pain, rather than climbing through historical layers
+again.
+
 ## Core Question
 
 Can a Pysh-style abstract rule system become safer, clearer, and more

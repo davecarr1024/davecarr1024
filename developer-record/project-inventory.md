@@ -29,6 +29,7 @@ These repos are currently checked out under `~/projects`:
 | `pirata` | Python 6502-style cycle-accurate CPU simulator with customizable microcode and assembler pipeline. |
 | `pysh6` | Python parser/language stack experiment combining regex, lexer, parser, interpreter layers, and tests. |
 | `pysh7` | Later Python parser/language stack iteration with core errors, processor rules, streams, tokens, and parser infrastructure. |
+| `rule_lab` | Completed C++23 typed-rule research proof with `Rule<State, Result>`, typed composition, lexer/parser sidecars, graph finalization, regex rebuild, and a tiny evaluated language. |
 | `sudologue` | Proof-producing Sudoku solver that derives placements using logical deduction, not search. |
 | `tracky` | Python virtual model railroad platform with grid track, car physics, projection math, and planned operations layers. |
 
@@ -115,6 +116,7 @@ This family explores computers from several levels: gate/circuit simulation, com
 - `pysh8`
 - `pyshe`
 - `pyshe2`
+- `rule_lab`
 - `sharpy`
 - `sharpy2`
 - `sharpy3`
@@ -208,7 +210,7 @@ Newly added in this refresh:
 | IRATA | Virtual computer | Whole-stack retro computing, compiler and hardware simulation | What makes the fake console uniquely fun to program? |
 | IRATA2 | C++ CPU platform | Strong typing, HDL, generated ISA, microcode, tests as proof | What future world deserves this level of stable layering? |
 | PIRATA | Python CPU simulator | Cycle accuracy, assembler, microcode, testable hardware | What demo program proves the architecture is alive? |
-| Pysh / Sharpy / Shype family | Parser rule | Regex, lexer, parser, processors, interpreter layers, abstraction risk | What stable artifact would make each layer safe to build on? |
+| Pysh / Sharpy / Shype / Rule Lab family | Parser rule | Regex, lexer, parser, processors, interpreter layers, abstraction risk, typed-rule repair | What concrete proof artifact makes each layer safe to build on, and when is the research question answered enough to stop? |
 | Sudologue | Proof | Logic, explainability, no guessing, formal derivation | Can the proof output teach a human a solving technique? |
 | Sudoku | CSP model | Propagation, rollback, reusable puzzle modeling | When does reuse help more than one concrete puzzle? |
 | Tracky | Track graph / car | Physical simulation, operations, sandbox, automation | What is the smallest railroad world that creates operational pressure? |

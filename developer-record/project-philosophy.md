@@ -135,6 +135,23 @@ Doki expanded from a visible distributed-system model into replication, durabili
 
 In Pysh6 I successfully stacked regex, lexer, parser, parser framework, Pysp, Pype, and Pysh. It tipped when changing anything required pulling apart the whole vertical stack and rebuilding too much working memory at once.
 
+### Rule Lab: A Completed Parser-Stack Repair
+
+Rule Lab revisited the Pysh rule-composition idea in C++23 and completed a
+bounded research proof: `Rule<State, Result>`, typed composition, structured
+failure, lexer/parser sidecar propagation, typed graph finalization, and a tiny
+evaluated language. Its value is not a public parser library. Its value is the
+thought process and verified artifact showing that a parser-stack idea can be
+kept inspectable when every layer earns the next one.
+
+What I learned: v2 should start with the concrete pressure test earlier. Rule
+Lab v1 climbed carefully from small rules to a tiny language; that taught the
+right core shape, but also carried historical scaffolding. A future version
+should put the final proof world near the beginning and work backward from
+there.
+
+Tags: Pysh repair, typed rules, sidecars, close-out discipline.
+
 ### Versioning Is A Release Valve
 
 My v1 is allowed to be wrong. The healthy pattern is IRATA to IRATA2: build a concrete version, extract real design regrets, then make v2 smaller and clearer. The dangerous loop is restarting before the current version has taught me something specific.
@@ -146,6 +163,7 @@ My v1 is allowed to be wrong. The healthy pattern is IRATA to IRATA2: build a co
 | IRATA2 HDL, ISA, microcode, sim, assembler, tests | Each layer owns one kind of truth and emits an artifact the next layer can trust. | I should freeze contracts as I climb. If a change requires re-deriving the whole stack, I should cut a boundary. |
 | Doki roadmap and subsystem growth | Production-shaped complexity can crowd out the model's explanatory center. | I should keep real-world inspiration, but fictionalize implementation until the causal model is clear. |
 | Pysh6 parser/compiler stack | Elegant abstractions are still dangerous when every layer remains live and interdependent. | I need every layer to produce an inspectable artifact: token trace, parse tree, typed AST, IR, executable result, or diagnostic. |
+| Rule Lab v1 close-out | A research project can be complete when its thesis is answered, even if the API is not public-product polished. | I should preserve the code as a design artifact, record the thought process, and stop capability expansion when the proof is done. |
 | GBGE and board-game engines | A generic engine is less satisfying than one complete game whose rules can be explained. | I should build one concrete experience before extracting a framework. |
 
 ## Design Principles
