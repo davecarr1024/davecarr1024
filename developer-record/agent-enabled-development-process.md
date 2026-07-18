@@ -140,6 +140,10 @@ This is not a replacement for judgment. It is a pressure test for whether the
 design has become internally coherent enough to guide the next bite-size
 implementation step.
 
+The same review discipline applies at the end of each completed implementation
+phase. The phase-close review should include both a fresh-context self review
+and, when available, a Gemini CLI review of code and design together.
+
 ## 4. Repo Creation And Design Promotion
 
 `davecarr1024` is the root developer record. It should hold developer-wide structure, reusable patterns, standards, agent process, inventory, and future designs.
@@ -242,6 +246,15 @@ A phase is complete when:
 - tests or checks pass,
 - documentation reflects the current model,
 - known gaps are written down,
+- the current agent performs a fresh-context self review of the code against
+  the design, the design against the project goals, and both against the root
+  development principles,
+- Gemini CLI is asked for an external code and design review when available,
+  focused on whether the implementation follows the design and whether the
+  design still serves the project principles, goals, and rules,
+- obviously correct review findings are implemented,
+- review findings that are open questions, tradeoffs, or design choices are
+  surfaced to the user for discussion before moving to the next phase,
 - the completed phase is committed,
 - the commit is pushed to the project remote when one exists,
 - the next phase can build on the result without re-explaining it from scratch.

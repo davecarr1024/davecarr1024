@@ -45,7 +45,13 @@ Before calling a coding task done:
 - Add or update tests for changed behavior.
 - Keep coverage expectations intact. 100% production-code coverage is the standard goal unless the project documents a narrow exception.
 - Update docs, roadmaps, and local agent files when architecture, commands, phases, or behavior change.
-- Report exactly which checks were run and which were not.
+- After each phase, perform a fresh-context self review and ask Gemini CLI for
+  an external code/design review when available. Use the reviews to assess
+  implementation-to-design fit, design-to-goal fit, and adherence to the root
+  development principles and project-local rules. Apply obviously correct
+  review findings. Surface open questions, tradeoffs, or design choices to the
+  user for discussion before moving to the next phase.
+- Report exactly which checks and review passes were run and which were not.
 
 ## Anti-Stuck Workflow
 

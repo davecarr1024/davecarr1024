@@ -29,7 +29,7 @@ These standards summarize the patterns already present across my checked-out rep
 - For multi-module projects, group code by domain/module using directories and matching namespaces/packages. Prefer `module/submodule` layout over flat file lists once a second cohesive area appears.
 - When a second concrete implementation forces a generic core, keep domain-friendly wrapper APIs around that core so callers can still speak the local model.
 - Defer optional interfaces, evaluators, and strategy hooks until a concrete use case proves they are needed.
-- A phase is not done until the presubmit command, coverage gate, documentation updates, commit, and push all succeed.
+- A phase is not done until the presubmit command, coverage gate, documentation updates, fresh-context self review, Gemini CLI review request when available, commit, and push all succeed.
 - Prefer local pre-commit hooks plus CI for the same checks. The hook catches mistakes before commit; CI proves the same workflow from a clean checkout.
 
 ## Unit Of Work Standard
