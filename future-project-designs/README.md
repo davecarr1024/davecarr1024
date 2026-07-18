@@ -16,6 +16,7 @@ The goal is to make ideas easy to edit from anywhere, including a phone, before 
 - `compiler-lab.md`: future design for learning compiler fundamentals through a tiny language, TAC, and VM/machine-code environment.
 - `game-ai-lab.md`: future design for revisiting GBGE/ESS as a concrete-game-first generic board-game representation and AI system.
 - `rule-lab.md`: origin design for the active `/home/davecarr1024/projects/rule_lab` repo.
+- `self-hosting-grammar-compiler.md`: future design for a Rule Lab successor that parses grammar descriptions, compiles LR(1) parser machines, and emits language-neutral syntax trees.
 - `typed-game-engine.md`: future design for a C++23 statically validated game object tree with typed properties, behaviors, and messages.
 - `symbolic-math-lab.md`: future design for a SymPy-like C++23 symbolic expression and rewrite system.
 - `spreadsheet-wars.md`: future design for a naval operations analysis sandbox centered on probabilistic salvo, detection, and decision models.
