@@ -12,6 +12,7 @@ The book is Dave's "train book": the recurring source text behind the railroad p
 - `themes.md`: central themes and interesting ideas to preserve in projects.
 - `cross-reference.md`: links from book themes to Paper Railroad, Janney, and Tower.
 - `project-design-support.md`: concrete design imports, vocabulary, diagnostics, and test ideas for the railroad projects.
+- `paper-railroad-inspiration.md`: focused source-lens notes for Paper Railroad's circulation, scenarios, investments, and reports.
 - `topics/book-topics.yaml`: structured topic map for future automated analysis.
 
 ## Source
