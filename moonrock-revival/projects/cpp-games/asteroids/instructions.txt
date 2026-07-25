@@ -1,0 +1,5 @@
+Use the arrows to move your ship around. Spacebar shoots, and W warps.
+To drop a bomb, press enter. The bomb will detonate when
+its fuse runs out or it collides with an asteroid.
+Both of these actions require energy, which constantly recharges.
+You get an extra life for every 250 points.
