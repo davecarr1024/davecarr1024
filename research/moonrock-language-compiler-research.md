@@ -13,13 +13,35 @@ The original toolchain is a classic multi-stage compiler pipeline:
 .moo source -> mrc.exe -> .asm -> assembler -> .obj -> linker -> .com
 ```
 
-The most practical way to use it on this Linux machine is preservation-oriented emulation: obtain the original `moon050.zip` and ArrowSoft assembler package from a legitimate archive, run them in a DOS environment under Wine/DOSBox/QEMU, and preserve the generated `.asm` and final `.com` artifacts. A native Linux port of the original compiler is not currently evidenced by public source code. A clean-room reimplementation is feasible, but the language reference/manual and sample corpus should be recovered before designing a parser.
+The original toolchain and a public source release have now been recovered. A preserved copy is in `research/moonrock-recovery/`. The archive includes `MRC.EXE`, `MRLINK.COM`, documentation, samples, ArrowSoft, and nested `MRSRC017.ZIP`, which contains `MRC.BAS` and the compiler’s assembly libraries. The toolchain has been run successfully in DOSBox on this Linux machine, producing `HELLO.ASM`, `HELLO.OBJ`, and `HELLO.COM` from `HELLO.MOO`.
 
 ## Identity and evidence quality
 
 “MoonRock” is not a single modern language ecosystem. Search results also contain unrelated projects and the similarly named MoonScript, MoonBit, and Moon programming language. This document uses “MoonRock” only for the DOS compiler associated with Rowan Crowe and version 0.50.
 
-Evidence is thin and archival. The best accessible technical description is a detailed FreeDOS installation report, while an archival book excerpt identifies version 0.50 as a 1998 freeware DOS compiler and reproduces a sample. The original author/download site is referenced by those sources but was not independently retrievable during this research, so the exact archive contents, license terms, compiler options, and implementation language remain unverified.
+Evidence is now strong enough for direct archaeology. The recovered archive identifies MoonRock 0.50 Beta, includes the command reference and samples, and provides a public-domain/personal-use source release. The source release states that the compiler was written in QuickBASIC/Visual Basic for DOS and includes roughly 10,000 lines across six `.BAS` files plus more than 5,000 lines of assembly library code. The source release prohibits commercial use, so its licensing text must travel with any preserved copy.
+
+The original author/download site remains unavailable, but a surviving mirror at `exmortis.narod.ru` served `mrock50.zip` successfully. Its SHA-256 is recorded in `research/moonrock-recovery/README.md`.
+
+## Recovery result
+
+The recovered release contains:
+
+- `MRC.EXE` — compiler;
+- `MRLINK.COM` — linker;
+- `MR-REF.DOC` and `MRHELP.COM` — reference documentation;
+- `HELLO.MOO`, `STARS.MOO`, `WDEMO.MOO`, and many other samples;
+- `ARROWASM.ZIP` containing `ASM.EXE` and `ASM.DOC`;
+- `CONFIG.ZIP` containing TASM/MASM/A86/ArrowSoft configurations;
+- `MRSRC017.ZIP`, a source release with `MRC.BAS`, compiler support modules, assembly libraries, build files, bug reports, and an early self-hosting rewrite under `MM/`.
+
+The original pipeline was reproduced with DOSBox:
+
+```text
+MRC HELLO.MOO -> HELLO.ASM -> ASM.EXE -> HELLO.OBJ -> MRLINK.COM -> HELLO.COM
+```
+
+The resulting `HELLO.COM` is 276 bytes and prints `Hello world`. This is substantially more valuable than a speculative reimplementation: the original compiler is now available as a behavior and code-generation oracle.
 
 ## Language characteristics
 
@@ -203,8 +225,8 @@ The first Codex task should be an acquisition-and-reproduction task, not a rewri
 
 ## Risks and open questions
 
-- The original source code has not been located in the accessible evidence.
-- The author’s current distribution location and the exact license are unverified.
+- The recovered source release is version 0.17-era/public-source material bundled with the 0.50 distribution; whether it exactly rebuilds the 0.50 `MRC.EXE` remains to be tested.
+- The author’s current distribution location is unavailable, but the mirror archive and checksum are recorded.
 - The full grammar, type system, runtime ABI, command-line options, and protected-mode support need the original manual or binaries for confirmation.
 - ArrowSoft assembler/linker compatibility may be difficult to reproduce on a current Linux host.
 - DOS graphics, ports, and memory-segment features cannot be meaningfully validated solely through a Linux-native test runner.
@@ -212,13 +234,16 @@ The first Codex task should be an acquisition-and-reproduction task, not a rewri
 
 ## Research conclusion
 
-MoonRock is best approached as a small historical DOS compiler worth preserving, not as a currently maintained general-purpose language. The lowest-risk path is to reproduce the original `.moo -> .asm -> .obj -> .com` pipeline in an isolated DOS environment, then use the captured outputs and manual to guide a narrow native implementation. Codex is well suited to corpus extraction, grammar reconstruction, test generation, wrapper scripts, and incremental compiler work once the original artifacts are available.
+MoonRock is a recovered historical DOS compiler, not a currently maintained general-purpose language. The lowest-risk path is now to preserve and exercise the original `.moo -> .asm -> .obj -> .com` pipeline, inventory its real graphics and hardware capabilities, and use the captured outputs/manual/source to guide a narrow native implementation. The “wedding cake” project can be grounded in the real compiler rather than merely imitating descriptions of it.
 
 ## Sources
 
 - [MoonRock on DOS — installation and technical overview](https://www.streetinfo.lu/computing/programming/dos/dos_moonrock.html) — primary accessible technical description used for the pipeline, language features, platform targets, and limitations.
 - [Philipp Winterberg, “MoonRock 0.50” excerpt](https://d-nb.info/1358655383/34) — archival reproduction identifying the 1998 freeware DOS compiler and showing a `.moo` sample/build sequence.
 - [Rowan Crowe’s MoonRock page](https://www.rowan.sensation.net.au/moonrock.html) — author/download page referenced by the archival sources; availability was not independently verified during this research.
+- [Recovered MoonRock mirror archive](https://exmortis.narod.ru/comp_src/mrock50.zip) — served the 551,055-byte `mrock50.zip` archive used for the local recovery; checksum and extracted contents are recorded in `research/moonrock-recovery/`.
+- [Compiler source index](https://exmortis.narod.ru/src_compilers_eng.html) — historical index identifying `mrock50.zip` and its claimed source/output model.
+- [FreeDOS compiler list](https://www.geocities.ws/snoopimeanie/freedos.htm) — historical index describing MoonRock as a semi-open-source BASIC-to-assembly compiler using ArrowSoft.
 - [DOSBox-X home and feature overview](https://dosbox-x.com/) — current emulator project and target use cases.
 - [DOSBox-X introduction](https://dosbox-x.com/wiki/Home) — mounting, screenshots, and keyboard shortcuts.
 - [FreeDOS download page](https://www.freedos.org/download/) — current FreeDOS release and emulator guidance.
