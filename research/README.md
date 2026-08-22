@@ -33,5 +33,6 @@ and link to a research index that distinguishes:
 The `davecarr1024` hub may retain a short pointer or cross-project synthesis,
 but not a second working copy of the project's archive or research tree.
 
-MoonRock now follows the project-specific side of this rule. The train-book
-collection follows the shared-foundation side.
+MoonRock and Barbacane follow the project-specific side of this rule for their
+active experiments and findings. The train-book and Viollet-le-Duc collections
+follow the shared-foundation side.

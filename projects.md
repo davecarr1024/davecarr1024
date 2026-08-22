@@ -60,6 +60,12 @@ The projects that stay interesting usually have:
 - `future-project-designs/train-book-alignment.md`: analysis of how the railroad-world designs can preserve the spirit, period, and technical texture of *The American Railway*.
 - `research/train_book/`: raw text, fingerprint, themes, topic map, and
   cross-reference docs for *The American Railway*.
+- `research/viollet_le_duc_fortification/`: shared source foundation for
+  *Annals of a Fortress*, *Castles and Warfare in the Middle Ages*, Barbacane,
+  and future adversarial-design work.
+- `/home/davecarr1024/projects/barbacane`: active repo for an executable siege
+  engineer that produces and explains fortification plans from terrain,
+  resources, period capabilities, and an adversary model.
 - `future-project-designs/nes-emulator.md`: future design for a transparent NES emulator, with fit analysis against the existing CPU-simulator history.
 - `future-project-designs/compiler-lab.md`: future design for learning compiler fundamentals with an inspectable pipeline, TAC, and tiny execution environment.
 - `future-project-designs/game-ai-lab.md`: retained origin design for the completed Game AI Lab v1.
@@ -121,6 +127,7 @@ See `future-project-designs/railroad-worlds.md` for the consolidated railroad-fa
 
 | Project | Path | Status | Why it is interesting |
 | --- | --- | --- | --- |
+| Barbacane | `/home/davecarr1024/projects/barbacane` | Active inception | Val d'Ohet provides one evolving world in which an inspectable siege engineer can analyze and eventually generate fortification plans under changing constraints and weapons. |
 | Paper Railroad | `/home/davecarr1024/projects/paper_railroad` | Active | An explainable planning office composes recurring circulation, economics, capital, industry, shared traffic, and reliability without collapsing their evidence. |
 | MoonRock | `/home/davecarr1024/projects/moonrock` | Active | The recovered original compiler is used as a hard constraint for reproducible DOS graphics programs, tests, and captured artifacts. |
 | Eastman 1 | `/home/davecarr1024/projects/eastman1` | Active reconstruction | A QB64-PE content and rendering lane reconstructs a planned kart game while keeping provenance and new work distinct. |

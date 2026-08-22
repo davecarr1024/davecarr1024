@@ -28,6 +28,9 @@ This repository is the cross-project hub for five kinds of durable context:
 
 The current project entry points include:
 
+- [Barbacane](https://github.com/davecarr1024/barbacane), an executable siege
+  engine for producing and explaining fortification plans from terrain,
+  resources, period capabilities, and an adversary model;
 - [Paper Railroad](https://github.com/davecarr1024/paper_railroad), an
   explainable railroad planning office built from circulation, capacity,
   economics, capital, and reliability evidence;
@@ -76,6 +79,17 @@ IRATA2 is my architectural gold standard: stable boundaries, generated sources o
 **Sudologue**, **Sudoku**, and **Banana** explore constraint systems, search, propagation, rollback, and proof.
 
 The satisfying part is not just finding an answer. The satisfying part is understanding why the answer is forced.
+
+### Adversarial Design
+
+**Barbacane** treats fortification as an executable argument. The same ground
+is reconsidered as weapons, construction, resources, and attacker behavior
+change; each proposal must explain what attack it anticipates, how its works
+support one another, and what happens when the enemy responds.
+
+The long-term artifact is an illustrated chronicle derived from structured
+evidence: plan, counterplan, partial information, actions, and consequences.
+The first proof remains one small La Roche-Pont barbican study.
 
 ### Operations Worlds
 
@@ -150,6 +164,11 @@ original MoonRock 0.50 compiler can support deterministic DOS graphics and
 small games when builds, generated assembly, framebuffer results, and captured
 frames are made reproducible.
 
+**Barbacane** is newly active. Its first work asks whether a simplified
+La Roche-Pont barbican can prove and illustrate how an outwork changes an
+attacker's sequence of access before the project attempts generated plans or a
+simulated siege.
+
 The future shelf remains useful, but promoted projects own their active design
 and specific research. Strong unpromoted candidates include **Janney**,
 **Tower**, **Compiler Lab**, and **Spreadsheet Wars**. The deciding question is
@@ -168,4 +187,7 @@ Worlds where every interesting event has an understandable cause.
 
 Worlds that are fun to explore because they make complicated ideas feel tangible.
 
-If someone walks away understanding computers, railroads, distributed systems, puzzles, games, scheduling, or language design a little better because they spent an hour inside one of those worlds, then I probably built the right thing.
+If someone walks away understanding computers, railroads, distributed systems,
+puzzles, games, fortifications, scheduling, or language design a little better
+because they spent an hour inside one of those worlds, then I probably built
+the right thing.
