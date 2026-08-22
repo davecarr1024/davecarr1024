@@ -1,5 +1,10 @@
 # Paper Railroad Design Doc
 
+Status: promoted to `~/projects/paper_railroad` as an active project. This file
+is retained as the origin design. The project README, status narrative,
+technical description, goals, and project-specific research are authoritative
+for current work and findings.
+
 ## Train Book Lens
 
 Paper Railroad is explicitly inspired by *The American Railway*, especially the book's management, freight, way-bill, statistical, and civil-engineering chapters.

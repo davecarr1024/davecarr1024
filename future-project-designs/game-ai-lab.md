@@ -1,5 +1,10 @@
 # Game AI Lab Design Doc
 
+Status: promoted to `~/projects/game_ai_lab` and completed as a v1 research
+proof. This file is retained as the origin design. The project README, status
+narrative, technical description, and retrospective are authoritative for its
+implemented capabilities and findings.
+
 ## Core Question
 
 Can an abstract board-game representation capture enough of a game's state, move space, reward structure, and terminal conditions that one AI system can play many different games effectively through the same interface?

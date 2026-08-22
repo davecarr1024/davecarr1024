@@ -1,5 +1,10 @@
 # Eastman Reconstruction
 
+Status: promoted to `~/projects/eastman1` as an active reconstruction. This
+file is retained as the origin design. The project README and its provenance,
+implementation, and runtime documentation are authoritative for current work
+and findings.
+
 ## Seed
 
 Recover the experience of the Eastman text RPG from its surviving `.COM` scenes, QBasic map tools, maps, sprites, and textures, while clearly distinguishing recovered artifacts from newly reconstructed source.
@@ -19,4 +24,3 @@ A player can move through a small deterministic world whose map, collision rules
 ## Guardrail
 
 Never label reconstructed code as original source. The original binaries, extracted assets, observations, and reconstruction should remain separate artifacts.
-

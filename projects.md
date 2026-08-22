@@ -37,7 +37,7 @@ The projects that stay interesting usually have:
 - `agents.md`: canonical cross-repo agent instructions.
 - `AGENTS.md`: compatibility pointer for tooling that expects this filename.
 - `CODING_STANDARDS.md`: synthesized language and tooling standards from checked-out repos.
-- `future-project-designs/`: design shelf for project ideas I want to tinker with before they become repositories.
+- `future-project-designs/`: future proposals plus clearly labeled origin designs retained after promotion.
 - `research/train_book/`: the first shared book-research foundation, containing
   source provenance, OCR, analysis, and cross-project railroad lenses.
 - `train_ideas.md`: original pulled railroad-world sketch kept as source material.
@@ -48,7 +48,7 @@ The projects that stay interesting usually have:
 - `developer-record/project-inventory.md`: local/GitHub project summary and project matrix from `PROJECT_SUMMARY.md` and `projects.html`.
 - `developer-record/agent-enabled-development-process.md`: explicit agent-driven process from brainstorming through verified delivery.
 - `developer-record/open-questions-and-next-steps.md`: synthesis of current open questions, next steps, and decision points.
-- `future-project-designs/paper-railroad.md`: detailed design from `PAPER_RAILROAD_DESIGN.md`.
+- `future-project-designs/paper-railroad.md`: retained origin design for the active Paper Railroad repo.
 - `future-project-designs/janney.md`: detailed design for the coupler and switching project.
 - `future-project-designs/tower.md`: detailed design for the interlocking and route-authority project.
 - `future-project-designs/railroad-fit-analysis.md`: comparison of train-based ideas against the design and execution goals.
@@ -57,24 +57,24 @@ The projects that stay interesting usually have:
   cross-reference docs for *The American Railway*.
 - `future-project-designs/nes-emulator.md`: future design for a transparent NES emulator, with fit analysis against the existing CPU-simulator history.
 - `future-project-designs/compiler-lab.md`: future design for learning compiler fundamentals with an inspectable pipeline, TAC, and tiny execution environment.
-- `future-project-designs/game-ai-lab.md`: future design for a generic board-game representation and AI system earned through concrete games.
+- `future-project-designs/game-ai-lab.md`: retained origin design for the completed Game AI Lab v1.
 - `/home/davecarr1024/projects/rule_lab`: active repo for a C++23 typed rule algebra that grows from pure rules to character-stream regex combinators.
-- `future-project-designs/rule-lab.md`: origin design for the active Rule Lab repo.
+- `future-project-designs/rule-lab.md`: retained origin design for the completed Rule Lab v1.
 - `future-project-designs/typed-game-engine.md`: future design for a C++23 statically validated game object tree with typed properties, behaviors, and messages.
 - `future-project-designs/symbolic-math-lab.md`: future design for a SymPy-like C++23 symbolic expression and rewrite system.
 
 ## Future Project Designs
 
-The strongest current direction is a family of railroad-world projects. These are related by philosophy, not necessarily shared code.
+The strongest current direction is a family of railroad-world projects. Paper
+Railroad has been promoted and is active; Janney and Tower remain future
+designs. These are related by philosophy, not necessarily shared code.
 
 | Project | Core object | Question | First runnable moment |
 | --- | --- | --- | --- |
-| Paper Railroad | Waybill | What should move? | A static map analyzer that explains supply, demand, reachability, route load, and bottlenecks. |
 | Janney | Coupler | How does it move? | One inglenook switching puzzle with slack, momentum, coupling, and uncoupling. |
 | Tower | Route | When may it move? | One junction where every signal clear or denial has an inspectable safety explanation. |
 | NES Emulator | Frame | Can a real console explain itself? | One simple NROM ROM produces a deterministic, asserted frame. |
 | Compiler Lab | Program | Can compiler basics be learned through inspectable artifacts? | A tiny program compiles through tokens, AST, TAC, VM code, trace, and output. |
-| Game AI Lab | GameState | Can one AI play many games through one interface? | One generic search policy plays two small deterministic games and explains moves. |
 | Typed Game Engine | GameObject | Can C++23 types statically validate object properties, behaviors, and message plumbing? | One tiny object tree runs a deterministic frame after compile-time behavior/property checks. |
 | Symbolic Math Lab | Expr | Can C++23 types make symbolic expressions, rewrites, and simplification traces explicit? | A tiny arithmetic expression simplifies through named rewrite rules with an inspectable trace. |
 
