@@ -16,8 +16,9 @@ This repository is the cross-project hub for five kinds of durable context:
   candidate projects.
 - [Developer record](developer-record/README.md) explains the recurring project
   philosophy and keeps portfolio-level synthesis.
-- [Future project designs](future-project-designs/README.md) is the shelf for
-  ideas that do not yet have an implementation repository.
+- [Future project designs](future-project-designs/README.md) holds proposals
+  that do not yet have an implementation repository and retained origin
+  designs for projects that have been promoted.
 - [Development and agent practice](agents.md) defines the cross-repo workflow;
   [coding standards](CODING_STANDARDS.md) supplies the default quality and
   language conventions.

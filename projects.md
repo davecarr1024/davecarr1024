@@ -45,9 +45,9 @@ The projects that stay interesting usually have:
 ## Developer Record
 
 - `developer-record/project-philosophy.md`: long-form project philosophy and lessons from `projects.html`.
-- `developer-record/project-inventory.md`: local/GitHub project summary and project matrix from `PROJECT_SUMMARY.md` and `projects.html`.
+- `developer-record/project-inventory.md`: dated 2026-07-10 local/GitHub portfolio snapshot and project matrix.
 - `developer-record/agent-enabled-development-process.md`: explicit agent-driven process from brainstorming through verified delivery.
-- `developer-record/open-questions-and-next-steps.md`: synthesis of current open questions, next steps, and decision points.
+- `developer-record/open-questions-and-next-steps.md`: historical 2026-07-10 planning snapshot that preserves promotion decisions and their rationale.
 - `future-project-designs/paper-railroad.md`: retained origin design for the active Paper Railroad repo.
 - `future-project-designs/janney.md`: detailed design for the coupler and switching project.
 - `future-project-designs/tower.md`: detailed design for the interlocking and route-authority project.

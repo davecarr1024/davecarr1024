@@ -309,9 +309,11 @@ The naming standard is not polish. It is focus. If an idea cannot yet support a 
 
 I should structure projects so there is always a next useful bite. The next step should be small enough to finish, meaningful enough to matter, and verified enough to become a stable building block for later work.
 
-## Future Direction
+## Direction And Candidate Seeds
 
-The strongest current direction is `Railroad Worlds`: a family of small executable models rather than one giant simulator.
+`Railroad Worlds` is a family of small executable models rather than one giant
+simulator. Paper Railroad has become an active project; Janney and Tower remain
+candidate seeds.
 
 - Paper Railroad asks what should move.
 - Janney asks how it moves.
@@ -323,7 +325,11 @@ Another future candidate is `NES Emulator`: a transparent, testable emulator cen
 
 Another future candidate is `Compiler Lab`: a small learning compiler focused on fundamentals, three-address code, a tiny execution environment, and visible artifacts at every stage. It fits if it repairs the Pysh failure mode by compiling one concrete language before building parser frameworks or chasing a dream language.
 
-Another future candidate is `Game AI Lab`: a return to the GBGE / ESS idea of a generic board-game representation and AI system. It fits if the abstraction is earned by concrete games: one AI policy should play at least two small deterministic games through the same interface before the project claims generality.
+`Game AI Lab` subsequently completed a v1 research proof of the GBGE / ESS
+idea. Its durable lesson remains the original constraint: an abstraction is
+earned by concrete games, with one policy playing at least two small
+deterministic games through the same interface before the project claims
+generality.
 
 ## Projects I Should Probably Avoid
 

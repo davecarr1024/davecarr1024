@@ -2,7 +2,14 @@
 
 Last synthesized: 2026-07-10.
 
-This document summarizes the current developer record, project inventory, and future-project design shelf. It is meant to keep the next decisions visible without turning early ideas into commitments.
+Snapshot status: historical planning record. Paper Railroad and Game AI Lab
+were subsequently promoted, so the rankings and immediate-next-step section
+below should be read as decision provenance, not current instructions. See
+`../projects.md` for the maintained project index.
+
+This document summarized the then-current developer record, project inventory,
+and future-project design shelf. It kept the next decisions visible without
+turning early ideas into commitments.
 
 ## Current Read
 

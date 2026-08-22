@@ -2,11 +2,17 @@
 
 Last refreshed: 2026-07-10.
 
+Snapshot status: this document preserves what the portfolio and local checkout
+looked like on that date. Repository counts, checkout lists, and proposed next
+questions are historical evidence, not a live dashboard. See `../projects.md`
+for the maintained project index and follow each project README for current
+status.
+
 This inventory is based on the GitHub repositories owned by `davecarr1024`, plus local checkout context under `~/projects`. The GitHub pass used repository metadata, visibility, default branches, README files where present, design docs where present, and shallow top-level/tree inspection.
 
 ## Summary
 
-The GitHub account currently contains 41 repositories:
+At the time of this snapshot, the GitHub account contained 41 repositories:
 
 - 13 public repositories.
 - 28 private repositories.
@@ -15,7 +21,7 @@ The GitHub account currently contains 41 repositories:
 
 ## Local Checkouts
 
-These repos are currently checked out under `~/projects`:
+These repos were checked out under `~/projects` when the snapshot was made:
 
 | Repo | Description |
 | --- | --- |
