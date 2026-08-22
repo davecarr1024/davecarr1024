@@ -128,9 +128,15 @@ Always prefer the local repo's exact command if it differs from these defaults.
 ## Testing Expectations
 
 - Thoroughly testable code is a strong sign that a project is stable and well-shaped.
-- 100% production-code coverage is the standard goal and a useful code smell: if coverage is painful, the representation may be hiding concepts or mixing responsibilities.
-- Every project should include a coverage command or coverage-producing test target.
-- Every project should include a presubmit or all-check command that at least enforces tests passing, and should enforce coverage when the project is mature enough.
+- 100% production-code coverage is the standard goal for model-oriented code
+  and a useful code smell: if coverage is painful, the representation may be
+  hiding concepts or mixing responsibilities.
+- Model-oriented projects should include a coverage command or
+  coverage-producing test target.
+- Every project should include a presubmit or all-check command that enforces
+  its meaningful tests or executable artifact checks. Native visual runtimes,
+  platform glue, interactive artifacts, and recovered-binary projects should
+  document their strongest repeatable substitute evidence.
 - Tests should prove meaningful model behavior and invariants, not just line execution.
 - Promote representative status-document scenarios into executable tests so
   capability claims are backed by structured proof.

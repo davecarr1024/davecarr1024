@@ -229,14 +229,20 @@ Verification should answer:
 
 For these projects, tests are not a cleanup step. The proof is the product.
 
-Every project should define a presubmit or all-check command. At minimum it should enforce tests passing. Mature projects should also enforce coverage, with 100% production-code coverage as the standard goal unless a narrow exception is documented.
+Every project should define a presubmit or all-check command. At minimum it
+should enforce its meaningful tests or executable artifact checks. Mature
+model-oriented projects should also enforce coverage, with 100% production-code
+coverage as the standard goal unless a narrow exception is documented; native
+visual, platform, interactive, and recovered-binary projects should document
+their strongest substitute evidence.
 
 The preferred mature-project verification stack is:
 
 - a formatter check,
 - a static-analysis or lint check,
 - tests,
-- a coverage gate,
+- a coverage gate for model-oriented code, or a documented artifact/runtime
+  evidence gate for other project types,
 - a local pre-commit hook that runs the same checks,
 - CI that runs the same checks from a clean checkout.
 

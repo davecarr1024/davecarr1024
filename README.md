@@ -125,7 +125,10 @@ I like strong representations because they make the world harder to misuse. When
 
 For my projects, the proof is the product.
 
-A demo is nice, but the deeper pride is a full test run: every layer exercised, every invariant checked, every expansion covered, 100% pass, and coverage accounted for.
+A demo is nice, but the deeper pride is a full proof run: every layer
+exercised, every invariant checked, every expansion covered, and 100% pass.
+Model-oriented projects also account for coverage; native visual and other
+platform-bound projects document the artifact/runtime evidence that fits them.
 
 Readable tests matter. A good test should set up the world, perform the action, and assert the meaningful final state. If the test needs a thousand lines of boilerplate, mocks, and special cases, the representation is probably wrong.
 

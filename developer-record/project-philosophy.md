@@ -196,9 +196,16 @@ Thoroughly testable code is a very good sign. When code can be covered cleanly, 
 
 ### Tests Are The Deliverable
 
-For my projects, the proof is the product. A demo is nice, but the deeper pride is a full run: every layer exercised, every invariant checked, every expansion covered, 100% pass, and 100% production-code coverage as the standard goal.
+For my model-oriented projects, the proof is the product. A demo is nice, but
+the deeper pride is a full run: every layer exercised, every invariant checked,
+every expansion covered, 100% pass, and 100% production-code coverage as the
+standard goal. Native visual, platform, interactive, and recovered-binary
+projects need an equivalent repeatable artifact/runtime proof instead.
 
-Every project should have a test command, a coverage command, and a presubmit or all-check command that at least enforces tests passing. Mature projects should enforce coverage too, with narrow documented exceptions when full coverage is not practical.
+Every project should have a test or artifact-verification command and a
+presubmit or all-check command that enforces it. Model-oriented projects should
+also have a coverage command; mature projects should enforce coverage, with
+narrow documented exceptions when full coverage is not practical.
 
 ### Make The Idea Visible
 

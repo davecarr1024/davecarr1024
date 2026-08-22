@@ -24,12 +24,19 @@ These standards summarize the patterns already present across my checked-out rep
   it into focused module files and group related concepts/classes under
   matching directories and namespaces where practical.
 - Keep docs, roadmaps, and tests current with behavior changes.
-- Treat 100% production-code coverage as the standard goal. Thoroughly testable code is a good sign that the project is stable and well-shaped.
-- Every project should provide a coverage command and a presubmit/all-check command that at least enforces tests passing.
+- Treat 100% production-code coverage as the standard goal for model-oriented
+  code. Thoroughly testable code is a good sign that the project is stable and
+  well-shaped.
+- Model-oriented projects should provide a coverage command; every project
+  should provide a presubmit/all-check command that enforces its meaningful
+  tests or executable artifact checks.
 - For multi-module projects, group code by domain/module using directories and matching namespaces/packages. Prefer `module/submodule` layout over flat file lists once a second cohesive area appears.
 - When a second concrete implementation forces a generic core, keep domain-friendly wrapper APIs around that core so callers can still speak the local model.
 - Defer optional interfaces, evaluators, and strategy hooks until a concrete use case proves they are needed.
-- A roadmap or major phase is not done until the presubmit command, coverage gate, documentation updates, fresh-context self review, Gemini CLI review request when available, commit, and push all succeed.
+- A roadmap or major phase is not done until the presubmit command, a coverage
+  gate for model-oriented code (or a documented alternate evidence gate),
+  documentation updates, fresh-context self review, Gemini CLI review request
+  when available, commit, and push all succeed.
 - If external review tooling is unavailable, report that explicitly. Use pasted
   user-provided external review as advisory input when present, without claiming
   a tool review ran.
@@ -71,7 +78,7 @@ This is not only a metric. It is a design smell and a design signal:
 - If coverage is painful, the code may be mixing responsibilities, hiding state, depending on incidental timing, or lacking useful public artifacts.
 - If a line is intentionally excluded from coverage, the reason should be narrow and documented.
 
-Every project should have:
+Every model-oriented project should have:
 
 - a normal test command,
 - a coverage command or coverage-producing test target,
@@ -79,6 +86,10 @@ Every project should have:
 - a static-analysis or lint check when the ecosystem has a practical tool,
 - a presubmit/all-check command that enforces formatting, static analysis or linting, and tests,
 - coverage enforcement once the project is mature enough for it.
+
+Projects centered on native visual runtimes, platform glue, interactive
+artifacts, or recovered binaries should instead document the strongest
+repeatable artifact and runtime checks their ecosystem supports.
 
 For model projects, tests should prove behavior, invariants, diagnostics, traces, and generated artifacts. Line coverage is the floor, not the purpose.
 When a status document uses canonical scenarios as a capability tour, promote

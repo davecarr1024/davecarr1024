@@ -102,8 +102,13 @@ See `future-project-designs/railroad-worlds.md` for the consolidated railroad-fa
 - Encode important truths once and derive docs, tests, diagrams, and diagnostics from that model where practical.
 - Make invalid states unrepresentable when doing so clarifies the design.
 - Treat tests as the proof of the world.
-- Treat 100% production-code coverage as the standard goal and a useful code smell.
-- Give every project a test command, coverage command, and presubmit/all-check command that at least enforces tests passing.
+- Treat 100% production-code coverage as the standard goal for model-oriented
+  code and a useful design signal. Native visual, platform, interactive, and
+  recovered-binary projects should document an equivalent artifact/runtime
+  evidence gate when coverage is not meaningful.
+- Give every project a test or artifact-verification command and a
+  presubmit/all-check command; model-oriented projects should also provide a
+  coverage command.
 - Write postmortems before rewrites. A v2 needs lessons from v1, not just imagined cleanliness.
 - Keep administrative complexity out until the model itself has earned it.
 
