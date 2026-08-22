@@ -17,5 +17,5 @@ and link to a research index that distinguishes:
 The `davecarr1024` hub may retain a short pointer or cross-project synthesis,
 but not a second working copy of the project's archive or research tree.
 
-The current cleanup is applying this rule first to MoonRock, then to the train
-book material owned by Paper Railroad.
+MoonRock now follows this rule. The train-book material owned by Paper
+Railroad is the next project-specific research migration.
