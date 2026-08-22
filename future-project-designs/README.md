@@ -29,6 +29,8 @@ guidance, findings, and executable artifacts live in the linked project repo.
 
 ## Cross-Project Analysis
 
+- `railroad-worlds-origin.md`: original design seed retained as provenance for
+  the refined railroad-world family.
 - `railroad-fit-analysis.md`: comparison of the three railroad ideas against the developer-record goals.
 - `train-book-alignment.md`: book-derived analysis connecting *The American Railway* to the railroad-world ideas.
 

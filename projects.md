@@ -44,7 +44,8 @@ The projects that stay interesting usually have:
 - `future-project-designs/`: future proposals plus clearly labeled origin designs retained after promotion.
 - `research/train_book/`: the first shared book-research foundation, containing
   source provenance, OCR, analysis, and cross-project railroad lenses.
-- `train_ideas.md`: original pulled railroad-world sketch kept as source material.
+- `future-project-designs/railroad-worlds-origin.md`: original railroad-world
+  sketch retained beside the refined design as source provenance.
 
 ## Developer Record
 

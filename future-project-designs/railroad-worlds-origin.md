@@ -1,6 +1,11 @@
-Railroad Worlds
+# Railroad Worlds Origin Note
 
-A Family of Executable Models
+This is the original pulled sketch that introduced Paper Railroad, Janney, and
+Tower as a family of executable models. It is retained as design provenance;
+`railroad-worlds.md` is the refined family design, and the promoted Paper
+Railroad repo owns its current implementation direction.
+
+## A Family of Executable Models
 
 Rather than one giant railroad simulator, I want to build a family of small projects. Each one isolates a different aspect of railroading and asks:
 
