@@ -4,7 +4,11 @@ This repo is my root developer record: the place to keep long-term project plann
 
 The working rule is simple: this repository should remember the ideas, constraints, and standards that should survive across projects. Once a future design becomes an active project, its working design moves into that project's own `README.md`, `docs/design.md`, and local agent file.
 
-Markdown is the documentation standard. New projects should keep a root `README.md`, a canonical `docs/design.md`, and any deeper planning or architecture notes as optional `docs/*.md` files.
+Markdown is the documentation standard. New projects should start with a root
+`README.md`, a canonical `docs/design.md`, and optional deeper `docs/*.md`
+files. Mature projects may replace the single design file with a clearly
+mapped set of authoritative documents when the split reflects real audiences
+or responsibilities.
 
 A high-level operating goal is not being stuck: use design discussion, agent-driven implementation, clear standards, bite-size work units, and verification to keep projects moving steadily from one stable building block to the next.
 
@@ -87,7 +91,8 @@ See `future-project-designs/railroad-worlds.md` for the consolidated railroad-fa
 - Use the agent-enabled development process: brainstorm, name, design, phase, execute, verify, and checkpoint.
 - Preserve not-being-stuck as a first-class goal: define the next bite, design it, implement it, verify it, and deliver it as a stable building block.
 - Use Markdown for durable documentation.
-- Give every project a root `README.md` and `docs/design.md`.
+- Give every project a root `README.md` and an explicit design record; use
+  `docs/design.md` by default for new projects.
 - Add `status.md` when a project needs a human-readable capability narrative.
 - Add `technical-description.md` when a project needs a compact architecture and
   data-flow explanation.

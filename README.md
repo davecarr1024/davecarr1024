@@ -45,7 +45,11 @@ its status/design links, technical description, project-specific research,
 and executable tests. Each level should explain what was found, why it is
 interesting, what currently runs, and where the evidence lives.
 
-Markdown is the standard documentation format. For normal project repos, the expected shape is a root `README.md`, a canonical `docs/design.md`, and optional detailed `docs/*.md` files.
+Markdown is the standard documentation format. New project repos start with a
+root `README.md`, a canonical `docs/design.md`, and optional detailed
+`docs/*.md` files. A mature project may split that design record into focused
+documents when its README and local agent guide clearly map which file owns
+each kind of truth.
 
 For mature, revived, or idea-heavy projects, the explanation should separate
 four jobs: `README.md` says what the project is and how to run it, `status.md`

@@ -8,7 +8,9 @@ Use this file as the default when starting new repositories. If a project has it
 
 ## Working Style
 
-- Read the project `README.md`, `docs/design.md`, other relevant `docs/*.md`, and local agent file before changing code.
+- Read the project `README.md`, its canonical design record (`docs/design.md`
+  or the locally documented equivalent), other relevant `docs/*.md`, and local
+  agent file before changing code.
 - Prefer the repo's existing patterns, commands, and abstractions over new ones.
 - Keep work in small, focused steps that can be built, tested, and reviewed independently.
 - Prefer immutability by default. Make values, members, and helper functions
@@ -77,7 +79,8 @@ For new projects and major phases, follow `developer-record/agent-enabled-develo
 1. Brainstorm and discuss the seed question.
 2. Choose a good name: a short proper-noun name for creative/releasable projects, or a descriptive name for labs and experiments.
 3. Write or update the initial design.
-4. Create or promote the project repo with `README.md`, `docs/design.md`, and local agent guidance.
+4. Create or promote the project repo with `README.md`, a default
+   `docs/design.md`, and local agent guidance.
 5. Plan phases, deliverables, and checkpoints.
 6. Execute one bite-size unit at a time.
 7. Verify each unit with tests, checks, or inspectable artifacts.
@@ -141,7 +144,10 @@ Always prefer the local repo's exact command if it differs from these defaults.
 
 - Use Markdown for durable documentation.
 - Every project should have a root `README.md`.
-- Every project should have `docs/design.md` as its canonical design document.
+- Every project should have an explicit canonical design record. New projects
+  should start with `docs/design.md`; a mature project may split it into
+  focused documents when the README and local agent guide map ownership
+  clearly and avoid competing sources of truth.
 - Mature, revived, or idea-heavy projects should add `status.md` as the
   human-readable capability narrative: the question, current capabilities,
   canonical scenarios, representative output, surprising tradeoffs, limitations,
@@ -159,7 +165,8 @@ Always prefer the local repo's exact command if it differs from these defaults.
   narrative, and then choose the next phase that deepens the central idea.
 - Before a rewrite, write down what the previous version taught and why local repair is not enough.
 - Record important invariants near the model that depends on them.
-- Keep local agent files concise and link to `README.md` and `docs/design.md` for long-form context.
+- Keep local agent files concise and link to `README.md` and the project's
+  canonical design record for long-form context.
 - New project agent files should include a pointer back to `~/projects/davecarr1024` and a note that reusable findings should be promoted there.
 
 ## Language Notes

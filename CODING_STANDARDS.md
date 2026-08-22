@@ -96,7 +96,7 @@ When 100% coverage is not practical for a project area, document the exception i
 Every project should have a small, predictable documentation structure:
 
 - `README.md`: root project introduction, quick start, status, and links to deeper docs.
-- `docs/design.md`: the canonical design document for the project.
+- `docs/design.md`: the default canonical design document for a new project.
 - `docs/*.md`: optional detailed docs for architecture notes, roadmaps, protocols, milestones, feature designs, postmortems, and operating notes.
 - `status.md` for mature, revived, or idea-heavy projects: a readable
   capability narrative showing what the system can do now and why that is
@@ -110,9 +110,14 @@ Documentation rules:
 
 - Prefer Markdown for all durable docs. Avoid HTML or ad hoc document formats for planning and design records.
 - Include the project name and naming rationale in early design notes when the project is still forming, including whether it is a proper-noun creative project or a descriptive lab/experiment.
-- When a future design becomes an active project, move the active design into that project's `docs/design.md` as part of repo creation.
+- When a future design becomes an active project, move the active design into
+  that project's `docs/design.md` as part of repo creation.
+- A mature project may divide the canonical design record among focused files
+  when the split serves distinct audiences or responsibilities. Its README and
+  local agent guide must map those files, name what each one owns, and prevent
+  the same fact from becoming independently authoritative in multiple places.
 - Keep the root `README.md` concise. Move detailed design material into `docs/design.md` or focused `docs/*.md` files.
-- Keep `docs/design.md` current with the model that actually exists.
+- Keep the canonical design record current with the model that actually exists.
 - Link detailed docs from `README.md` so a new reader can find the shape of the project quickly.
 - Use `status.md` to preserve the project's thesis, canonical scenarios,
   representative output, surprising tradeoffs, current limitations, and next
@@ -256,5 +261,6 @@ Style:
   - current phase or roadmap pointer,
   - pointer back to `~/projects/davecarr1024` as the root developer rules dir,
   - instruction to promote reusable workflow, style, tooling, and process findings back to `~/projects/davecarr1024`.
-- Agent files should point to `README.md` and `docs/design.md` rather than duplicating long design content.
+- Agent files should point to `README.md` and the canonical design record
+  rather than duplicating long design content.
 - Keep local agent files concise enough to read before work starts.
