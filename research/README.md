@@ -8,6 +8,10 @@ repository, including shared source foundations such as books.
 - [`train_book/`](train_book/README.md) preserves and analyzes *The American
   Railway* (1889) as a shared source for Paper Railroad, Janney, Tower, and
   future railroad projects.
+- [`viollet_le_duc_fortification/`](viollet_le_duc_fortification/README.md)
+  treats *Annals of a Fortress* and *Castles and Warfare in the Middle Ages*
+  as a paired foundation for Barbacane, analytical geometry and report work,
+  and future adversarial-design models.
 
 Add future books as sibling directories with their own source provenance,
 reading guide, analysis artifacts, and cross-project index. A book belongs
