@@ -1,23 +1,20 @@
 # Cross-project research
 
 This directory is reserved for research whose conclusions inform more than one
-repository, including shared source foundations such as books.
+repository. Project-owned source studies belong with their active projects.
 
 ## Research foundations
 
-- [`train_book/`](train_book/README.md) preserves and analyzes *The American
-  Railway* (1889) as a shared source for Paper Railroad, Janney, Tower, and
-  future railroad projects.
-- [`viollet_le_duc_fortification/`](viollet_le_duc_fortification/README.md)
+- [Paper Railroad's train-book study](https://github.com/davecarr1024/paper_railroad/tree/main/research/train_book)
+  preserves and analyzes *The American Railway* (1889) for its executable
+  planning model.
+- [Barbacane's Viollet-le-Duc study](https://github.com/davecarr1024/barbacane/tree/main/research/viollet_le_duc_fortification)
   treats *Annals of a Fortress* and *Castles and Warfare in the Middle Ages*
-  as a paired foundation for Barbacane, analytical geometry and report work,
-  and future adversarial-design models.
+  as the source foundation for its executable siege engineer.
 
-Add future books as sibling directories with their own source provenance,
-reading guide, analysis artifacts, and cross-project index. A book belongs
-here when it is intentionally available to more than one project; a
-project-only interpretation still belongs in that project's `research/`
-directory.
+Add a future book here only when its maintained interpretation materially
+supports more than one repository. Otherwise give it the owning project's
+`research/` directory and retain only a link here.
 
 Project-specific archaeology, source material, experiments, and findings
 belong under that project's `research/` directory once the project has an
@@ -33,6 +30,5 @@ and link to a research index that distinguishes:
 The `davecarr1024` hub may retain a short pointer or cross-project synthesis,
 but not a second working copy of the project's archive or research tree.
 
-MoonRock and Barbacane follow the project-specific side of this rule for their
-active experiments and findings. The train-book and Viollet-le-Duc collections
-follow the shared-foundation side.
+MoonRock, Barbacane, and Paper Railroad follow the project-specific side of
+this rule for their active research and source studies.

@@ -108,7 +108,7 @@ implementation.
 The review has two parts:
 
 - local deep review by the current agent,
-- external review with Gemini CLI when available.
+- external review with `agy` in read-only plan mode.
 
 The local review should check:
 
@@ -120,7 +120,7 @@ The local review should check:
 - whether open questions are captured instead of hidden inside prose,
 - whether the next implementation checkpoint is small enough to test.
 
-The Gemini review should be asked to focus on:
+The `agy` review should be asked to focus on:
 
 - contradictions,
 - unclear abstractions,
@@ -142,9 +142,10 @@ This is not a replacement for judgment. It is a pressure test for whether the
 design has become internally coherent enough to guide the next bite-size
 implementation step.
 
-The same review discipline applies at the end of each completed implementation
-phase. The phase-close review should include both a fresh-context self review
-and, when available, a Gemini CLI review of code and design together.
+The same review discipline applies at every push boundary, not only at the end
+of a completed implementation phase. The final pre-push review should include
+both a fresh-context self review and a completed `agy` review of code and design
+together, following the read-only rules in Section 7.5.
 
 ## 4. Repo Creation And Design Promotion
 
@@ -164,6 +165,13 @@ Project creation should produce:
 After promotion, the active design source lives in the project repo beside the implementation. The original future-design file in `davecarr1024` can remain as an origin note or be replaced with a short pointer to the new repo.
 
 Cross-project lessons, postmortems, reusable standards, and changes to the agent-enabled process should come back into `davecarr1024`.
+
+Research should live with its narrowest durable owner. A source study,
+archaeology record, experiment, or finding used by one active project belongs
+in that project's `research/` directory so the repository remains
+self-supporting. `davecarr1024/research/` is reserved for material that
+substantively supports multiple repositories. When ownership narrows, move the
+collection and leave only a short hub pointer or cross-project synthesis.
 
 ## 5. Phases, Deliverables, And Checkpoints
 
@@ -250,6 +258,45 @@ When a status document uses canonical scenarios to explain capabilities, promote
 representative scenarios into executable tests. The status narrative should not
 claim behavior that is only demonstrated in prose.
 
+## 7.5. Push-Boundary Review
+
+Every `git push` is a code-and-design review boundary, including incremental,
+documentation-only, and phase-close pushes. Review the final intended contents,
+not an earlier draft.
+
+The pre-push sequence is:
+
+1. Complete the intended code, tests, research, and documentation changes.
+2. Run the repository's local presubmit and evidence gates.
+3. Perform a fresh-context self review against the project design, current
+   phase, root standards, and exact files intended for the push.
+4. Run `agy` in plan mode for an independent code-and-design review. Name the
+   changed files and direct it to the relevant design and agent documents. Ask
+   it to check correctness, regressions, test evidence, invariants, goal fit,
+   scope discipline, interfaces, documentation, and provenance. For a
+   documentation-only change, the code findings may be "not applicable," but
+   the design and consistency review still runs.
+5. Apply obviously correct findings. Surface real tradeoffs or design choices
+   to the user. If review-driven fixes materially change the result, rerun the
+   local gates and start a fresh `agy` review.
+6. Push only after the last local and external reviews describe the contents
+   that will actually be sent.
+
+Use a conservative invocation shaped like:
+
+```bash
+agy --mode plan --effort high --sandbox --print-timeout 10m \
+  --log-file /tmp/agy-<project>-review.log \
+  --print "Perform a read-only code-and-design review of the named files. Use file-reading tools only. Do not run terminal, shell, Git, test, or file-editing commands."
+```
+
+Add context directories with `--add-dir` when the design or root standards live
+outside the repository being reviewed. Do not use
+`--dangerously-skip-permissions`. If `agy` is unavailable, cannot authenticate,
+or fails to finish, the push is blocked unless the user explicitly waives that
+review. Record the failure and completed self-review; do not describe a pasted
+review or self-review as an `agy` pass.
+
 ## 8. Phase Completion
 
 A roadmap or major phase is complete when:
@@ -266,12 +313,12 @@ A roadmap or major phase is complete when:
 - the current agent performs a fresh-context self review of the code against
   the design, the design against the project goals, and both against the root
   development principles,
-- Gemini CLI is asked for an external code and design review when available,
+- `agy` completes the read-only code-and-design review required by Section 7.5,
   focused on whether the implementation follows the design and whether the
   design still serves the project principles, goals, and rules,
-- if Gemini CLI or another external reviewer is unavailable, the phase record
-  says so explicitly; pasted user-provided external review can be used as
-  review input, but agents should not imply that a tool review ran,
+- if the user explicitly waives a failed or unavailable `agy` review, the phase
+  record says so; pasted user-provided external review can be used as advisory
+  input, but agents should not imply that an `agy` review ran,
 - obviously correct review findings are implemented,
 - review findings that are open questions, tradeoffs, or design choices are
   surfaced to the user for discussion before moving to the next phase,

@@ -42,8 +42,8 @@ The projects that stay interesting usually have:
 - `AGENTS.md`: compatibility pointer for tooling that expects this filename.
 - `CODING_STANDARDS.md`: synthesized language and tooling standards from checked-out repos.
 - `future-project-designs/`: future proposals plus clearly labeled origin designs retained after promotion.
-- `research/train_book/`: the first shared book-research foundation, containing
-  source provenance, OCR, analysis, and cross-project railroad lenses.
+- [Paper Railroad's train-book study](https://github.com/davecarr1024/paper_railroad/tree/main/research/train_book):
+  source provenance, OCR, analysis, and project-owned railroad lenses.
 - `future-project-designs/railroad-worlds-origin.md`: original railroad-world
   sketch retained beside the refined design as source provenance.
 
@@ -58,11 +58,12 @@ The projects that stay interesting usually have:
 - `future-project-designs/tower.md`: detailed design for the interlocking and route-authority project.
 - `future-project-designs/railroad-fit-analysis.md`: comparison of train-based ideas against the design and execution goals.
 - `future-project-designs/train-book-alignment.md`: analysis of how the railroad-world designs can preserve the spirit, period, and technical texture of *The American Railway*.
-- `research/train_book/`: raw text, fingerprint, themes, topic map, and
-  cross-reference docs for *The American Railway*.
-- `research/viollet_le_duc_fortification/`: shared source foundation for
-  *Annals of a Fortress*, *Castles and Warfare in the Middle Ages*, Barbacane,
-  and future adversarial-design work.
+- [Paper Railroad's train-book study](https://github.com/davecarr1024/paper_railroad/tree/main/research/train_book):
+  raw text, fingerprint, themes, topic map, and design support for *The
+  American Railway*.
+- [Barbacane's Viollet-le-Duc study](https://github.com/davecarr1024/barbacane/tree/main/research/viollet_le_duc_fortification):
+  source foundation for *Annals of a Fortress* and *Castles and Warfare in the
+  Middle Ages*.
 - `/home/davecarr1024/projects/barbacane`: active repo for an executable siege
   engineer that produces and explains fortification plans from terrain,
   resources, period capabilities, and an adversary model.
@@ -89,13 +90,16 @@ designs. These are related by philosophy, not necessarily shared code.
 | Typed Game Engine | GameObject | Can C++23 types statically validate object properties, behaviors, and message plumbing? | One tiny object tree runs a deterministic frame after compile-time behavior/property checks. |
 | Symbolic Math Lab | Expr | Can C++23 types make symbolic expressions, rewrites, and simplification traces explicit? | A tiny arithmetic expression simplifies through named rewrite rules with an inspectable trace. |
 
-See `future-project-designs/railroad-worlds.md` for the consolidated railroad-family design, the individual project design docs, `future-project-designs/railroad-fit-analysis.md` for the cross-project fit analysis, and `research/train_book/` for the *American Railway* source-text fingerprint and cross-references.
+See `future-project-designs/railroad-worlds.md` for the consolidated railroad-family design, the individual project design docs, `future-project-designs/railroad-fit-analysis.md` for the cross-project fit analysis, and [Paper Railroad's train-book study](https://github.com/davecarr1024/paper_railroad/tree/main/research/train_book) for the *American Railway* source-text fingerprint and cross-references.
 
 ## Standards To Preserve Across Projects
 
 - Start with one small, complete, inspectable world.
 - Give every project a good name as part of the initial brainstorming process: short punchy proper-noun names for creative/releasable projects, descriptive names for labs and experiments.
 - Use the agent-enabled development process: brainstorm, name, design, phase, execute, verify, and checkpoint.
+- Treat every push as a code-and-design review boundary: run local evidence
+  gates and a fresh-context self review, then use `agy` in read-only plan mode
+  for an independent review of the final intended contents before pushing.
 - Preserve not-being-stuck as a first-class goal: define the next bite, design it, implement it, verify it, and deliver it as a stable building block.
 - Use Markdown for durable documentation.
 - Give every project a root `README.md` and an explicit design record; use

@@ -49,15 +49,27 @@ Before calling a coding task done:
 - Add or update tests for changed behavior.
 - Keep coverage expectations intact. 100% production-code coverage is the standard goal unless the project documents a narrow exception.
 - Update docs, roadmaps, and local agent files when architecture, commands, phases, or behavior change.
-- At each roadmap or major phase boundary, perform a fresh-context self review and ask Gemini CLI for
-  an external code/design review when available. Use the reviews to assess
-  implementation-to-design fit, design-to-goal fit, and adherence to the root
-  development principles and project-local rules. Apply obviously correct
-  review findings. Surface open questions, tradeoffs, or design choices to the
-  user for discussion before moving to the next phase.
-- Report exactly which checks and review passes were run and which were not.
-- If external model review is unavailable, say so explicitly and use
-  user-provided pasted review as advisory input when present.
+- Treat every `git push` as a review boundary, including incremental and
+  documentation-only pushes, not only roadmap or major phase completion.
+  After the intended push contents and documentation are complete and local
+  checks pass, perform both a fresh-context self review and a read-only
+  external code-and-design review with `agy` in plan mode. The review should
+  inspect the final changed files and relevant design context, checking code
+  correctness, regressions, tests, invariants, implementation-to-design fit,
+  design-to-goal fit, phase scope, and documentation/provenance consistency.
+- Run `agy` conservatively: use `--mode plan`, sandboxing when supported, and
+  an explicit instruction to use file-reading tools only and not run terminal,
+  shell, Git, test, or file-editing commands. Never use
+  `--dangerously-skip-permissions` to make a review succeed.
+- Apply obviously correct review findings, rerun local verification, and run a
+  fresh `agy` review when the response causes material changes. Surface open
+  questions, tradeoffs, or design choices to the user before pushing.
+- If `agy` is unavailable, cannot authenticate, or does not complete the
+  review, do not push unless the user explicitly waives the external review.
+  Report the exact failure and the self-review evidence; pasted user-provided
+  review remains advisory and must not be reported as a completed `agy` pass.
+- Report exactly which checks and review passes ran, their outcome, and whether
+  the intended push contents changed after the final review.
 
 ## Anti-Stuck Workflow
 

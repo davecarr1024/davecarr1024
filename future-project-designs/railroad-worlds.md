@@ -2,12 +2,13 @@
 
 This project family is deliberately inspired by *The American Railway: Its Construction, Development, Management, and Appliances*, Dave's "train book." The book is treated as a source lens for period vocabulary, engineering concerns, operating records, and safety logic, not as a demand to build one giant historically complete simulator.
 
-Train-book references:
+Train-book references now live with the active owner, [Paper Railroad's
+research study](https://github.com/davecarr1024/paper_railroad/tree/main/research/train_book):
 
-- `../research/train_book/README.md`: source-text index.
-- `../research/train_book/fingerprint.md`: book structure and rough term-frequency fingerprint.
-- `../research/train_book/themes.md`: central themes and project-useful ideas.
-- `../research/train_book/cross-reference.md`: mapping from book themes to these railroad designs.
+- [source-text index](https://github.com/davecarr1024/paper_railroad/blob/main/research/train_book/README.md);
+- [fingerprint](https://github.com/davecarr1024/paper_railroad/blob/main/research/train_book/fingerprint.md);
+- [themes](https://github.com/davecarr1024/paper_railroad/blob/main/research/train_book/themes.md); and
+- [cross-reference](https://github.com/davecarr1024/paper_railroad/blob/main/research/train_book/cross-reference.md).
 - `train-book-alignment.md`: project-facing analysis of how the book should influence this family.
 
 Rather than one giant railroad simulator, build a family of small projects. Each one isolates a different aspect of railroading and asks:
@@ -140,4 +141,4 @@ Tower asks when it may move. It models authority, signals, interlocking, and saf
 
 Together they describe a railroad from three independent viewpoints. Each is intentionally small. Each explores one abstraction. Each tries to make an invisible system visible.
 
-For a comparison against the developer-record design and execution goals, see `railroad-fit-analysis.md`. For the book-derived source lens, see `../research/train_book/cross-reference.md` and `train-book-alignment.md`.
+For a comparison against the developer-record design and execution goals, see `railroad-fit-analysis.md`. For the book-derived source lens, see the [Paper Railroad cross-reference](https://github.com/davecarr1024/paper_railroad/blob/main/research/train_book/cross-reference.md) and `train-book-alignment.md`.

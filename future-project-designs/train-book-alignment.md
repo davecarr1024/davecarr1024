@@ -276,7 +276,7 @@ The analysis can become a repeatable local tool without needing a large AI syste
 ### Derived Files
 
 ```text
-research/train_book/derived/
+paper_railroad/research/train_book/derived/
   book-topics.yaml
   period-terms.yaml
   project-matches.md

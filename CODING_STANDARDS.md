@@ -34,13 +34,20 @@ These standards summarize the patterns already present across my checked-out rep
 - For multi-module projects, group code by domain/module using directories and matching namespaces/packages. Prefer `module/submodule` layout over flat file lists once a second cohesive area appears.
 - When a second concrete implementation forces a generic core, keep domain-friendly wrapper APIs around that core so callers can still speak the local model.
 - Defer optional interfaces, evaluators, and strategy hooks until a concrete use case proves they are needed.
-- A roadmap or major phase is not done until the presubmit command, a coverage
-  gate for model-oriented code (or a documented alternate evidence gate),
-  documentation updates, fresh-context self review, Gemini CLI review request
-  when available, commit, and push all succeed.
-- If external review tooling is unavailable, report that explicitly. Use pasted
-  user-provided external review as advisory input when present, without claiming
-  a tool review ran.
+- No push is ready until the presubmit command, a coverage gate for
+  model-oriented code (or a documented alternate evidence gate), documentation
+  updates, a fresh-context self review, and a read-only `agy` code-and-design
+  review all succeed against the intended push contents. This applies to every
+  push, including incremental and documentation-only pushes, not only roadmap
+  or major phase completion.
+- Use `agy` in plan mode with sandboxing when supported. Tell it to use
+  file-reading tools only and prohibit terminal, shell, Git, test, and
+  file-editing commands. Never use `--dangerously-skip-permissions` for review.
+- Apply obvious findings, rerun verification, and repeat the external review
+  after material changes. Surface genuine tradeoffs or design choices before
+  pushing. If `agy` is unavailable or fails to complete, block the push unless
+  the user explicitly waives the review; report the failure without presenting
+  pasted or self-generated review as an `agy` pass.
 - Prefer local pre-commit hooks plus CI for the same checks. The hook catches mistakes before commit; CI proves the same workflow from a clean checkout.
 
 ## Unit Of Work Standard
