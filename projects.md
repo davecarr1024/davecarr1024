@@ -32,6 +32,8 @@ The projects that stay interesting usually have:
 - `README.md`: public-facing developer summary and philosophy.
 - `projects.md`: active long-term planning index.
 - `developer-record/`: durable project philosophy and inventory moved from loose root files.
+- `research/`: findings that span multiple repositories; project-specific
+  research belongs in the owning project's `research/` directory.
 - `agents.md`: canonical cross-repo agent instructions.
 - `AGENTS.md`: compatibility pointer for tooling that expects this filename.
 - `CODING_STANDARDS.md`: synthesized language and tooling standards from checked-out repos.
@@ -102,8 +104,12 @@ See `future-project-designs/railroad-worlds.md` for the consolidated railroad-fa
 - Add one design file per future project as the ideas become more concrete.
 - Convert mature future designs into project repos when they are ready to implement, leaving behind origin notes or pointers here.
 
-## Active Project Repos
+## Promoted Project Repos
 
-| Project | Path | Core object | Current proof |
+| Project | Path | Status | Why it is interesting |
 | --- | --- | --- | --- |
-| Rule Lab | `/home/davecarr1024/projects/rule_lab` | Rule | C++23 CMake scaffold with typed `Rule` proof slice, tests, CI workflow, and 100% production-code coverage gate. |
+| Paper Railroad | `/home/davecarr1024/projects/paper_railroad` | Active | An explainable planning office composes recurring circulation, economics, capital, industry, shared traffic, and reliability without collapsing their evidence. |
+| MoonRock | `/home/davecarr1024/projects/moonrock` | Active | The recovered original compiler is used as a hard constraint for reproducible DOS graphics programs, tests, and captured artifacts. |
+| Eastman 1 | `/home/davecarr1024/projects/eastman1` | Active reconstruction | A QB64-PE content and rendering lane reconstructs a planned kart game while keeping provenance and new work distinct. |
+| Rule Lab | `/home/davecarr1024/projects/rule_lab` | V1 complete | One typed C++ rule model proved execution, diagnostics, lexer dependencies, graph structure, and a tiny language through the same inspectable object family. |
+| Game AI Lab | `/home/davecarr1024/projects/game_ai_lab` | V1 complete | One generic match/search boundary plays Tic-Tac-Toe and Mini Connect Four and records what the second concrete game forced the abstraction to learn. |

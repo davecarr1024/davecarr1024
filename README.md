@@ -8,16 +8,41 @@ I am less interested in building production systems than in building things that
 
 A high-level goal of my development practice is not being stuck: moving steadily by identifying the next bite-size piece, designing it, implementing it, verifying it, and delivering it as a stable building block. Agent-driven development is one of my main tools for preserving that flow while keeping design intent explicit.
 
-## Developer Record
+## Start Here
 
-This repository is also my root developer record:
+This repository is the cross-project hub for five kinds of durable context:
 
-- `projects.md` tracks the active structure of this repo as a planning hub.
-- `developer-record/project-philosophy.md` holds the long-form design philosophy and lessons from past projects.
-- `developer-record/project-inventory.md` summarizes local and GitHub projects.
-- `future-project-designs/` holds early project designs, including the Railroad Worlds and Paper Railroad docs.
-- `train-book/` holds the raw OCR text and analysis fingerprint for *The American Railway*, the source lens behind the railroad-world ideas.
-- `agents.md` and `CODING_STANDARDS.md` hold cross-repo agent and coding guidance.
+- [Projects](projects.md) is the index of active, completed, historical, and
+  candidate projects.
+- [Developer record](developer-record/README.md) explains the recurring project
+  philosophy and keeps portfolio-level synthesis.
+- [Future project designs](future-project-designs/README.md) is the shelf for
+  ideas that do not yet have an implementation repository.
+- [Development and agent practice](agents.md) defines the cross-repo workflow;
+  [coding standards](CODING_STANDARDS.md) supplies the default quality and
+  language conventions.
+- [Research](research/README.md) is reserved for findings that genuinely span
+  multiple repositories. Project-specific research moves into that project's
+  own `research/` directory.
+
+The current project entry points include:
+
+- [Paper Railroad](https://github.com/davecarr1024/paper_railroad), an
+  explainable railroad planning office built from circulation, capacity,
+  economics, capital, and reliability evidence;
+- [MoonRock](https://github.com/davecarr1024/moonrock), a preservation-led
+  revival of an original DOS compiler through reproducible programs, captured
+  frames, and project-owned recovery research;
+- [Eastman 1](https://github.com/davecarr1024/eastman1), a deterministic
+  QB64-PE reconstruction of a planned top-down kart game;
+- [Rule Lab](https://github.com/davecarr1024/rule_lab) and
+  [Game AI Lab](https://github.com/davecarr1024/game_ai_lab), completed v1
+  research proofs whose docs record what their abstractions earned.
+
+When entering an individual project, start with its `README.md`, then follow
+its status/design links, technical description, project-specific research,
+and executable tests. Each level should explain what was found, why it is
+interesting, what currently runs, and where the evidence lives.
 
 Markdown is the standard documentation format. For normal project repos, the expected shape is a root `README.md`, a canonical `docs/design.md`, and optional detailed `docs/*.md` files.
 
@@ -105,32 +130,23 @@ The next layer should feel inevitable, not magical.
 
 V1 is allowed to be wrong. The healthy pattern is to build a concrete version, extract real design regrets, and let v2 be smaller and clearer. The dangerous loop is restarting before the current version has taught me something specific.
 
-## What I Am Thinking About Next
+## Current Work And Next Questions
 
-The strongest current candidate is **Paper Railroad**: a discrete railroad economy inspired by the paper maps I made as a kid for my model train layout.
+**Paper Railroad** has moved from future design into an active, substantial
+railroad-planning model. Its current work asks how capital, industry,
+multi-commodity traffic, reliability shocks, and historical obligations can be
+composed without hiding the baseline evidence.
 
-The first layer would be static:
+**MoonRock** has also moved into a dedicated project. It asks how far the
+original MoonRock 0.50 compiler can support deterministic DOS graphics and
+small games when builds, generated assembly, framebuffer results, and captured
+frames are made reproducible.
 
-- towns as nodes
-- routes as edges
-- goods as flows
-- producers and consumers
-- waybills as causal objects
-- route capacity as the first resource constraint
-
-No clock. No trains. No dispatcher at first.
-
-Just a map analyzer that can answer:
-
-- Is this economy balanced?
-- Are all demands reachable?
-- What transport bandwidth is required?
-- Which routes are bottlenecks?
-- If the railway works, can it be a going concern?
-
-It has the load-and-balance flavor I like from schedulers, the operations flavor I like from railroads, and a personal hook that keeps it from becoming another production-shaped systems project.
-
-Another future-project shelf item is **Spreadsheet Wars**: a naval operations analysis sandbox for studying salvo exchange, detection confidence, uncertainty, and decision delay as small probabilistic models. Its scope guardrail is to analyze the decision rather than simulate the battle.
+The future shelf remains useful, but promoted projects own their active design
+and specific research. Strong unpromoted candidates include **Janney**,
+**Tower**, **Compiler Lab**, and **Spreadsheet Wars**. The deciding question is
+not which architecture sounds largest; it is which next small world can make a
+hidden mechanism visible through a runnable artifact and readable proof.
 
 ## The Compass
 
