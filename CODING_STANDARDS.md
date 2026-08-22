@@ -45,9 +45,11 @@ These standards summarize the patterns already present across my checked-out rep
   file-editing commands. Never use `--dangerously-skip-permissions` for review.
 - Apply obvious findings, rerun verification, and repeat the external review
   after material changes. Surface genuine tradeoffs or design choices before
-  pushing. If `agy` is unavailable or fails to complete, block the push unless
-  the user explicitly waives the review; report the failure without presenting
-  pasted or self-generated review as an `agy` pass.
+  pushing. An exhausted `agy` quota or usage limit is a documented
+  `quota-skipped` exception after full local gates and fresh-context self
+  review; other unavailable or incomplete reviews block the push unless the
+  user explicitly waives it. Report the exact failure without presenting pasted
+  or self-generated review as an `agy` pass.
 - Prefer local pre-commit hooks plus CI for the same checks. The hook catches mistakes before commit; CI proves the same workflow from a clean checkout.
 
 ## Unit Of Work Standard

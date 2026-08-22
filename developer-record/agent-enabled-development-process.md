@@ -292,10 +292,13 @@ agy --mode plan --effort high --sandbox --print-timeout 10m \
 
 Add context directories with `--add-dir` when the design or root standards live
 outside the repository being reviewed. Do not use
-`--dangerously-skip-permissions`. If `agy` is unavailable, cannot authenticate,
-or fails to finish, the push is blocked unless the user explicitly waives that
-review. Record the failure and completed self-review; do not describe a pasted
-review or self-review as an `agy` pass.
+`--dangerously-skip-permissions`. If `agy` reports an exhausted quota or usage
+limit, record a `quota-skipped` review and proceed only after full local gates
+and fresh-context self review pass. Do not retry to evade the limit or describe
+the skip as an `agy` pass. Other unavailable, authentication, permission, or
+incomplete-review failures block the push unless the user explicitly waives
+that review. Record the exact failure and completed self-review; do not
+describe a pasted review or self-review as an `agy` pass.
 
 ## 8. Phase Completion
 
@@ -315,10 +318,11 @@ A roadmap or major phase is complete when:
   development principles,
 - `agy` completes the read-only code-and-design review required by Section 7.5,
   focused on whether the implementation follows the design and whether the
-  design still serves the project principles, goals, and rules,
-- if the user explicitly waives a failed or unavailable `agy` review, the phase
-  record says so; pasted user-provided external review can be used as advisory
-  input, but agents should not imply that an `agy` review ran,
+  design still serves the project principles, goals, and rules; a documented
+  `quota-skipped` review is the defined exception,
+- if the user explicitly waives another failed or unavailable `agy` review, the
+  phase record says so; pasted user-provided external review can be used as
+  advisory input, but agents should not imply that an `agy` review ran,
 - obviously correct review findings are implemented,
 - review findings that are open questions, tradeoffs, or design choices are
   surfaced to the user for discussion before moving to the next phase,

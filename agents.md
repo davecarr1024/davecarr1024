@@ -64,10 +64,13 @@ Before calling a coding task done:
 - Apply obviously correct review findings, rerun local verification, and run a
   fresh `agy` review when the response causes material changes. Surface open
   questions, tradeoffs, or design choices to the user before pushing.
-- If `agy` is unavailable, cannot authenticate, or does not complete the
-  review, do not push unless the user explicitly waives the external review.
-  Report the exact failure and the self-review evidence; pasted user-provided
-  review remains advisory and must not be reported as a completed `agy` pass.
+- If `agy` reports an exhausted quota or usage limit, record a `quota-skipped`
+  review and proceed only after full local gates and fresh-context self review
+  pass. Do not retry to evade the limit or report the skip as a completed
+  `agy` pass. Other unavailable, authentication, permission, or incomplete
+  review failures block the push unless the user explicitly waives the external
+  review. Report the exact failure and the self-review evidence; pasted
+  user-provided review remains advisory.
 - Report exactly which checks and review passes ran, their outcome, and whether
   the intended push contents changed after the final review.
 
