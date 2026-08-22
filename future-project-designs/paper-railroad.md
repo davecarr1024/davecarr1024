@@ -6,9 +6,9 @@ Paper Railroad is explicitly inspired by *The American Railway*, especially the 
 
 Primary cross-references:
 
-- `../train-book/themes.md`: themes 2, 4, 5, 7, and 9.
-- `../train-book/cross-reference.md`: `Paper Railroad`.
-- `../train-book/fingerprint.md`: chapter map and term counts for freight, cars, way-bills, route burden, and statistics.
+- `../research/train_book/themes.md`: themes 2, 4, 5, 7, and 9.
+- `../research/train_book/cross-reference.md`: `Paper Railroad`.
+- `../research/train_book/fingerprint.md`: chapter map and term counts for freight, cars, way-bills, route burden, and statistics.
 - `train-book-alignment.md`: `Way-Bill And Management Lens` and `Civil Engineering Lens`.
 
 The book-derived rule for this project is: a railroad economy should be explained through records. The first useful artifact should feel like a small railroad office report: generated way-bills, route loads, bottlenecks, unreachable demands, and later revenue or car-accounting summaries.

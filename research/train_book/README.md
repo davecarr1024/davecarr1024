@@ -1,6 +1,7 @@
-# Train Book
+# The American Railway (1889)
 
-This directory captures *The American Railway* as a reusable source for the railroad-world project family.
+This is the first book in the hub's shared research library. It captures *The
+American Railway* as a reusable source for the railroad-world project family.
 
 The book is Dave's "train book": the recurring source text behind the railroad project ideas. These files preserve the raw OCR text, summarize the book's central technical themes, and provide cross-references into the design shelf.
 
@@ -28,7 +29,7 @@ Use this directory as a book-derived lens when editing railroad designs.
 
 The intended workflow is:
 
-1. Start from a project idea in `../future-project-designs/`.
+1. Start from a project idea in `../../future-project-designs/`.
 2. Check `cross-reference.md` for relevant book lenses.
 3. Use `project-design-support.md` for concrete imports, diagnostics, and test ideas.
 4. Use `themes.md` to preserve period texture and engineering concerns.

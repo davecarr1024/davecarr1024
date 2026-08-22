@@ -4,10 +4,10 @@ This project family is deliberately inspired by *The American Railway: Its Const
 
 Train-book references:
 
-- `../train-book/README.md`: source-text index.
-- `../train-book/fingerprint.md`: book structure and rough term-frequency fingerprint.
-- `../train-book/themes.md`: central themes and project-useful ideas.
-- `../train-book/cross-reference.md`: mapping from book themes to these railroad designs.
+- `../research/train_book/README.md`: source-text index.
+- `../research/train_book/fingerprint.md`: book structure and rough term-frequency fingerprint.
+- `../research/train_book/themes.md`: central themes and project-useful ideas.
+- `../research/train_book/cross-reference.md`: mapping from book themes to these railroad designs.
 - `train-book-alignment.md`: project-facing analysis of how the book should influence this family.
 
 Rather than one giant railroad simulator, build a family of small projects. Each one isolates a different aspect of railroading and asks:
@@ -140,4 +140,4 @@ Tower asks when it may move. It models authority, signals, interlocking, and saf
 
 Together they describe a railroad from three independent viewpoints. Each is intentionally small. Each explores one abstraction. Each tries to make an invisible system visible.
 
-For a comparison against the developer-record design and execution goals, see `railroad-fit-analysis.md`. For the book-derived source lens, see `../train-book/cross-reference.md` and `train-book-alignment.md`.
+For a comparison against the developer-record design and execution goals, see `railroad-fit-analysis.md`. For the book-derived source lens, see `../research/train_book/cross-reference.md` and `train-book-alignment.md`.

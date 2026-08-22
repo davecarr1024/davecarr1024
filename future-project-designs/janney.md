@@ -6,9 +6,9 @@ Janney is explicitly inspired by *The American Railway*, especially `American Lo
 
 Primary cross-references:
 
-- `../train-book/themes.md`: themes 3, 4, 6, 8, and 10.
-- `../train-book/cross-reference.md`: `Janney`.
-- `../train-book/fingerprint.md`: term clusters for cars, couplers, brakes, locomotives, wheels, and steam.
+- `../research/train_book/themes.md`: themes 3, 4, 6, 8, and 10.
+- `../research/train_book/cross-reference.md`: `Janney`.
+- `../research/train_book/fingerprint.md`: term clusters for cars, couplers, brakes, locomotives, wheels, and steam.
 - `train-book-alignment.md`: `Locomotive And Car Lens`.
 
 The book-derived rule for this project is: every local movement should be explainable as a mechanical event. Coupling, uncoupling, stopping, slipping, shoving, and slack should produce structured facts, not just screen motion.

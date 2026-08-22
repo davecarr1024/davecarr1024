@@ -8,7 +8,7 @@ Related design files:
 - `../future-project-designs/paper-railroad.md`
 - `../future-project-designs/janney.md`
 - `../future-project-designs/tower.md`
-- `../future-project-designs/train-book-alignment.md`
+- `../../future-project-designs/train-book-alignment.md`
 - `project-design-support.md`
 
 ## Overview

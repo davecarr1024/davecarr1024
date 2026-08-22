@@ -49,5 +49,5 @@ When a book-derived idea gets promoted into a project design, include a short cr
 Example:
 
 ```text
-Book lens: see ../train-book/project-design-support.md, Paper Railroad Support.
+Book lens: see ../research/train_book/project-design-support.md, Paper Railroad Support.
 ```

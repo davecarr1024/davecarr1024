@@ -9,7 +9,7 @@ Use this when editing:
 - `../future-project-designs/janney.md`
 - `../future-project-designs/tower.md`
 - `../future-project-designs/railroad-fit-analysis.md`
-- `../future-project-designs/train-book-alignment.md`
+- `../../future-project-designs/train-book-alignment.md`
 
 ## Design Rule
 

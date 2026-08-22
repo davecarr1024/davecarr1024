@@ -38,7 +38,8 @@ The projects that stay interesting usually have:
 - `AGENTS.md`: compatibility pointer for tooling that expects this filename.
 - `CODING_STANDARDS.md`: synthesized language and tooling standards from checked-out repos.
 - `future-project-designs/`: design shelf for project ideas I want to tinker with before they become repositories.
-- `train-book/`: raw OCR text and analysis fingerprint for *The American Railway*, used as a source lens for railroad-world designs.
+- `research/train_book/`: the first shared book-research foundation, containing
+  source provenance, OCR, analysis, and cross-project railroad lenses.
 - `train_ideas.md`: original pulled railroad-world sketch kept as source material.
 
 ## Developer Record
@@ -52,7 +53,8 @@ The projects that stay interesting usually have:
 - `future-project-designs/tower.md`: detailed design for the interlocking and route-authority project.
 - `future-project-designs/railroad-fit-analysis.md`: comparison of train-based ideas against the design and execution goals.
 - `future-project-designs/train-book-alignment.md`: analysis of how the railroad-world designs can preserve the spirit, period, and technical texture of *The American Railway*.
-- `train-book/`: raw text, fingerprint, themes, topic map, and cross-reference docs for the train book.
+- `research/train_book/`: raw text, fingerprint, themes, topic map, and
+  cross-reference docs for *The American Railway*.
 - `future-project-designs/nes-emulator.md`: future design for a transparent NES emulator, with fit analysis against the existing CPU-simulator history.
 - `future-project-designs/compiler-lab.md`: future design for learning compiler fundamentals with an inspectable pipeline, TAC, and tiny execution environment.
 - `future-project-designs/game-ai-lab.md`: future design for a generic board-game representation and AI system earned through concrete games.
@@ -76,7 +78,7 @@ The strongest current direction is a family of railroad-world projects. These ar
 | Typed Game Engine | GameObject | Can C++23 types statically validate object properties, behaviors, and message plumbing? | One tiny object tree runs a deterministic frame after compile-time behavior/property checks. |
 | Symbolic Math Lab | Expr | Can C++23 types make symbolic expressions, rewrites, and simplification traces explicit? | A tiny arithmetic expression simplifies through named rewrite rules with an inspectable trace. |
 
-See `future-project-designs/railroad-worlds.md` for the consolidated railroad-family design, the individual project design docs, `future-project-designs/railroad-fit-analysis.md` for the cross-project fit analysis, and `train-book/` for the *American Railway* source-text fingerprint and cross-references.
+See `future-project-designs/railroad-worlds.md` for the consolidated railroad-family design, the individual project design docs, `future-project-designs/railroad-fit-analysis.md` for the cross-project fit analysis, and `research/train_book/` for the *American Railway* source-text fingerprint and cross-references.
 
 ## Standards To Preserve Across Projects
 

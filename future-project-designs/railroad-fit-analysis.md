@@ -1,12 +1,12 @@
 # Railroad Worlds Fit Analysis
 
-This compares the three train-based project ideas against the stated developer-record goals and the source lens in `../train-book/`.
+This compares the three train-based project ideas against the stated developer-record goals and the source lens in `../research/train_book/`.
 
 The railroad ideas are deliberately inspired by *The American Railway*. The book-derived analysis lives in:
 
-- `../train-book/fingerprint.md`
-- `../train-book/themes.md`
-- `../train-book/cross-reference.md`
+- `../research/train_book/fingerprint.md`
+- `../research/train_book/themes.md`
+- `../research/train_book/cross-reference.md`
 - `train-book-alignment.md`
 
 This comparison asks whether each project preserves the book's spirit in a small executable world rather than trying to model the entire book at once.
@@ -129,7 +129,7 @@ The projects should share vocabulary and design philosophy, not infrastructure. 
 - Keep the v1 design smaller than the interesting future vision.
 - Build the headless model before the UI where practical.
 - Make every important decision produce structured output.
-- Cross-reference `../train-book/` when importing period vocabulary or technical detail.
+- Cross-reference `../research/train_book/` when importing period vocabulary or technical detail.
 - Import book details only when they become rules, diagnostics, tests, or reports.
 - Write tests against model state and diagnostics.
 - Add visual/manual tests only where the experience genuinely needs them.

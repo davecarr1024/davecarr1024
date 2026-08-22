@@ -6,9 +6,9 @@ Tower is explicitly inspired by *The American Railway*, especially `Safety in Ra
 
 Primary cross-references:
 
-- `../train-book/themes.md`: themes 6, 7, 8, 9, and 10.
-- `../train-book/cross-reference.md`: `Tower`.
-- `../train-book/fingerprint.md`: term clusters for signals, switches, interlocking, blocks, brakes, and telegraph.
+- `../research/train_book/themes.md`: themes 6, 7, 8, 9, and 10.
+- `../research/train_book/cross-reference.md`: `Tower`.
+- `../research/train_book/fingerprint.md`: term clusters for signals, switches, interlocking, blocks, brakes, and telegraph.
 - `train-book-alignment.md`: `Safety And Authority Lens`.
 
 The book-derived rule for this project is: route authority is a proof under constraints. A signal should clear only because switches, locks, occupancy, and conflicts have all been checked. A denial is a successful explanation.
