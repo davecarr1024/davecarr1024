@@ -89,6 +89,7 @@ designs. These are related by philosophy, not necessarily shared code.
 | Compiler Lab | Program | Can compiler basics be learned through inspectable artifacts? | A tiny program compiles through tokens, AST, TAC, VM code, trace, and output. |
 | Typed Game Engine | GameObject | Can C++23 types statically validate object properties, behaviors, and message plumbing? | One tiny object tree runs a deterministic frame after compile-time behavior/property checks. |
 | Symbolic Math Lab | Expr | Can C++23 types make symbolic expressions, rewrites, and simplification traces explicit? | A tiny arithmetic expression simplifies through named rewrite rules with an inspectable trace. |
+| Go Forth | Reachable adventure | Can a railway planner reveal interesting one-way possibilities from a traveler's current state rather than require a destination first? | From Kanazawa at 09:00, return several diverse, explainable railway days from a small baked network. |
 
 See `future-project-designs/railroad-worlds.md` for the consolidated railroad-family design, the individual project design docs, `future-project-designs/railroad-fit-analysis.md` for the cross-project fit analysis, and [Paper Railroad's train-book study](https://github.com/davecarr1024/paper_railroad/tree/main/research/train_book) for the *American Railway* source-text fingerprint and cross-references.
 
