@@ -90,8 +90,14 @@ designs. These are related by philosophy, not necessarily shared code.
 | Typed Game Engine | GameObject | Can C++23 types statically validate object properties, behaviors, and message plumbing? | One tiny object tree runs a deterministic frame after compile-time behavior/property checks. |
 | Symbolic Math Lab | Expr | Can C++23 types make symbolic expressions, rewrites, and simplification traces explicit? | A tiny arithmetic expression simplifies through named rewrite rules with an inspectable trace. |
 | Go Forth | Reachable adventure | Can a railway planner reveal interesting one-way possibilities from a traveler's current state rather than require a destination first? | From Kanazawa at 09:00, return several diverse, explainable railway days from a small baked network. |
+| Spring Body Lab | ODE-driven material | Can a small deterministic laboratory make numerical integration, deformable materials, fracture, and structural failure visible and testable? | One spring compares several integrators against its analytic solution in a headless test and browser inspector. |
+| Rigid Body Lab | Rigid pose and contact | Can a small deterministic laboratory make rotation, collision impulses, and joints understandable without recreating Bullet? | A falling circle collides with a floor and explains its normal, impulse, and changed state. |
 
 See `future-project-designs/railroad-worlds.md` for the consolidated railroad-family design, the individual project design docs, `future-project-designs/railroad-fit-analysis.md` for the cross-project fit analysis, and [Paper Railroad's train-book study](https://github.com/davecarr1024/paper_railroad/tree/main/research/train_book) for the *American Railway* source-text fingerprint and cross-references.
+
+See `future-project-designs/spring-body-lab.md` for the ODE-first deformable-material laboratory and its later 2D breach-game capstone.
+
+See `future-project-designs/rigid-body-lab.md` for its rigid-body companion and their intentionally narrow shared ODE/math basis.
 
 ## Standards To Preserve Across Projects
 
